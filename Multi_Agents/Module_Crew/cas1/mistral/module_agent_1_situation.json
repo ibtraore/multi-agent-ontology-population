@@ -1,0 +1,49 @@
+{
+  "triplets": [
+    {
+      "subject": "BrunoSituation",
+      "predicate": "is_A",
+      "object": "AcademicSituation"
+    },
+    {
+      "subject": "BrunoSituation",
+      "predicate": "hasPatient",
+      "object": "Bruno"
+    },
+    {
+      "subject": "BrunoSituation",
+      "predicate": "hasTemporalEntity",
+      "object": "SituationInterval"
+    },
+    {
+      "subject": "BrunoSituation",
+      "predicate": "hasEnvironment",
+      "object": "Classroom"
+    },
+    {
+      "subject": "BrunoSituation",
+      "predicate": "hasChallenge",
+      "object": "Frustration"
+    },
+    {
+      "subject": "BrunoSituation",
+      "predicate": "hasChallenge",
+      "object": "LowSelfEsteem"
+    },
+    {
+      "subject": "BrunoSituation",
+      "predicate": "hasChallenge",
+      "object": "ChronicStress"
+    },
+    {
+      "subject": "Bruno",
+      "predicate": "isEngagedIn",
+      "object": "MathLesson"
+    },
+    {
+      "subject": "MathLesson",
+      "predicate": "isWith",
+      "object": "Mathieu"
+    }
+  ]
+}

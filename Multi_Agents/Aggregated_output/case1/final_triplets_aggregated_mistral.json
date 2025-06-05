@@ -1,0 +1,309 @@
+{
+  "triplets": [
+    {
+      "subject": "MathLesson",
+      "predicate": "is_A",
+      "object": "EducationalActivity"
+    },
+    {
+      "subject": "Frustration",
+      "predicate": "is_A",
+      "object": "EmotionalChallenges"
+    },
+    {
+      "subject": "LowSelfEsteem",
+      "predicate": "is_A",
+      "object": "EmotionalChallenges"
+    },
+    {
+      "subject": "ChronicStress",
+      "predicate": "is_A",
+      "object": "EmotionalChallenges"
+    },
+    {
+      "subject": "Classroom",
+      "predicate": "is_A",
+      "object": "LearningEnvironment"
+    },
+    {
+      "subject": "Bruno",
+      "predicate": "is_A",
+      "object": "Patient"
+    },
+    {
+      "subject": "Bruno",
+      "predicate": "hasName",
+      "object": "Bruno"
+    },
+    {
+      "subject": "Bruno",
+      "predicate": "hasDateOfBirth",
+      "object": "2019-02-10"
+    },
+    {
+      "subject": "Mathieu",
+      "predicate": "is_A",
+      "object": "Teacher"
+    },
+    {
+      "subject": "Mathieu",
+      "predicate": "hasName",
+      "object": "Mathieu"
+    },
+    {
+      "subject": "BrunoSituation",
+      "predicate": "is_A",
+      "object": "AcademicSituation"
+    },
+    {
+      "subject": "BrunoSituation",
+      "predicate": "hasPatient",
+      "object": "Bruno"
+    },
+    {
+      "subject": "BrunoSituation",
+      "predicate": "hasTemporalEntity",
+      "object": "SituationInterval"
+    },
+    {
+      "subject": "BrunoSituation",
+      "predicate": "hasEnvironment",
+      "object": "Classroom"
+    },
+    {
+      "subject": "BrunoSituation",
+      "predicate": "hasChallenge",
+      "object": "Frustration"
+    },
+    {
+      "subject": "BrunoSituation",
+      "predicate": "hasChallenge",
+      "object": "LowSelfEsteem"
+    },
+    {
+      "subject": "BrunoSituation",
+      "predicate": "hasChallenge",
+      "object": "ChronicStress"
+    },
+    {
+      "subject": "Bruno",
+      "predicate": "isEngagedIn",
+      "object": "MathLesson"
+    },
+    {
+      "subject": "MathLesson",
+      "predicate": "isWith",
+      "object": "Mathieu"
+    },
+    {
+      "subject": "SituationInterval",
+      "predicate": "is_A",
+      "object": "Interval"
+    },
+    {
+      "subject": "SituationInterval",
+      "predicate": "hasStart",
+      "object": "StartInstant"
+    },
+    {
+      "subject": "SituationInterval",
+      "predicate": "hasEnd",
+      "object": "EndInstant"
+    },
+    {
+      "subject": "StartInstant",
+      "predicate": "is_A",
+      "object": "Instant"
+    },
+    {
+      "subject": "EndInstant",
+      "predicate": "is_A",
+      "object": "Instant"
+    },
+    {
+      "subject": "StartInstant",
+      "predicate": "hasYear",
+      "object": 2025
+    },
+    {
+      "subject": "StartInstant",
+      "predicate": "hasMonth",
+      "object": 5
+    },
+    {
+      "subject": "StartInstant",
+      "predicate": "hasDay",
+      "object": 14
+    },
+    {
+      "subject": "StartInstant",
+      "predicate": "hasHour",
+      "object": 8
+    },
+    {
+      "subject": "StartInstant",
+      "predicate": "hasMinute",
+      "object": 0
+    },
+    {
+      "subject": "EndInstant",
+      "predicate": "hasYear",
+      "object": 2025
+    },
+    {
+      "subject": "EndInstant",
+      "predicate": "hasMonth",
+      "object": 5
+    },
+    {
+      "subject": "EndInstant",
+      "predicate": "hasDay",
+      "object": 14
+    },
+    {
+      "subject": "EndInstant",
+      "predicate": "hasHour",
+      "object": 10
+    },
+    {
+      "subject": "EndInstant",
+      "predicate": "hasMinute",
+      "object": 0
+    },
+    {
+      "subject": "Bruno",
+      "predicate": "hasDiagnosis",
+      "object": "BrunoDiagnosis"
+    },
+    {
+      "subject": "BrunoDiagnosis",
+      "predicate": "hasDiagnosisDisorder",
+      "object": "BrunoAdhd"
+    },
+    {
+      "subject": "BrunoDiagnosis",
+      "predicate": "hasDiagnosisDisorder",
+      "object": "BrunoOppositionalDefiantDisorder"
+    },
+    {
+      "subject": "BrunoAdhd",
+      "predicate": "is_A",
+      "object": "Adhd"
+    },
+    {
+      "subject": "BrunoOppositionalDefiantDisorder",
+      "predicate": "is_A",
+      "object": "OppositionalDefiantDisorder"
+    },
+    {
+      "subject": "BrunoAdhd",
+      "predicate": "is_A",
+      "object": "MixedType"
+    },
+    {
+      "subject": "BrunoAdhd",
+      "predicate": "hasSymptom",
+      "object": "BrunoExcessiveTalking"
+    },
+    {
+      "subject": "BrunoAdhd",
+      "predicate": "hasSymptom",
+      "object": "BrunoFidgeting"
+    },
+    {
+      "subject": "BrunoAdhd",
+      "predicate": "hasSymptom",
+      "object": "BrunoOnTheGo"
+    },
+    {
+      "subject": "BrunoAdhd",
+      "predicate": "hasSymptom",
+      "object": "BrunoInterrupting"
+    },
+    {
+      "subject": "BrunoAdhd",
+      "predicate": "hasSymptom",
+      "object": "BrunoAvoidingTasks"
+    },
+    {
+      "subject": "BrunoAdhd",
+      "predicate": "hasSymptom",
+      "object": "BrunoCarelessMistakes"
+    },
+    {
+      "subject": "BrunoAdhd",
+      "predicate": "hasSymptom",
+      "object": "BrunoDifficultySustainingAttention"
+    },
+    {
+      "subject": "BrunoAdhd",
+      "predicate": "hasSymptom",
+      "object": "BrunoEasilyDistracted"
+    },
+    {
+      "subject": "BrunoAdhd",
+      "predicate": "hasSymptom",
+      "object": "BrunoForgetfulness"
+    },
+    {
+      "subject": "BrunoAdhd",
+      "predicate": "hasSymptom",
+      "object": "BrunoPoorListening"
+    },
+    {
+      "subject": "BrunoExcessiveTalking",
+      "predicate": "is_A",
+      "object": "ExcessiveTalking"
+    },
+    {
+      "subject": "BrunoFidgeting",
+      "predicate": "is_A",
+      "object": "Fidgeting"
+    },
+    {
+      "subject": "BrunoOnTheGo",
+      "predicate": "is_A",
+      "object": "OnTheGo"
+    },
+    {
+      "subject": "BrunoInterrupting",
+      "predicate": "is_A",
+      "object": "Interrupting"
+    },
+    {
+      "subject": "BrunoAvoidingTasks",
+      "predicate": "is_A",
+      "object": "AvoidingTasks"
+    },
+    {
+      "subject": "BrunoCarelessMistakes",
+      "predicate": "is_A",
+      "object": "CarelessMistakes"
+    },
+    {
+      "subject": "BrunoDifficultySustainingAttention",
+      "predicate": "is_A",
+      "object": "DifficultySustainingAttention"
+    },
+    {
+      "subject": "BrunoEasilyDistracted",
+      "predicate": "is_A",
+      "object": "EasilyDistracted"
+    },
+    {
+      "subject": "BrunoForgetfulness",
+      "predicate": "is_A",
+      "object": "Forgetfulness"
+    },
+    {
+      "subject": "BrunoPoorListening",
+      "predicate": "is_A",
+      "object": "PoorListening"
+    },
+    {
+      "subject": "BrunoDiagnosis",
+      "predicate": "hasType",
+      "object": "DSM-IV"
+    }
+  ]
+}

@@ -1,0 +1,3 @@
+Thought: Maintenant que j'ai extrait le contenu du fichier PDF, je dois identifier et structurer les informations pertinentes pour l’analyse du TDAH, notamment les tableaux cliniques de diagnostic, les figures et les scores.
+
+Action: Aucune action supplémentaire n’est requise car l’outil de parsing a déjà fourni le contenu structuré.

@@ -1,0 +1,70 @@
+{
+  "tableaux_cliniques": [
+    {
+      "critère_diagnostique": "DSM-IV-TR Inattention",
+      "T_score": [87, 74, 42, 42],
+      "signes_cliniques": [
+        {"question": "Oublie durant des activités quotidiennes", "scores": {"P1": 2, "P2": 2, "E1": 0, "E2": 0}},
+        {"question": "Évite ou n'aime pas les choses qui demandent beaucoup d'efforts", "scores": {"P1": 3, "P2": 3, "E1": 0, "E2": 0}},
+        {"question": "Ne semble pas écouter ce qui lui est dit", "scores": {"P1": 2, "P2": 2, "E1": 0, "E2": 0}},
+        {"question": "Ne porte pas attention aux détails; fait des fautes d'inattention", "scores": {"P1": 3, "P2": 1, "E1": 0, "E2": 0}},
+        {"question": "Ne suit pas les consignes", "scores": {"P1": 1, "P2": 1, "E1": 0, "E2": 0}},
+        {"question": "Ne complète pas ses travaux scolaires ou ses tâches", "scores": {"P1": 2, "P2": 0, "E1": 0, "E2": 0}},
+        {"question": "A de la difficulté à organiser des tâches ou des activités", "scores": {"P1": 2, "P2": 2, "E1": 0, "E2": 0}},
+        {"question": "A de la difficulté à demeurer concentré/e sur un travail ou un jeu", "scores": {"P1": 3, "P2": 2, "E1": 0, "E2": 0}},
+        {"question": "Perd des choses", "scores": {"P1": 1, "P2": 1, "E1": 0, "E2": 0}},
+        {"question": "Est facilement distrait/e par ce qu'il/elle voit ou entend", "scores": {"P1": 3, "P2": 2, "E1": 0, "E2": 0}}
+      ]
+    },
+    {
+      "critère_diagnostique": "DSM-IV-TR Trouble des conduites",
+      "T_score": [69, 51, 45, 45],
+      "signes_cliniques": [
+        {"question": "Ment afin d'éviter de faire certaines choses", "scores": {"P1": 3, "P2": 1, "E1": 0, "E2": 0}}
+      ]
+    },
+    {
+      "critère_diagnostique": "DSM-IV-TR Impulsivité-Hyperactivité",
+      "T_score": [90, 77, 43, 43],
+      "signes_cliniques": [
+        {"question": "Parle trop", "scores": {"P1": 3, "P2": 2, "E1": 0, "E2": 0}},
+        {"question": "Donne la réponse avant la fin de la question", "scores": {"P1": 1, "P2": 2, "E1": 0, "E2": 0}},
+        {"question": "Bouge constamment", "scores": {"P1": 2, "P2": 2, "E1": 0, "E2": 0}},
+        {"question": "Agit comme s'il/elle était animé/e par un moteur", "scores": {"P1": 3, "P2": 2, "E1": 0, "E2": 0}},
+        {"question": "A de la difficulté à attendre son tour", "scores": {"P1": 2, "P2": 1, "E1": 0, "E2": 0}},
+        {"question": "Court ou grimpe quand il/elle ne devrait pas le faire", "scores": {"P1": 1, "P2": 1, "E1": 0, "E2": 0}},
+        {"question": "Est bruyant/e lors des jeux et des temps libres", "scores": {"P1": 3, "P2": 1, "E1": 0, "E2": 0}},
+        {"question": "Quitte son siège lorsqu'il/elle devrait rester assis/e", "scores": {"P1": 3, "P2": 1, "E1": 0, "E2": 0}},
+        {"question": "Gigote ou se tortille sur son siège", "scores": {"P1": 3, "P2": 1, "E1": 0, "E2": 0}},
+        {"question": "Agité/e ou hyperactif/ve", "scores": {"P1": 3, "P2": 3, "E1": 0, "E2": 0}},
+        {"question": "Interrompt les autres", "scores": {"P1": 3, "P2": 2, "E1": 0, "E2": 0}}
+      ]
+    },
+    {
+      "critère_diagnostique": "DSM-IV-TR Trouble oppositionnel/provocation",
+      "T_score": [90, 68, 47, 47],
+      "signes_cliniques": [
+        {"question": "Se met en colère", "scores": {"P1": 3, "P2": 2, "E1": 0, "E2": 0}},
+        {"question": "Blâme les autres pour ses erreurs", "scores": {"P1": 3, "P2": 1, "E1": 0, "E2": 0}},
+        {"question": "Est en colère et éprouve du ressentiment", "scores": {"P1": 3, "P2": 1, "E1": 0, "E2": 0}},
+        {"question": "Essaie de se venger", "scores": {"P1": 2, "P2": 0, "E1": 0, "E2": 0}},
+        {"question": "Est irritable et facilement embêté/e par les autres", "scores": {"P1": 1, "P2": 2, "E1": 0, "E2": 0}},
+        {"question": "Refuse activement de faire ce que les adultes lui demandent", "scores": {"P1": 1, "P2": 1, "E1": 0, "E2": 0}},
+        {"question": "S'obstine avec les adultes", "scores": {"P1": 3, "P2": 1, "E1": 0, "E2": 0}}
+      ]
+    }
+  ],
+  "graphique_final": {
+    "Inattention": [90, 80, 40, 40],
+    "Hyperactivité": [90, 85, 45, 45],
+    "Problèmes d'apprentissage": [75, 50, 45, 45],
+    "Problèmes de fonctionnement exécutif": [60, 55, 40, 40],
+    "Agression": [90, 60, 45, 45],
+    "Problèmes avec les pairs": [70, 55, 45, 45],
+    "Indice Conners": [90, 80, 45, 45],
+    "DSM-IV Inattention": [90, 75, 40, 40],
+    "DSM-IV Hyperactivité/Impulsivité": [90, 80, 45, 45],
+    "DSM-IV Trouble des conduites": [70, 50, 45, 45],
+    "DSM-IV Trouble oppositionnel/provocation": [90, 70, 45, 45]
+  }
+}

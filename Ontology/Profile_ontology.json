@@ -1,0 +1,160 @@
+{
+  "title": "Profile Ontology",
+  "id": "ont_profile",
+  "concepts": [
+    {
+      "qid": "Diagnosis",
+      "label": "Diagnosis"
+    },
+    {
+      "qid": "Disorder",
+      "label": "Disorder"
+    },
+    {
+      "qid": "ProfileState",
+      "label": "ProfileState"
+    },
+    {
+      "qid": "Symptom",
+      "label": "Symptom"
+    },
+    {
+      "qid": "Adhd",
+      "label": "Adhd"
+    },
+    {
+      "qid": "AnxietyDisorders",
+      "label": "AnxietyDisorders"
+    },
+    {
+      "qid": "AvoidingTasks",
+      "label": "AvoidingTasks"
+    },
+    {
+      "qid": "InattentionSymptoms",
+      "label": "InattentionSymptoms"
+    },
+    {
+      "qid": "BlurtingOut",
+      "label": "BlurtingOut"
+    },
+    {
+      "qid": "ImpulsivitySymptoms",
+      "label": "ImpulsivitySymptoms"
+    },
+    {
+      "qid": "CarelessMistakes",
+      "label": "CarelessMistakes"
+    },
+    {
+      "qid": "ConductDisorder",
+      "label": "ConductDisorder"
+    },
+    {
+      "qid": "Depression",
+      "label": "Depression"
+    },
+    {
+      "qid": "DifficultyPlayingQuietly",
+      "label": "DifficultyPlayingQuietly"
+    },
+    {
+      "qid": "HyperactivitySymptoms",
+      "label": "HyperactivitySymptoms"
+    },
+    {
+      "qid": "DifficultySustainingAttention",
+      "label": "DifficultySustainingAttention"
+    },
+    {
+      "qid": "DifficultyWaiting",
+      "label": "DifficultyWaiting"
+    },
+    {
+      "qid": "Disorganisation",
+      "label": "Disorganisation"
+    },
+    {
+      "qid": "EasilyDistracted",
+      "label": "EasilyDistracted"
+    },
+    {
+      "qid": "ExcessiveRunning",
+      "label": "ExcessiveRunning"
+    },
+    {
+      "qid": "ExcessiveTalking",
+      "label": "ExcessiveTalking"
+    },
+    {
+      "qid": "Fidgeting",
+      "label": "Fidgeting"
+    },
+    {
+      "qid": "Forgetfulness",
+      "label": "Forgetfulness"
+    },
+    {
+      "qid": "HyperactivityImpulsivityType",
+      "label": "HyperactivityImpulsivityType"
+    },
+    {
+      "qid": "InabilityStaySeated",
+      "label": "InabilityStaySeated"
+    },
+    {
+      "qid": "InattentionType",
+      "label": "InattentionType"
+    },
+    {
+      "qid": "Interrupting",
+      "label": "Interrupting"
+    },
+    {
+      "qid": "LosingThings",
+      "label": "LosingThings"
+    },
+    {
+      "qid": "MixedType",
+      "label": "MixedType"
+    },
+    {
+      "qid": "OnTheGo",
+      "label": "OnTheGo"
+    },
+    {
+      "qid": "OppositionalDefiantDisorder",
+      "label": "OppositionalDefiantDisorder"
+    },
+    {
+      "qid": "PoorListening",
+      "label": "PoorListening"
+    }
+  ],
+  "relations": [
+    {
+      "pid": "hasType",
+      "label": "hasType",
+      "domain": "Diagnosis",
+      "range": "str"
+    },
+    {
+      "pid": "hasDiagnosisDisorder",
+      "label": "hasDiagnosisDisorder",
+      "domain": "Diagnosis",
+      "range": "Disorder"
+    },
+    {
+      "pid": "hasProfileState",
+      "label": "hasProfileState",
+      "domain": "Diagnosis",
+      "range": "ProfileState"
+    },
+    {
+      "pid": "hasSymptom",
+      "label": "hasSymptom",
+      "domain": "Disorder",
+      "range": "Symptom"
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "triplets": [
+    {
+      "subject": "Lecture",
+      "predicate": "is_A",
+      "object": "EducationalActivity"
+    }
+  ]
+}

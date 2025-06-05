@@ -1,0 +1,9 @@
+{
+  "triplets": [
+    {
+      "subject": "LinaLectureChallenge",
+      "predicate": "is_A",
+      "object": "AcademicChallenges"
+    }
+  ]
+}

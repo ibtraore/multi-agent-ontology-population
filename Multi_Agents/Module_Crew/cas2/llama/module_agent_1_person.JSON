@@ -1,0 +1,10 @@
+{
+  "triplets": [
+    { "subject": "Adam", "predicate": "is_A", "object": "Patient" },
+    { "subject": "Adam", "predicate": "hasName", "object": "Adam" },
+    { "subject": "Adam", "predicate": "hasDateOfBirth", "object": "15-06-2018" },
+    { "subject": "Adam", "predicate": "hasGender", "object": "Male" },
+    { "subject": "AnimateurLouis", "predicate": "is_A", "object": "Teacher" },
+    { "subject": "AnimateurLouis", "predicate": "hasName", "object": "Animateur Louis" }
+  ]
+}

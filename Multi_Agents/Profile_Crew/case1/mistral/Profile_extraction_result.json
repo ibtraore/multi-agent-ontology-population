@@ -1,0 +1,139 @@
+{
+  "triplets": [
+    {
+      "subject": "Bruno",
+      "predicate": "hasDiagnosis",
+      "object": "BrunoDiagnosis"
+    },
+    {
+      "subject": "BrunoDiagnosis",
+      "predicate": "hasDiagnosisDisorder",
+      "object": "BrunoAdhd"
+    },
+    {
+      "subject": "BrunoDiagnosis",
+      "predicate": "hasDiagnosisDisorder",
+      "object": "BrunoOppositionalDefiantDisorder"
+    },
+    {
+      "subject": "BrunoAdhd",
+      "predicate": "is_A",
+      "object": "Adhd"
+    },
+    {
+      "subject": "BrunoOppositionalDefiantDisorder",
+      "predicate": "is_A",
+      "object": "OppositionalDefiantDisorder"
+    },
+    {
+      "subject": "BrunoAdhd",
+      "predicate": "is_A",
+      "object": "MixedType"
+    },
+    {
+      "subject": "BrunoAdhd",
+      "predicate": "hasSymptom",
+      "object": "BrunoExcessiveTalking"
+    },
+    {
+      "subject": "BrunoAdhd",
+      "predicate": "hasSymptom",
+      "object": "BrunoFidgeting"
+    },
+    {
+      "subject": "BrunoAdhd",
+      "predicate": "hasSymptom",
+      "object": "BrunoOnTheGo"
+    },
+    {
+      "subject": "BrunoAdhd",
+      "predicate": "hasSymptom",
+      "object": "BrunoInterrupting"
+    },
+    {
+      "subject": "BrunoAdhd",
+      "predicate": "hasSymptom",
+      "object": "BrunoAvoidingTasks"
+    },
+    {
+      "subject": "BrunoAdhd",
+      "predicate": "hasSymptom",
+      "object": "BrunoCarelessMistakes"
+    },
+    {
+      "subject": "BrunoAdhd",
+      "predicate": "hasSymptom",
+      "object": "BrunoDifficultySustainingAttention"
+    },
+    {
+      "subject": "BrunoAdhd",
+      "predicate": "hasSymptom",
+      "object": "BrunoEasilyDistracted"
+    },
+    {
+      "subject": "BrunoAdhd",
+      "predicate": "hasSymptom",
+      "object": "BrunoForgetfulness"
+    },
+    {
+      "subject": "BrunoAdhd",
+      "predicate": "hasSymptom",
+      "object": "BrunoPoorListening"
+    },
+    {
+      "subject": "BrunoExcessiveTalking",
+      "predicate": "is_A",
+      "object": "ExcessiveTalking"
+    },
+    {
+      "subject": "BrunoFidgeting",
+      "predicate": "is_A",
+      "object": "Fidgeting"
+    },
+    {
+      "subject": "BrunoOnTheGo",
+      "predicate": "is_A",
+      "object": "OnTheGo"
+    },
+    {
+      "subject": "BrunoInterrupting",
+      "predicate": "is_A",
+      "object": "Interrupting"
+    },
+    {
+      "subject": "BrunoAvoidingTasks",
+      "predicate": "is_A",
+      "object": "AvoidingTasks"
+    },
+    {
+      "subject": "BrunoCarelessMistakes",
+      "predicate": "is_A",
+      "object": "CarelessMistakes"
+    },
+    {
+      "subject": "BrunoDifficultySustainingAttention",
+      "predicate": "is_A",
+      "object": "DifficultySustainingAttention"
+    },
+    {
+      "subject": "BrunoEasilyDistracted",
+      "predicate": "is_A",
+      "object": "EasilyDistracted"
+    },
+    {
+      "subject": "BrunoForgetfulness",
+      "predicate": "is_A",
+      "object": "Forgetfulness"
+    },
+    {
+      "subject": "BrunoPoorListening",
+      "predicate": "is_A",
+      "object": "PoorListening"
+    },
+    {
+      "subject": "BrunoDiagnosis",
+      "predicate": "hasType",
+      "object": "DSM-IV"
+    }
+  ]
+}

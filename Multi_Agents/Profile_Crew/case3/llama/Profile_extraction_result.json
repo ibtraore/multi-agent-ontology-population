@@ -1,0 +1,89 @@
+{
+  "triplets": [
+    {
+      "subject": "Lina",
+      "predicate": "hasDiagnosis",
+      "object": "LinaDiagnosis"
+    },
+    {
+      "subject": "LinaDiagnosis",
+      "predicate": "hasDiagnosisDisorder",
+      "object": "LinaAdhd"
+    },
+    {
+      "subject": "LinaAdhd",
+      "predicate": "is_A",
+      "object": "Adhd"
+    },
+    {
+      "subject": "LinaAdhd",
+      "predicate": "is_A",
+      "object": "MixedType"
+    },
+    {
+      "subject": "LinaDiagnosis",
+      "predicate": "hasDiagnosisDisorder",
+      "object": "LinaOppositionalDefiantDisorder"
+    },
+    {
+      "subject": "LinaOppositionalDefiantDisorder",
+      "predicate": "is_A",
+      "object": "OppositionalDefiantDisorder"
+    },
+    {
+      "subject": "LinaAdhd",
+      "predicate": "hasSymptom",
+      "object": "LinaFidgeting"
+    },
+    {
+      "subject": "LinaFidgeting",
+      "predicate": "is_A",
+      "object": "Fidgeting"
+    },
+    {
+      "subject": "LinaAdhd",
+      "predicate": "hasSymptom",
+      "object": "LinaExcessiveRunning"
+    },
+    {
+      "subject": "LinaExcessiveRunning",
+      "predicate": "is_A",
+      "object": "ExcessiveRunning"
+    },
+    {
+      "subject": "LinaAdhd",
+      "predicate": "hasSymptom",
+      "object": "LinaForgetfulness"
+    },
+    {
+      "subject": "LinaForgetfulness",
+      "predicate": "is_A",
+      "object": "Forgetfulness"
+    },
+    {
+      "subject": "LinaAdhd",
+      "predicate": "hasSymptom",
+      "object": "LinaDifficultySustainingAttention"
+    },
+    {
+      "subject": "LinaDifficultySustainingAttention",
+      "predicate": "is_A",
+      "object": "DifficultySustainingAttention"
+    },
+    {
+      "subject": "LinaAdhd",
+      "predicate": "hasSymptom",
+      "object": "LinaBlurtingOut"
+    },
+    {
+      "subject": "LinaBlurtingOut",
+      "predicate": "is_A",
+      "object": "BlurtingOut"
+    },
+    {
+      "subject": "LinaDiagnosis",
+      "predicate": "hasType",
+      "object": "DSM-V"
+    }
+  ]
+}

@@ -1,0 +1,77 @@
+```json
+{
+  "Diagnosis": {
+    "disorder": "Adhd_MixedType",
+    "secondary_disorders": ["ConductDisorder", "OppositionalDefiantDisorder"],
+    "symptoms": {
+      "InattentionSymptoms": [
+        {
+          "symptom": "Forgetfulness",
+          "proof": "Oublie durant des activités quotidiennes",
+          "score": {"P1": 2, "P2": 2, "E1": 0, "E2": 0}
+        },
+        {
+          "symptom": "CarelessMistakes",
+          "proof": "Ne porte pas attention aux détails; fait des fautes d'inattention",
+          "score": {"P1": 2, "P2": 2, "E1": 0, "E2": 0}
+        },
+        {
+          "symptom": "DifficultySustainingAttention",
+          "proof": "A de la difficulté à demeurer concentré/e",
+          "score": {"P1": 2, "P2": 2, "E1": 0, "E2": 0}
+        },
+        {
+          "symptom": "EasilyDistracted",
+          "proof": "Est facilement distrait/e par ce qu'il/elle voit ou entend",
+          "score": {"P1": 2, "P2": 3, "E1": 0, "E2": 0}
+        }
+      ],
+      "HyperactivitySymptoms": [
+        {
+          "symptom": "ExcessiveTalking",
+          "proof": "Parle trop",
+          "score": {"P1": 3, "P2": 3, "E1": 0, "E2": 0}
+        },
+        {
+          "symptom": "Fidgeting",
+          "proof": "Bouge constamment",
+          "score": {"P1": 2, "P2": 2, "E1": 0, "E2": 0}
+        },
+        {
+          "symptom": "OnTheGo",
+          "proof": "Agit comme s'il/elle était animé/e par un moteur",
+          "score": {"P1": 3, "P2": 2, "E1": 0, "E2": 0}
+        },
+        {
+          "symptom": "ExcessiveRunning",
+          "proof": "Court ou grimpe quand il/elle ne devrait pas le faire",
+          "score": {"P1": 3, "P2": 2, "E1": 0, "E2": 0}
+        },
+        {
+          "symptom": "DifficultyPlayingQuietly",
+          "proof": "Est bruyant/e lors des jeux et des temps libres",
+          "score": {"P1": 2, "P2": 2, "E1": 0, "E2": 0}
+        }
+      ],
+      "ImpulsivitySymptoms": [
+        {
+          "symptom": "DifficultyWaiting",
+          "proof": "A de la difficulté à attendre son tour",
+          "score": {"P1": 3, "P2": 3, "E1": 0, "E2": 0}
+        },
+        {
+          "symptom": "Interrupting",
+          "proof": "Interrompt les autres",
+          "score": {"P1": 3, "P2": 3, "E1": 0, "E2": 0}
+        }
+      ]
+    },
+    "evidence": {
+      "T_score_inattention": 86,
+      "T_score_hyperactivity": 90,
+      "ConductDisorder": 90,
+      "OppositionalDefiantDisorder": 90
+    }
+  }
+}
+```

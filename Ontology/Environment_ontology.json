@@ -1,0 +1,94 @@
+{
+  "title": "Environment Ontology",
+  "id": "ont_environment",
+  "concepts": [
+    {
+      "qid": "Environment",
+      "label": "Environment"
+    },
+    {
+      "qid": "EnvironmentState",
+      "label": "EnvironmentState"
+    },
+    {
+      "qid": "Community",
+      "label": "Community"
+    },
+    {
+      "qid": "LivingEnvironment",
+      "label": "LivingEnvironment"
+    },
+    {
+      "qid": "FamilyHome",
+      "label": "FamilyHome"
+    },
+    {
+      "qid": "Garden",
+      "label": "Garden"
+    },
+    {
+      "qid": "PlayingEnvironment",
+      "label": "PlayingEnvironment"
+    },
+    {
+      "qid": "HomePlaySpace",
+      "label": "HomePlaySpace"
+    },
+    {
+      "qid": "HomeSchooling",
+      "label": "HomeSchooling"
+    },
+    {
+      "qid": "LearningEnvironment",
+      "label": "LearningEnvironment"
+    },
+    {
+      "qid": "Library",
+      "label": "Library"
+    },
+    {
+      "qid": "OnlineLearning",
+      "label": "OnlineLearning"
+    },
+    {
+      "qid": "Park",
+      "label": "Park"
+    },
+    {
+      "qid": "PreSchool",
+      "label": "PreSchool"
+    },
+    {
+      "qid": "PublicPlayground",
+      "label": "PublicPlayground"
+    },
+    {
+      "qid": "School",
+      "label": "School"
+    },
+    {
+      "qid": "SchoolResidence",
+      "label": "SchoolResidence"
+    },
+    {
+      "qid": "SportComplexe",
+      "label": "SportComplexe"
+    },
+    {
+      "qid": "SummerCamp",
+      "label": "SummerCamp"
+    },
+    {
+      "qid": "Theater",
+      "label": "Theater"
+    }
+  ],
+  "relations": [
+    {
+      "pid": "hasEnvironmentState",
+      "label": "hasEnvironmentState",
+      "domain": "Environment",
+      "range": "EnvironmentState"
+    }
+  ]
+}

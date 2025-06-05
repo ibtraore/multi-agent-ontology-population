@@ -1,0 +1,19 @@
+{
+  "nom": "P1",
+  "prenom": "Bruno",
+  "dateNaissance": "10-02-2019",
+  "classe": "CP1",
+  "challenges":["Frustration","Faible estime de soi", "Stress chronique"],
+  "profil": {},
+  "planningEcole": [
+    { "annee": 2025,
+      "mois": "mai",  
+      "jour": 14,
+      "heureDebut": "08:00",
+      "heureFin": "10:00",
+      "matiere": "Math",
+      "nomEnseignant": "Mathieu",
+      "enClasse": "True"
+    }
+  ]
+}

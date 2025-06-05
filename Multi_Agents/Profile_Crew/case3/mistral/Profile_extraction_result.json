@@ -1,0 +1,149 @@
+{
+  "triplets": [
+    {
+      "subject": "Lina",
+      "predicate": "hasDiagnosis",
+      "object": "LinaDiagnosis"
+    },
+    {
+      "subject": "LinaDiagnosis",
+      "predicate": "hasDiagnosisDisorder",
+      "object": "LinaAdhd"
+    },
+    {
+      "subject": "LinaDiagnosis",
+      "predicate": "hasDiagnosisDisorder",
+      "object": "LinaConductDisorder"
+    },
+    {
+      "subject": "LinaDiagnosis",
+      "predicate": "hasDiagnosisDisorder",
+      "object": "LinaOppositionalDefiantDisorder"
+    },
+    {
+      "subject": "LinaAdhd",
+      "predicate": "is_A",
+      "object": "Adhd"
+    },
+    {
+      "subject": "LinaConductDisorder",
+      "predicate": "is_A",
+      "object": "ConductDisorder"
+    },
+    {
+      "subject": "LinaOppositionalDefiantDisorder",
+      "predicate": "is_A",
+      "object": "OppositionalDefiantDisorder"
+    },
+    {
+      "subject": "LinaAdhd",
+      "predicate": "is_A",
+      "object": "MixedType"
+    },
+    {
+      "subject": "LinaAdhd",
+      "predicate": "hasSymptom",
+      "object": "LinaExcessiveTalking"
+    },
+    {
+      "subject": "LinaAdhd",
+      "predicate": "hasSymptom",
+      "object": "LinaFidgeting"
+    },
+    {
+      "subject": "LinaAdhd",
+      "predicate": "hasSymptom",
+      "object": "LinaOnTheGo"
+    },
+    {
+      "subject": "LinaAdhd",
+      "predicate": "hasSymptom",
+      "object": "LinaInabilityStaySeated"
+    },
+    {
+      "subject": "LinaAdhd",
+      "predicate": "hasSymptom",
+      "object": "LinaBlurtingOut"
+    },
+    {
+      "subject": "LinaAdhd",
+      "predicate": "hasSymptom",
+      "object": "LinaInterrupting"
+    },
+    {
+      "subject": "LinaAdhd",
+      "predicate": "hasSymptom",
+      "object": "LinaForgetfulness"
+    },
+    {
+      "subject": "LinaAdhd",
+      "predicate": "hasSymptom",
+      "object": "LinaCarelessMistakes"
+    },
+    {
+      "subject": "LinaAdhd",
+      "predicate": "hasSymptom",
+      "object": "LinaDifficultySustainingAttention"
+    },
+    {
+      "subject": "LinaAdhd",
+      "predicate": "hasSymptom",
+      "object": "LinaEasilyDistracted"
+    },
+    {
+      "subject": "LinaExcessiveTalking",
+      "predicate": "is_A",
+      "object": "ExcessiveTalking"
+    },
+    {
+      "subject": "LinaFidgeting",
+      "predicate": "is_A",
+      "object": "Fidgeting"
+    },
+    {
+      "subject": "LinaOnTheGo",
+      "predicate": "is_A",
+      "object": "OnTheGo"
+    },
+    {
+      "subject": "LinaInabilityStaySeated",
+      "predicate": "is_A",
+      "object": "InabilityStaySeated"
+    },
+    {
+      "subject": "LinaBlurtingOut",
+      "predicate": "is_A",
+      "object": "BlurtingOut"
+    },
+    {
+      "subject": "LinaInterrupting",
+      "predicate": "is_A",
+      "object": "Interrupting"
+    },
+    {
+      "subject": "LinaForgetfulness",
+      "predicate": "is_A",
+      "object": "Forgetfulness"
+    },
+    {
+      "subject": "LinaCarelessMistakes",
+      "predicate": "is_A",
+      "object": "CarelessMistakes"
+    },
+    {
+      "subject": "LinaDifficultySustainingAttention",
+      "predicate": "is_A",
+      "object": "DifficultySustainingAttention"
+    },
+    {
+      "subject": "LinaEasilyDistracted",
+      "predicate": "is_A",
+      "object": "EasilyDistracted"
+    },
+    {
+      "subject": "LinaDiagnosis",
+      "predicate": "hasType",
+      "object": "DSM-IV"
+    }
+  ]
+}

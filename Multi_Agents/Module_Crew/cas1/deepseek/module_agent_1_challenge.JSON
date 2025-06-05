@@ -1,0 +1,19 @@
+{
+  "triplets": [
+    {
+      "subject": "Frustration",
+      "predicate": "is_A",
+      "object": "Frustration"
+    },
+    {
+      "subject": "FaibleEstimeDeSoi",
+      "predicate": "is_A",
+      "object": "LowSelfEsteem"
+    },
+    {
+      "subject": "StressChronique",
+      "predicate": "is_A",
+      "object": "ChronicStress"
+    }
+  ]
+}

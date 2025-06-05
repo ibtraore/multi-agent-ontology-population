@@ -1,0 +1,75 @@
+```json
+{
+  "Diagnosis": {
+    "disorder": "Adhd_MixedType",
+    "secondary_disorders": [
+      "OppositionalDefiantDisorder",
+      "AnxietyDisorders"
+    ],
+    "symptoms": {
+      "HyperactivitySymptoms": [
+        {
+          "symptom": "Fidgeting",
+          "proof": "L’enfant bougeait constamment sur sa chaise.",
+          "score": {
+            "P1": 3,
+            "P2": 2,
+            "E1": 0,
+            "E2": 2
+          }
+        },
+        {
+          "symptom": "ExcessiveRunning",
+          "proof": "Il court sans arrêt dans la cour de récréation.",
+          "score": {
+            "P1": 2,
+            "P2": 3,
+            "E1": 1,
+            "E2": 2
+          }
+        }
+      ],
+      "InattentionSymptoms": [
+        {
+          "symptom": "Forgetfulness",
+          "proof": "Elle oublie régulièrement ses affaires de classe.",
+          "score": {
+            "P1": 1,
+            "P2": 2,
+            "E1": 3,
+            "E2": 0
+          }
+        },
+        {
+          "symptom": "DifficultySustainingAttention",
+          "proof": "Il a du mal à rester concentré pendant les leçons.",
+          "score": {
+            "P1": 2,
+            "P2": 1,
+            "E1": 2,
+            "E2": 3
+          }
+        }
+      ],
+      "ImpulsivitySymptoms": [
+        {
+          "symptom": "BlurtingOut",
+          "proof": "Il répond sans lever la main.",
+          "score": {
+            "P1": 3,
+            "P2": 2,
+            "E1": 1,
+            "E2": 2
+          }
+        }
+      ]
+    },
+    "evidence": {
+      "T_score_inattention": 72,
+      "T_score_hyperactivity": 75,
+      "OppositionalDefiantDisorder": 80,
+      "AnxietyDisorders": 70
+    }
+  }
+}
+```

@@ -1,0 +1,76 @@
+```json
+{
+  "Diagnosis": {
+    "disorder": "Adhd_MixedType",
+    "secondary_disorders": ["OppositionalDefiantDisorder"],
+    "symptoms": {
+      "HyperactivitySymptoms": [
+        {
+          "symptom": "ExcessiveTalking",
+          "proof": "Parle trop.",
+          "score": {"P1": 3, "P2": 2, "E1": 0, "E2": 0}
+        },
+        {
+          "symptom": "Fidgeting",
+          "proof": "Bouge constamment.",
+          "score": {"P1": 2, "P2": 2, "E1": 0, "E2": 0}
+        },
+        {
+          "symptom": "OnTheGo",
+          "proof": "Agit comme s'il/elle était animé/e par un moteur.",
+          "score": {"P1": 3, "P2": 2, "E1": 0, "E2": 0}
+        },
+        {
+          "symptom": "Interrupting",
+          "proof": "Interrompt les autres (par exemple, leurs conversations ou leurs jeux).",
+          "score": {"P1": 3, "P2": 2, "E1": 0, "E2": 0}
+        }
+      ],
+      "ImpulsivitySymptoms": [
+        {
+          "symptom": "BlurtingOut",
+          "proof": "Se met en colère.",
+          "score": {"P1": 3, "P2": 2, "E1": 0, "E2": 0}
+        }
+      ],
+      "InattentionSymptoms": [
+        {
+          "symptom": "Forgetfulness",
+          "proof": "Oublie durant des activités quotidiennes.",
+          "score": {"P1": 2, "P2": 2, "E1": 0, "E2": 0}
+        },
+        {
+          "symptom": "AvoidingTasks",
+          "proof": "Évite ou n'aime pas les choses qui demandent beaucoup d'efforts et qui ne",
+          "score": {"P1": 3, "P2": 3, "E1": 0, "E2": 0}
+        },
+        {
+          "symptom": "PoorListening",
+          "proof": "Ne semble pas écouter ce qui lui est dit.",
+          "score": {"P1": 2, "P2": 2, "E1": 0, "E2": 0}
+        },
+        {
+          "symptom": "Disorganisation",
+          "proof": "A de la difficulté à organiser des tâches ou des activités.",
+          "score": {"P1": 2, "P2": 2, "E1": 0, "E2": 0}
+        },
+        {
+          "symptom": "DifficultySustainingAttention",
+          "proof": "A de la difficulté à demeurer concentré/e sur un travail ou un jeu pour une longue période de temps.",
+          "score": {"P1": 3, "P2": 2, "E1": 0, "E2": 0}
+        },
+        {
+          "symptom": "EasilyDistracted",
+          "proof": "Est facilement distrait/e par ce qu'il/elle voit ou entend.",
+          "score": {"P1": 3, "P2": 2, "E1": 0, "E2": 0}
+        }
+      ]
+    },
+    "evidence": {
+      "T_score_inattention": 87,
+      "T_score_hyperactivity": 90,
+      "OppositionalDefiantDisorder": 90
+    }
+  }
+}
+```

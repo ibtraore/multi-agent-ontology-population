@@ -1,0 +1,9 @@
+{
+  "triplets": [
+    {
+      "subject": "DifficulteAFaireDesAmis",
+      "predicate": "is_A",
+      "object": "DifficultyMakingFriend"
+    }
+  ]
+}

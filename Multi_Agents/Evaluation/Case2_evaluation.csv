@@ -1,0 +1,4 @@
+﻿model_id,precision,recall,f1,onto_conf,rel_halluc,sub_halluc,obj_halluc
+deepseek-r1,0.86,0.83,0.84,1.00,0.00,0.09,0.04
+mistral-large,0.89,0.95,0.92,1.00,0.00,0.04,0.02
+llama-3.3,0.71,0.66,0.68,0.98,0.02,0.16,0.08

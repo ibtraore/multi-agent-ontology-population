@@ -1,0 +1,99 @@
+{
+"triplets":[
+  {
+    "subject": "Bruno",
+    "predicate": "hasDiagnosis",
+    "object": "BrunoDiagnosis"
+  },
+  {
+    "subject": "BrunoDiagnosis",
+    "predicate": "hasDiagnosisDisorder",
+    "object": "BrunoAdhd"
+  },
+  {
+    "subject": "BrunoAdhd",
+    "predicate": "is_A",
+    "object": "Adhd"
+  },
+  {
+    "subject": "BrunoAdhd",
+    "predicate": "is_A",
+    "object": "MixedType"
+  },
+  {
+    "subject": "BrunoDiagnosis",
+    "predicate": "hasDiagnosisDisorder",
+    "object": "BrunoOppositionalDefiantDisorder"
+  },
+  {
+    "subject": "BrunoOppositionalDefiantDisorder",
+    "predicate": "is_A",
+    "object": "OppositionalDefiantDisorder"
+  },
+  {
+    "subject": "BrunoDiagnosis",
+    "predicate": "hasDiagnosisDisorder",
+    "object": "BrunoAnxietyDisorders"
+  },
+  {
+    "subject": "BrunoAnxietyDisorders",
+    "predicate": "is_A",
+    "object": "AnxietyDisorders"
+  },
+  {
+    "subject": "BrunoAdhd",
+    "predicate": "hasSymptom",
+    "object": "BrunoFidgeting"
+  },
+  {
+    "subject": "BrunoFidgeting",
+    "predicate": "is_A",
+    "object": "Fidgeting"
+  },
+  {
+    "subject": "BrunoAdhd",
+    "predicate": "hasSymptom",
+    "object": "BrunoExcessiveRunning"
+  },
+  {
+    "subject": "BrunoExcessiveRunning",
+    "predicate": "is_A",
+    "object": "ExcessiveRunning"
+  },
+  {
+    "subject": "BrunoAdhd",
+    "predicate": "hasSymptom",
+    "object": "BrunoForgetfulness"
+  },
+  {
+    "subject": "BrunoForgetfulness",
+    "predicate": "is_A",
+    "object": "Forgetfulness"
+  },
+  {
+    "subject": "BrunoAdhd",
+    "predicate": "hasSymptom",
+    "object": "BrunoDifficultySustainingAttention"
+  },
+  {
+    "subject": "BrunoDifficultySustainingAttention",
+    "predicate": "is_A",
+    "object": "DifficultySustainingAttention"
+  },
+  {
+    "subject": "BrunoAdhd",
+    "predicate": "hasSymptom",
+    "object": "BrunoBlurtingOut"
+  },
+  {
+    "subject": "BrunoBlurtingOut",
+    "predicate": "is_A",
+    "object": "BlurtingOut"
+  },
+  {
+    "subject": "BrunoDiagnosis",
+    "predicate": "hasType",
+    "object": "DSM-V"
+  }
+]
+}

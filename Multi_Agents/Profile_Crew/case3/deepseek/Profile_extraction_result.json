@@ -1,0 +1,158 @@
+{"triplets":[
+  {
+    "subject": "Lina",
+    "predicate": "hasDiagnosis",
+    "object": "LinaDiagnosis"
+  },
+  {
+    "subject": "LinaDiagnosis",
+    "predicate": "hasDiagnosisDisorder",
+    "object": "LinaAdhd"
+  },
+  {
+    "subject": "LinaDiagnosis",
+    "predicate": "hasDiagnosisDisorder",
+    "object": "LinaConductDisorder"
+  },
+  {
+    "subject": "LinaDiagnosis",
+    "predicate": "hasDiagnosisDisorder",
+    "object": "LinaOppositionalDefiantDisorder"
+  },
+  {
+    "subject": "LinaAdhd",
+    "predicate": "is_A",
+    "object": "Adhd"
+  },
+  {
+    "subject": "LinaAdhd",
+    "predicate": "is_A",
+    "object": "MixedType"
+  },
+  {
+    "subject": "LinaConductDisorder",
+    "predicate": "is_A",
+    "object": "ConductDisorder"
+  },
+  {
+    "subject": "LinaOppositionalDefiantDisorder",
+    "predicate": "is_A",
+    "object": "OppositionalDefiantDisorder"
+  },
+  {
+    "subject": "LinaDiagnosis",
+    "predicate": "hasType",
+    "object": "DSM-IV"
+  },
+  {
+    "subject": "LinaAdhd",
+    "predicate": "hasSymptom",
+    "object": "LinaForgetfulness"
+  },
+  {
+    "subject": "LinaForgetfulness",
+    "predicate": "is_A",
+    "object": "Forgetfulness"
+  },
+  {
+    "subject": "LinaAdhd",
+    "predicate": "hasSymptom",
+    "object": "LinaCarelessMistakes"
+  },
+  {
+    "subject": "LinaCarelessMistakes",
+    "predicate": "is_A",
+    "object": "CarelessMistakes"
+  },
+  {
+    "subject": "LinaAdhd",
+    "predicate": "hasSymptom",
+    "object": "LinaDifficultySustainingAttention"
+  },
+  {
+    "subject": "LinaDifficultySustainingAttention",
+    "predicate": "is_A",
+    "object": "DifficultySustainingAttention"
+  },
+  {
+    "subject": "LinaAdhd",
+    "predicate": "hasSymptom",
+    "object": "LinaEasilyDistracted"
+  },
+  {
+    "subject": "LinaEasilyDistracted",
+    "predicate": "is_A",
+    "object": "EasilyDistracted"
+  },
+  {
+    "subject": "LinaAdhd",
+    "predicate": "hasSymptom",
+    "object": "LinaExcessiveTalking"
+  },
+  {
+    "subject": "LinaExcessiveTalking",
+    "predicate": "is_A",
+    "object": "ExcessiveTalking"
+  },
+  {
+    "subject": "LinaAdhd",
+    "predicate": "hasSymptom",
+    "object": "LinaFidgeting"
+  },
+  {
+    "subject": "LinaFidgeting",
+    "predicate": "is_A",
+    "object": "Fidgeting"
+  },
+  {
+    "subject": "LinaAdhd",
+    "predicate": "hasSymptom",
+    "object": "LinaOnTheGo"
+  },
+  {
+    "subject": "LinaOnTheGo",
+    "predicate": "is_A",
+    "object": "OnTheGo"
+  },
+  {
+    "subject": "LinaAdhd",
+    "predicate": "hasSymptom",
+    "object": "LinaExcessiveRunning"
+  },
+  {
+    "subject": "LinaExcessiveRunning",
+    "predicate": "is_A",
+    "object": "ExcessiveRunning"
+  },
+  {
+    "subject": "LinaAdhd",
+    "predicate": "hasSymptom",
+    "object": "LinaDifficultyPlayingQuietly"
+  },
+  {
+    "subject": "LinaDifficultyPlayingQuietly",
+    "predicate": "is_A",
+    "object": "DifficultyPlayingQuietly"
+  },
+  {
+    "subject": "LinaAdhd",
+    "predicate": "hasSymptom",
+    "object": "LinaDifficultyWaiting"
+  },
+  {
+    "subject": "LinaDifficultyWaiting",
+    "predicate": "is_A",
+    "object": "DifficultyWaiting"
+  },
+  {
+    "subject": "LinaAdhd",
+    "predicate": "hasSymptom",
+    "object": "LinaInterrupting"
+  },
+  {
+    "subject": "LinaInterrupting",
+    "predicate": "is_A",
+    "object": "Interrupting"
+  }
+]
+}

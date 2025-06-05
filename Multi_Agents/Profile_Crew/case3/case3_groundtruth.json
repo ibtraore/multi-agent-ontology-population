@@ -1,0 +1,89 @@
+{
+ "triplets": [
+  
+      { "subject": "Lina",                "predicate": "hasDiagnosis",        "object": "LinaDiagnosis" },
+      { "subject": "LinaDiagnosis",       "predicate": "hasType",               "object": "DSM-IV" },
+
+      { "subject": "LinaDiagnosis", "predicate": "hasDiagnosisDisorder", "object": "LinaAdhd" },
+      { "subject": "LinaAdhd",      "predicate": "is_A",                 "object": "MixedType" },
+      { "subject": "LinaAdhd",      "predicate": "is_A",                 "object": "Adhd" },
+ 
+      { "subject": "LinaDiagnosis","predicate": "hasDiagnosisDisorder", "object": "LinaOppositionalDefiantDisorder" },
+      { "subject": "LinaOppositionalDefiantDisorder", "predicate": "is_A", "object": "OppositionalDefiantDisorder" },
+
+      { "subject": "LinaDiagnosis", "predicate": "hasDiagnosisDisorder", "object": "LinaConductDisorder" },
+      { "subject": "LinaConductDisorder", "predicate": "is_A", "object": "ConductDisorder" },
+
+
+      { "subject": "LinaAdhd", "predicate": "hasSymptom", "object": "LinaForgetfulness" },
+      { "subject": "LinaAdhd", "predicate": "hasSymptom", "object": "LinaEasilyDistracted" },
+      { "subject": "LinaAdhd", "predicate": "hasSymptom", "object": "LinaCarelessMistakes" },
+      { "subject": "LinaAdhd", "predicate": "hasSymptom", "object": "LinaDifficultySustainingAttention" },
+      { "subject": "LinaAdhd", "predicate": "hasSymptom", "object": "LinaExcessiveTalking" },
+      { "subject": "LinaAdhd", "predicate": "hasSymptom", "object": "LinaOnTheGo" },
+      { "subject": "LinaAdhd", "predicate": "hasSymptom", "object": "LinaDifficultyWaiting" },
+      { "subject": "LinaAdhd", "predicate": "hasSymptom", "object": "LinaInterrupting" },
+      { "subject": "LinaAdhd", "predicate": "hasSymptom", "object": "LinaDifficultyPlayingQuietly" },
+      { "subject": "LinaAdhd", "predicate": "hasSymptom", "object": "LinaExcessiveRunning" },
+      { "subject": "LinaAdhd", "predicate": "hasSymptom", "object": "LinaFidgeting" },
+      { "subject": "LinaAdhd", "predicate": "hasSymptom", "object": "LinaAvoidingTasks"    },
+  
+
+      { "subject": "LinaForgetfulness",                 "predicate": "is_A", "object": "Forgetfulness" },
+      { "subject": "LinaEasilyDistracted",              "predicate": "is_A", "object": "EasilyDistracted" },
+      { "subject": "LinaCarelessMistakes",              "predicate": "is_A", "object": "CarelessMistakes" },
+      { "subject": "LinaDifficultySustainingAttention", "predicate": "is_A", "object": "DifficultySustainingAttention" },
+      { "subject": "LinaExcessiveTalking",              "predicate": "is_A", "object": "ExcessiveTalking" },
+      { "subject": "LinaOnTheGo",                       "predicate": "is_A", "object": "OnTheGo" },
+      { "subject": "LinaDifficultyWaiting",             "predicate": "is_A", "object": "DifficultyWaiting" },
+      { "subject": "LinaInterrupting",                  "predicate": "is_A", "object": "Interrupting" },
+      { "subject": "LinaDifficultyPlayingQuietly",      "predicate": "is_A", "object": "DifficultyPlayingQuietly" },
+      { "subject": "LinaExcessiveRunning",              "predicate": "is_A", "object": "ExcessiveRunning" },
+      { "subject": "LinaFidgeting",                     "predicate": "is_A", "object": "Fidgeting" },
+      { "subject": "LinaAvoidingTasks",                 "predicate": "is_A", "object": "AvoidingTasks"    },
+
+
+
+      { "subject": "Lina", "predicate": "is_A",           "object": "Patient" },
+      { "subject": "Lina", "predicate": "hasName",        "object": "Lina" },
+      { "subject": "Lina", "predicate": "hasDateOfBirth", "object": "2017-11-22" },
+      { "subject": "Lina", "predicate": "hasGender",      "object": "Female" },
+      { "subject": "Lina", "predicate": "hasAge",         "object": 7 },
+
+      { "subject": "LinaSituation",   "predicate": "hasPatient",        "object": "Lina" },
+      { "subject": "LinaSituation",   "predicate": "is_A",              "object": "AcademicSituation" },
+      { "subject": "LinaSituation",   "predicate": "hasEnvironment",    "object": "SchoolClassroom" },
+      { "subject": "SchoolClassroom", "predicate": "is_A",              "object": "LearningEnvironment" },
+      { "subject": "LinaSituation",   "predicate": "hasTemporalEntity", "object": "SituationInterval" },
+      { "subject": "SituationInterval", "predicate": "is_A",       "object": "Interval" },
+
+    
+      { "subject": "SituationInterval", "predicate": "hasStart",   "object": "StartInstant" },
+      { "subject": "SituationInterval", "predicate": "hasEnd",     "object": "EndInstant" },
+
+      { "subject": "StartInstant", "predicate": "is_A",      "object": "Instant" },
+      { "subject": "StartInstant", "predicate": "hasYear",   "object": 2025 },
+      { "subject": "StartInstant", "predicate": "hasMonth",  "object": 6 },
+      { "subject": "StartInstant", "predicate": "hasDay",    "object": 16 },
+      { "subject": "StartInstant", "predicate": "hasHour",   "object": 8 },
+      { "subject": "StartInstant", "predicate": "hasMinute", "object": 0 },
+
+      { "subject": "EndInstant", "predicate": "is_A",      "object": "Instant" },
+      { "subject": "EndInstant", "predicate": "hasYear",   "object": 2025 },
+      { "subject": "EndInstant", "predicate": "hasMonth",  "object": 6 },
+      { "subject": "EndInstant", "predicate": "hasDay",    "object": 16 },
+      { "subject": "EndInstant", "predicate": "hasHour",   "object": 9 },
+      { "subject": "EndInstant", "predicate": "hasMinute", "object": 30 },
+
+      { "subject": "Lina",             "predicate": "isEngagedIn", "object": "LectureLesson" },
+      { "subject": "LectureLesson",    "predicate": "isWith",      "object": "MmeMartin" },
+      { "subject": "LectureLesson",    "predicate": "is_A",        "object": "LanguageCourse" },
+
+      { "subject": "MmeMartin",        "predicate": "is_A",        "object": "Teacher" },
+      { "subject": "MmeMartin",        "predicate": "hasName",     "object": "Martin" },
+
+      { "subject": "LinaSituation",    "predicate": "hasChallenge", "object": "TravailDeGroupe" },
+      { "subject": "TravailDeGroupe",  "predicate": "is_A",         "object": "GroupWorkChallenges" }
+
+        ]
+    }

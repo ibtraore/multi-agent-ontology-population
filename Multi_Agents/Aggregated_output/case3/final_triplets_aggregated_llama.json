@@ -1,0 +1,259 @@
+{
+  "triplets": [
+    {
+      "subject": "Lecture",
+      "predicate": "is_A",
+      "object": "EducationalActivity"
+    },
+    {
+      "subject": "LinaLectureChallenge",
+      "predicate": "is_A",
+      "object": "AcademicChallenges"
+    },
+    {
+      "subject": "SchoolClassroom",
+      "predicate": "is_A",
+      "object": "LearningEnvironment"
+    },
+    {
+      "subject": "Lina",
+      "predicate": "is_A",
+      "object": "Patient"
+    },
+    {
+      "subject": "Lina",
+      "predicate": "hasName",
+      "object": "Lina"
+    },
+    {
+      "subject": "Lina",
+      "predicate": "hasDateOfBirth",
+      "object": "2017-11-22"
+    },
+    {
+      "subject": "Lina",
+      "predicate": "hasGender",
+      "object": "Female"
+    },
+    {
+      "subject": "MmeMartin",
+      "predicate": "is_A",
+      "object": "Teacher"
+    },
+    {
+      "subject": "MmeMartin",
+      "predicate": "hasName",
+      "object": "MmeMartin"
+    },
+    {
+      "subject": "LinaSituation",
+      "predicate": "is_A",
+      "object": "AcademicSituation"
+    },
+    {
+      "subject": "LinaSituation",
+      "predicate": "hasPatient",
+      "object": "Lina"
+    },
+    {
+      "subject": "LinaSituation",
+      "predicate": "hasTemporalEntity",
+      "object": "SituationInterval"
+    },
+    {
+      "subject": "LinaSituation",
+      "predicate": "hasEnvironment",
+      "object": "SchoolClassroom"
+    },
+    {
+      "subject": "Lina",
+      "predicate": "isEngagedIn",
+      "object": "Lecture"
+    },
+    {
+      "subject": "Lecture",
+      "predicate": "isWith",
+      "object": "MmeMartin"
+    },
+    {
+      "subject": "SituationInterval",
+      "predicate": "is_A",
+      "object": "Interval"
+    },
+    {
+      "subject": "SituationInterval",
+      "predicate": "hasStart",
+      "object": "StartInstant"
+    },
+    {
+      "subject": "SituationInterval",
+      "predicate": "hasEnd",
+      "object": "EndInstant"
+    },
+    {
+      "subject": "StartInstant",
+      "predicate": "is_A",
+      "object": "Instant"
+    },
+    {
+      "subject": "EndInstant",
+      "predicate": "is_A",
+      "object": "Instant"
+    },
+    {
+      "subject": "StartInstant",
+      "predicate": "hasYear",
+      "object": 2025
+    },
+    {
+      "subject": "StartInstant",
+      "predicate": "hasMonth",
+      "object": 6
+    },
+    {
+      "subject": "StartInstant",
+      "predicate": "hasDay",
+      "object": 16
+    },
+    {
+      "subject": "StartInstant",
+      "predicate": "hasHour",
+      "object": 8
+    },
+    {
+      "subject": "StartInstant",
+      "predicate": "hasMinute",
+      "object": 0
+    },
+    {
+      "subject": "EndInstant",
+      "predicate": "hasYear",
+      "object": 2025
+    },
+    {
+      "subject": "EndInstant",
+      "predicate": "hasMonth",
+      "object": 6
+    },
+    {
+      "subject": "EndInstant",
+      "predicate": "hasDay",
+      "object": 16
+    },
+    {
+      "subject": "EndInstant",
+      "predicate": "hasHour",
+      "object": 9
+    },
+    {
+      "subject": "EndInstant",
+      "predicate": "hasMinute",
+      "object": 30
+    },
+    {
+      "subject": "LinaBirthInstant",
+      "predicate": "is_A",
+      "object": "Instant"
+    },
+    {
+      "subject": "LinaBirthInstant",
+      "predicate": "hasYear",
+      "object": 2017
+    },
+    {
+      "subject": "LinaBirthInstant",
+      "predicate": "hasMonth",
+      "object": 11
+    },
+    {
+      "subject": "LinaBirthInstant",
+      "predicate": "hasDay",
+      "object": 22
+    },
+    {
+      "subject": "Lina",
+      "predicate": "hasDiagnosis",
+      "object": "LinaDiagnosis"
+    },
+    {
+      "subject": "LinaDiagnosis",
+      "predicate": "hasDiagnosisDisorder",
+      "object": "LinaAdhd"
+    },
+    {
+      "subject": "LinaAdhd",
+      "predicate": "is_A",
+      "object": "Adhd"
+    },
+    {
+      "subject": "LinaAdhd",
+      "predicate": "is_A",
+      "object": "MixedType"
+    },
+    {
+      "subject": "LinaDiagnosis",
+      "predicate": "hasDiagnosisDisorder",
+      "object": "LinaOppositionalDefiantDisorder"
+    },
+    {
+      "subject": "LinaOppositionalDefiantDisorder",
+      "predicate": "is_A",
+      "object": "OppositionalDefiantDisorder"
+    },
+    {
+      "subject": "LinaAdhd",
+      "predicate": "hasSymptom",
+      "object": "LinaFidgeting"
+    },
+    {
+      "subject": "LinaFidgeting",
+      "predicate": "is_A",
+      "object": "Fidgeting"
+    },
+    {
+      "subject": "LinaAdhd",
+      "predicate": "hasSymptom",
+      "object": "LinaExcessiveRunning"
+    },
+    {
+      "subject": "LinaExcessiveRunning",
+      "predicate": "is_A",
+      "object": "ExcessiveRunning"
+    },
+    {
+      "subject": "LinaAdhd",
+      "predicate": "hasSymptom",
+      "object": "LinaForgetfulness"
+    },
+    {
+      "subject": "LinaForgetfulness",
+      "predicate": "is_A",
+      "object": "Forgetfulness"
+    },
+    {
+      "subject": "LinaAdhd",
+      "predicate": "hasSymptom",
+      "object": "LinaDifficultySustainingAttention"
+    },
+    {
+      "subject": "LinaDifficultySustainingAttention",
+      "predicate": "is_A",
+      "object": "DifficultySustainingAttention"
+    },
+    {
+      "subject": "LinaAdhd",
+      "predicate": "hasSymptom",
+      "object": "LinaBlurtingOut"
+    },
+    {
+      "subject": "LinaBlurtingOut",
+      "predicate": "is_A",
+      "object": "BlurtingOut"
+    },
+    {
+      "subject": "LinaDiagnosis",
+      "predicate": "hasType",
+      "object": "DSM-V"
+    }
+  ]
+}

@@ -1,0 +1,234 @@
+{
+    "triples": [
+        {
+            "subject": "Adam",
+            "predicate": "is_A",
+            "object": "Patient"
+        },
+        {
+            "subject": "Adam",
+            "predicate": "hasName",
+            "object": "Adam"
+        },
+        {
+            "subject": "Adam",
+            "predicate": "hasDateOfBirth",
+            "object": "2018-06-15"
+        },
+        {
+            "subject": "Adam",
+            "predicate": "hasAge",
+            "object": 6
+        },
+        {
+            "subject": "Adam",
+            "predicate": "hasDiagnosis",
+            "object": "ADHD Diagnosis"
+        },
+        {
+            "subject": "Adam",
+            "predicate": "hasDiagnosis",
+            "object": "OppositionalDefiantDisorder Diagnosis"
+        },
+        {
+            "subject": "ADHD Diagnosis",
+            "predicate": "hasDiagnosisDisorder",
+            "object": "MixedADHD"
+        },
+        {
+            "subject": "OppositionalDefiantDisorder Diagnosis",
+            "predicate": "hasDiagnosisDisorder",
+            "object": "OppositionalDefiantDisorder"
+        },
+        {
+            "subject": "ADHD Diagnosis",
+            "predicate": "hasProfileState",
+            "object": "ADHD ProfileState"
+        },
+        {
+            "subject": "ADHD ProfileState",
+            "predicate": "hasSymptom",
+            "object": "InattentionSymptoms"
+        },
+        {
+            "subject": "ADHD ProfileState",
+            "predicate": "hasSymptom",
+            "object": "ImpulsivitySymptoms"
+        },
+        {
+            "subject": "ADHD ProfileState",
+            "predicate": "hasSymptom",
+            "object": "HyperactivitySymptoms"
+        },
+        {
+            "subject": "InattentionSymptoms",
+            "predicate": "hasSymptom",
+            "object": "Forgetfulness"
+        },
+        {
+            "subject": "InattentionSymptoms",
+            "predicate": "hasSymptom",
+            "object": "PoorListening"
+        },
+        {
+            "subject": "InattentionSymptoms",
+            "predicate": "hasSymptom",
+            "object": "EasilyDistracted"
+        },
+        {
+            "subject": "InattentionSymptoms",
+            "predicate": "hasSymptom",
+            "object": "DifficultySustainingAttention"
+        },
+        {
+            "subject": "ImpulsivitySymptoms",
+            "predicate": "hasSymptom",
+            "object": "ExcessiveTalking"
+        },
+        {
+            "subject": "ImpulsivitySymptoms",
+            "predicate": "hasSymptom",
+            "object": "Interrupting"
+        },
+        {
+            "subject": "HyperactivitySymptoms",
+            "predicate": "hasSymptom",
+            "object": "Fidgeting"
+        },
+        {
+            "subject": "HyperactivitySymptoms",
+            "predicate": "hasSymptom",
+            "object": "OnTheGo"
+        },
+        {
+            "subject": "FreePlayActivity",
+            "predicate": "is_A",
+            "object": "OutdoorActivity"
+        },
+        {
+            "subject": "FreePlayActivity",
+            "predicate": "isWith",
+            "object": "Louis"
+        },
+        {
+            "subject": "Adam",
+            "predicate": "isEngagedIn",
+            "object": "FreePlayActivity"
+        },
+        {
+            "subject": "FreePlayActivity",
+            "predicate": "hasActivityState",
+            "object": "FreePlayActivityState"
+        },
+        {
+            "subject": "SituationInterval",
+            "predicate": "is_A",
+            "object": "TemporalEntity"
+        },
+        {
+            "subject": "SituationInterval",
+            "predicate": "hasStart",
+            "object": "StartInstant"
+        },
+        {
+            "subject": "StartInstant",
+            "predicate": "is_A",
+            "object": "Instant"
+        },
+        {
+            "subject": "StartInstant",
+            "predicate": "hasYear",
+            "object": 2025
+        },
+        {
+            "subject": "StartInstant",
+            "predicate": "hasMonth",
+            "object": 2
+        },
+        {
+            "subject": "StartInstant",
+            "predicate": "hasDay",
+            "object": 19
+        },
+        {
+            "subject": "StartInstant",
+            "predicate": "hasHour",
+            "object": 10
+        },
+        {
+            "subject": "StartInstant",
+            "predicate": "hasMinute",
+            "object": 0
+        },
+        {
+            "subject": "StartInstant",
+            "predicate": "hasSecond",
+            "object": 0
+        },
+        {
+            "subject": "SituationInterval",
+            "predicate": "hasEnd",
+            "object": "EndInstant"
+        },
+        {
+            "subject": "EndInstant",
+            "predicate": "is_A",
+            "object": "Instant"
+        },
+        {
+            "subject": "EndInstant",
+            "predicate": "hasYear",
+            "object": 2025
+        },
+        {
+            "subject": "EndInstant",
+            "predicate": "hasMonth",
+            "object": 2
+        },
+        {
+            "subject": "EndInstant",
+            "predicate": "hasDay",
+            "object": 19
+        },
+        {
+            "subject": "EndInstant",
+            "predicate": "hasHour",
+            "object": 11
+        },
+        {
+            "subject": "EndInstant",
+            "predicate": "hasMinute",
+            "object": 0
+        },
+        {
+            "subject": "EndInstant",
+            "predicate": "hasSecond",
+            "object": 0
+        },
+        {
+            "subject": "AdamSituation",
+            "predicate": "is_A",
+            "object": "SocialSituation"
+        },
+        {
+            "subject": "AdamSituation",
+            "predicate": "hasPatient",
+            "object": "Adam"
+        },
+        {
+            "subject": "AdamSituation",
+            "predicate": "hasTemporalEntity",
+            "object": "SituationInterval"
+        },
+        {
+            "subject": "AdamSituation",
+            "predicate": "hasEnvironment",
+            "object": "OutdoorPlayground"
+        },
+        {
+            "subject": "Louis",
+            "predicate": "is_A",
+            "object": "ActivityLeader"
+        }
+    ]
+}

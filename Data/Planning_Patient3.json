@@ -1,0 +1,20 @@
+{
+  "nom": "p3",
+  "prenom": "Lina",
+  "dateNaissance": "22-11-2017",
+  "classe": "CP2",
+  "profil": {},
+  "Challenge":"",
+  "planningEcole": [
+    {  "annee":2025,
+       "mois": 6,
+      "jour": 16,
+      "heureDebut": "08:00",
+      "heureFin": "09:30",
+      "matiere": "Lecture",
+      "nomEnseignant": "Mme Martin",
+      "enClasse": "True"
+    }
+  ],
+  "autrePlanning": []
+}

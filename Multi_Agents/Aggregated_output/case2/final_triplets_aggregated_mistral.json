@@ -1,0 +1,319 @@
+{
+  "triplets": [
+    {
+      "subject": "FreePlay",
+      "predicate": "is_A",
+      "object": "GameActivity"
+    },
+    {
+      "subject": "FriendshipChallenge",
+      "predicate": "is_A",
+      "object": "DifficultyMakingFriend"
+    },
+    {
+      "subject": "Playground",
+      "predicate": "is_A",
+      "object": "PublicPlayground"
+    },
+    {
+      "subject": "Adam",
+      "predicate": "is_A",
+      "object": "Patient"
+    },
+    {
+      "subject": "Adam",
+      "predicate": "hasName",
+      "object": "Adam"
+    },
+    {
+      "subject": "Adam",
+      "predicate": "hasDateOfBirth",
+      "object": "2018-06-15"
+    },
+    {
+      "subject": "AnimateurLouis",
+      "predicate": "is_A",
+      "object": "Teacher"
+    },
+    {
+      "subject": "AnimateurLouis",
+      "predicate": "hasName",
+      "object": "AnimateurLouis"
+    },
+    {
+      "subject": "AdamSituation",
+      "predicate": "is_A",
+      "object": "SocialSituation"
+    },
+    {
+      "subject": "AdamSituation",
+      "predicate": "hasPatient",
+      "object": "Adam"
+    },
+    {
+      "subject": "AdamSituation",
+      "predicate": "hasTemporalEntity",
+      "object": "SituationInterval"
+    },
+    {
+      "subject": "AdamSituation",
+      "predicate": "hasEnvironment",
+      "object": "Playground"
+    },
+    {
+      "subject": "AdamSituation",
+      "predicate": "hasChallenge",
+      "object": "FriendshipChallenge"
+    },
+    {
+      "subject": "Adam",
+      "predicate": "isEngagedIn",
+      "object": "FreePlay"
+    },
+    {
+      "subject": "FreePlay",
+      "predicate": "isWith",
+      "object": "AnimateurLouis"
+    },
+    {
+      "subject": "SituationInterval",
+      "predicate": "is_A",
+      "object": "Interval"
+    },
+    {
+      "subject": "SituationInterval",
+      "predicate": "hasStart",
+      "object": "StartInstant"
+    },
+    {
+      "subject": "SituationInterval",
+      "predicate": "hasEnd",
+      "object": "EndInstant"
+    },
+    {
+      "subject": "StartInstant",
+      "predicate": "is_A",
+      "object": "Instant"
+    },
+    {
+      "subject": "EndInstant",
+      "predicate": "is_A",
+      "object": "Instant"
+    },
+    {
+      "subject": "StartInstant",
+      "predicate": "hasYear",
+      "object": 2025
+    },
+    {
+      "subject": "StartInstant",
+      "predicate": "hasMonth",
+      "object": 2
+    },
+    {
+      "subject": "StartInstant",
+      "predicate": "hasDay",
+      "object": 19
+    },
+    {
+      "subject": "StartInstant",
+      "predicate": "hasHour",
+      "object": 10
+    },
+    {
+      "subject": "StartInstant",
+      "predicate": "hasMinute",
+      "object": 0
+    },
+    {
+      "subject": "EndInstant",
+      "predicate": "hasYear",
+      "object": 2025
+    },
+    {
+      "subject": "EndInstant",
+      "predicate": "hasMonth",
+      "object": 2
+    },
+    {
+      "subject": "EndInstant",
+      "predicate": "hasDay",
+      "object": 19
+    },
+    {
+      "subject": "EndInstant",
+      "predicate": "hasHour",
+      "object": 11
+    },
+    {
+      "subject": "EndInstant",
+      "predicate": "hasMinute",
+      "object": 0
+    },
+    {
+      "subject": "Adam",
+      "predicate": "hasDiagnosis",
+      "object": "AdamDiagnosis"
+    },
+    {
+      "subject": "AdamDiagnosis",
+      "predicate": "hasDiagnosisDisorder",
+      "object": "AdamAdhd"
+    },
+    {
+      "subject": "AdamDiagnosis",
+      "predicate": "hasDiagnosisDisorder",
+      "object": "AdamOppositionalDefiantDisorder"
+    },
+    {
+      "subject": "AdamAdhd",
+      "predicate": "is_A",
+      "object": "Adhd"
+    },
+    {
+      "subject": "AdamOppositionalDefiantDisorder",
+      "predicate": "is_A",
+      "object": "OppositionalDefiantDisorder"
+    },
+    {
+      "subject": "AdamAdhd",
+      "predicate": "is_A",
+      "object": "MixedType"
+    },
+    {
+      "subject": "AdamAdhd",
+      "predicate": "hasSymptom",
+      "object": "AdamExcessiveTalking"
+    },
+    {
+      "subject": "AdamAdhd",
+      "predicate": "hasSymptom",
+      "object": "AdamFidgeting"
+    },
+    {
+      "subject": "AdamAdhd",
+      "predicate": "hasSymptom",
+      "object": "AdamInabilityStaySeated"
+    },
+    {
+      "subject": "AdamAdhd",
+      "predicate": "hasSymptom",
+      "object": "AdamOnTheGo"
+    },
+    {
+      "subject": "AdamAdhd",
+      "predicate": "hasSymptom",
+      "object": "AdamBlurtingOut"
+    },
+    {
+      "subject": "AdamAdhd",
+      "predicate": "hasSymptom",
+      "object": "AdamInterrupting"
+    },
+    {
+      "subject": "AdamAdhd",
+      "predicate": "hasSymptom",
+      "object": "AdamAvoidingTasks"
+    },
+    {
+      "subject": "AdamAdhd",
+      "predicate": "hasSymptom",
+      "object": "AdamCarelessMistakes"
+    },
+    {
+      "subject": "AdamAdhd",
+      "predicate": "hasSymptom",
+      "object": "AdamDifficultySustainingAttention"
+    },
+    {
+      "subject": "AdamAdhd",
+      "predicate": "hasSymptom",
+      "object": "AdamDisorganisation"
+    },
+    {
+      "subject": "AdamAdhd",
+      "predicate": "hasSymptom",
+      "object": "AdamEasilyDistracted"
+    },
+    {
+      "subject": "AdamAdhd",
+      "predicate": "hasSymptom",
+      "object": "AdamForgetfulness"
+    },
+    {
+      "subject": "AdamAdhd",
+      "predicate": "hasSymptom",
+      "object": "AdamPoorListening"
+    },
+    {
+      "subject": "AdamExcessiveTalking",
+      "predicate": "is_A",
+      "object": "ExcessiveTalking"
+    },
+    {
+      "subject": "AdamFidgeting",
+      "predicate": "is_A",
+      "object": "Fidgeting"
+    },
+    {
+      "subject": "AdamInabilityStaySeated",
+      "predicate": "is_A",
+      "object": "InabilityStaySeated"
+    },
+    {
+      "subject": "AdamOnTheGo",
+      "predicate": "is_A",
+      "object": "OnTheGo"
+    },
+    {
+      "subject": "AdamBlurtingOut",
+      "predicate": "is_A",
+      "object": "BlurtingOut"
+    },
+    {
+      "subject": "AdamInterrupting",
+      "predicate": "is_A",
+      "object": "Interrupting"
+    },
+    {
+      "subject": "AdamAvoidingTasks",
+      "predicate": "is_A",
+      "object": "AvoidingTasks"
+    },
+    {
+      "subject": "AdamCarelessMistakes",
+      "predicate": "is_A",
+      "object": "CarelessMistakes"
+    },
+    {
+      "subject": "AdamDifficultySustainingAttention",
+      "predicate": "is_A",
+      "object": "DifficultySustainingAttention"
+    },
+    {
+      "subject": "AdamDisorganisation",
+      "predicate": "is_A",
+      "object": "Disorganisation"
+    },
+    {
+      "subject": "AdamEasilyDistracted",
+      "predicate": "is_A",
+      "object": "EasilyDistracted"
+    },
+    {
+      "subject": "AdamForgetfulness",
+      "predicate": "is_A",
+      "object": "Forgetfulness"
+    },
+    {
+      "subject": "AdamPoorListening",
+      "predicate": "is_A",
+      "object": "PoorListening"
+    },
+    {
+      "subject": "AdamDiagnosis",
+      "predicate": "hasType",
+      "object": "DSM-IV"
+    }
+  ]
+}

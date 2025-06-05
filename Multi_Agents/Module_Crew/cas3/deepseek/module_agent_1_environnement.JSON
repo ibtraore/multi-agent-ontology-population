@@ -1,0 +1,9 @@
+{
+  "triplets": [
+    {
+      "subject": "SchoolClassroom",
+      "predicate": "is_A",
+      "object": "LearningEnvironment"
+    }
+  ]
+}

@@ -1,0 +1,244 @@
+{
+    "triples": [
+        {
+            "subject": "Lina",
+            "predicate": "is_A",
+            "object": "Patient"
+        },
+        {
+            "subject": "Lina",
+            "predicate": "hasName",
+            "object": "Lina"
+        },
+        {
+            "subject": "Lina",
+            "predicate": "hasDateOfBirth",
+            "object": "2017-11-22"
+        },
+        {
+            "subject": "Lina",
+            "predicate": "hasGender",
+            "object": "Female"
+        },
+        {
+            "subject": "Lina",
+            "predicate": "hasAge",
+            "object": 7
+        },
+        {
+            "subject": "Lina",
+            "predicate": "isEngagedIn",
+            "object": "ReadingClass"
+        },
+        {
+            "subject": "Lina",
+            "predicate": "hasDiagnosis",
+            "object": "LinaDiagnosis"
+        },
+        {
+            "subject": "LinaDiagnosis",
+            "predicate": "hasDiagnosisDisorder",
+            "object": "ADHD"
+        },
+        {
+            "subject": "LinaDiagnosis",
+            "predicate": "hasDiagnosisDisorder",
+            "object": "OppositionalDefiantDisorder"
+        },
+        {
+            "subject": "LinaDiagnosis",
+            "predicate": "hasDiagnosisDisorder",
+            "object": "ConductDisorder"
+        },
+        {
+            "subject": "ADHD",
+            "predicate": "hasType",
+            "object": "MixedType"
+        },
+        {
+            "subject": "Lina",
+            "predicate": "hasSymptom",
+            "object": "Forgetfulness"
+        },
+        {
+            "subject": "Lina",
+            "predicate": "hasSymptom",
+            "object": "EasilyDistracted"
+        },
+        {
+            "subject": "Lina",
+            "predicate": "hasSymptom",
+            "object": "CarelessMistakes"
+        },
+        {
+            "subject": "Lina",
+            "predicate": "hasSymptom",
+            "object": "DifficultySustainingAttention"
+        },
+        {
+            "subject": "Lina",
+            "predicate": "hasSymptom",
+            "object": "ExcessiveTalking"
+        },
+        {
+            "subject": "Lina",
+            "predicate": "hasSymptom",
+            "object": "OnTheGo"
+        },
+        {
+            "subject": "Lina",
+            "predicate": "hasSymptom",
+            "object": "DifficultyWaiting"
+        },
+        {
+            "subject": "Lina",
+            "predicate": "hasSymptom",
+            "object": "Interrupting"
+        },
+        {
+            "subject": "Lina",
+            "predicate": "hasSymptom",
+            "object": "DifficultyPlayingQuietly"
+        },
+        {
+            "subject": "Lina",
+            "predicate": "hasSymptom",
+            "object": "ExcessiveRunning"
+        },
+        {
+            "subject": "Lina",
+            "predicate": "hasSymptom",
+            "object": "Fidgeting"
+        },
+        {
+            "subject": "Lina",
+            "predicate": "hasSymptom",
+            "object": "AvoidingTasks"
+        },
+        {
+            "subject": "MmeMartin",
+            "predicate": "is_A",
+            "object": "Teacher"
+        },
+        {
+            "subject": "ReadingClass",
+            "predicate": "is_A",
+            "object": "EducationalActivity"
+        },
+        {
+            "subject": "ReadingClass",
+            "predicate": "isWith",
+            "object": "MmeMartin"
+        },
+        {
+            "subject": "Classroom",
+            "predicate": "is_A",
+            "object": "LearningEnvironment"
+        },
+        {
+            "subject": "SituationInterval",
+            "predicate": "is_A",
+            "object": "TemporalEntity"
+        },
+        {
+            "subject": "SituationInterval",
+            "predicate": "hasStart",
+            "object": "StartInstant"
+        },
+        {
+            "subject": "StartInstant",
+            "predicate": "is_A",
+            "object": "Instant"
+        },
+        {
+            "subject": "StartInstant",
+            "predicate": "hasYear",
+            "object": 2025
+        },
+        {
+            "subject": "StartInstant",
+            "predicate": "hasMonth",
+            "object": 6
+        },
+        {
+            "subject": "StartInstant",
+            "predicate": "hasDay",
+            "object": 16
+        },
+        {
+            "subject": "StartInstant",
+            "predicate": "hasHour",
+            "object": 8
+        },
+        {
+            "subject": "StartInstant",
+            "predicate": "hasMinute",
+            "object": 0
+        },
+        {
+            "subject": "StartInstant",
+            "predicate": "hasSecond",
+            "object": 0
+        },
+        {
+            "subject": "SituationInterval",
+            "predicate": "hasEnd",
+            "object": "EndInstant"
+        },
+        {
+            "subject": "EndInstant",
+            "predicate": "is_A",
+            "object": "Instant"
+        },
+        {
+            "subject": "EndInstant",
+            "predicate": "hasYear",
+            "object": 2025
+        },
+        {
+            "subject": "EndInstant",
+            "predicate": "hasMonth",
+            "object": 6
+        },
+        {
+            "subject": "EndInstant",
+            "predicate": "hasDay",
+            "object": 16
+        },
+        {
+            "subject": "EndInstant",
+            "predicate": "hasHour",
+            "object": 9
+        },
+        {
+            "subject": "EndInstant",
+            "predicate": "hasMinute",
+            "object": 30
+        },
+        {
+            "subject": "EndInstant",
+            "predicate": "hasSecond",
+            "object": 0
+        },
+        {
+            "subject": "LinaSituation",
+            "predicate": "is_A",
+            "object": "AcademicSituation"
+        },
+        {
+            "subject": "LinaSituation",
+            "predicate": "hasPatient",
+            "object": "Lina"
+        },
+        {
+            "subject": "LinaSituation",
+            "predicate": "hasTemporalEntity",
+            "object": "SituationInterval"
+        },
+        {
+            "subject": "LinaSituation",
+            "predicate": "hasEnvironment",
+            "object": "Classroom"
+        }
+    ]
+}

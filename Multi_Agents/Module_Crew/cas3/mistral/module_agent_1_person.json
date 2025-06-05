@@ -1,0 +1,34 @@
+{
+  "triplets": [
+    {
+      "subject": "Lina",
+      "predicate": "is_A",
+      "object": "Patient"
+    },
+    {
+      "subject": "Lina",
+      "predicate": "hasName",
+      "object": "Lina"
+    },
+    {
+      "subject": "Lina",
+      "predicate": "hasDateOfBirth",
+      "object": "2017-11-22"
+    },
+    {
+      "subject": "Lina",
+      "predicate": "hasGender",
+      "object": "Female"
+    },
+    {
+      "subject": "MmeMartin",
+      "predicate": "is_A",
+      "object": "Teacher"
+    },
+    {
+      "subject": "MmeMartin",
+      "predicate": "hasName",
+      "object": "MmeMartin"
+    }
+  ]
+}

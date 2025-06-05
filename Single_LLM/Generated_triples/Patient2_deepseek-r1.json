@@ -1,0 +1,234 @@
+{
+    "triples": [
+        {
+            "subject": "Adam",
+            "predicate": "is_A",
+            "object": "Patient"
+        },
+        {
+            "subject": "Adam",
+            "predicate": "hasName",
+            "object": "Adam"
+        },
+        {
+            "subject": "Adam",
+            "predicate": "hasDateOfBirth",
+            "object": "2018-06-15"
+        },
+        {
+            "subject": "Adam",
+            "predicate": "hasDiagnosis",
+            "object": "ADHDDiagnosis"
+        },
+        {
+            "subject": "Adam",
+            "predicate": "hasDiagnosis",
+            "object": "ODDDiagnosis"
+        },
+        {
+            "subject": "ADHDDiagnosis",
+            "predicate": "is_A",
+            "object": "Diagnosis"
+        },
+        {
+            "subject": "ADHDDiagnosis",
+            "predicate": "hasDiagnosisDisorder",
+            "object": "Adhd"
+        },
+        {
+            "subject": "ADHDDiagnosis",
+            "predicate": "hasType",
+            "object": "mixed type"
+        },
+        {
+            "subject": "ODDDiagnosis",
+            "predicate": "is_A",
+            "object": "Diagnosis"
+        },
+        {
+            "subject": "ODDDiagnosis",
+            "predicate": "hasDiagnosisDisorder",
+            "object": "OppositionalDefiantDisorder"
+        },
+        {
+            "subject": "Adhd",
+            "predicate": "hasSymptom",
+            "object": "Forgetfulness"
+        },
+        {
+            "subject": "Adhd",
+            "predicate": "hasSymptom",
+            "object": "PoorListening"
+        },
+        {
+            "subject": "Adhd",
+            "predicate": "hasSymptom",
+            "object": "EasilyDistracted"
+        },
+        {
+            "subject": "Adhd",
+            "predicate": "hasSymptom",
+            "object": "Disorganisation"
+        },
+        {
+            "subject": "Adhd",
+            "predicate": "hasSymptom",
+            "object": "DifficultySustainingAttention"
+        },
+        {
+            "subject": "Adhd",
+            "predicate": "hasSymptom",
+            "object": "ExcessiveTalking"
+        },
+        {
+            "subject": "Adhd",
+            "predicate": "hasSymptom",
+            "object": "OnTheGo"
+        },
+        {
+            "subject": "Adhd",
+            "predicate": "hasSymptom",
+            "object": "Interrupting"
+        },
+        {
+            "subject": "Adhd",
+            "predicate": "hasSymptom",
+            "object": "Fidgeting"
+        },
+        {
+            "subject": "Adhd",
+            "predicate": "hasSymptom",
+            "object": "AvoidingTasks"
+        },
+        {
+            "subject": "FreePlay",
+            "predicate": "is_A",
+            "object": "OutdoorActivity"
+        },
+        {
+            "subject": "FreePlay",
+            "predicate": "isWith",
+            "object": "Louis"
+        },
+        {
+            "subject": "Louis",
+            "predicate": "is_A",
+            "object": "Person"
+        },
+        {
+            "subject": "ActivityInterval",
+            "predicate": "is_A",
+            "object": "Interval"
+        },
+        {
+            "subject": "ActivityInterval",
+            "predicate": "hasStart",
+            "object": "StartInstant"
+        },
+        {
+            "subject": "ActivityInterval",
+            "predicate": "hasEnd",
+            "object": "EndInstant"
+        },
+        {
+            "subject": "StartInstant",
+            "predicate": "is_A",
+            "object": "Instant"
+        },
+        {
+            "subject": "StartInstant",
+            "predicate": "hasYear",
+            "object": 2025
+        },
+        {
+            "subject": "StartInstant",
+            "predicate": "hasMonth",
+            "object": 2
+        },
+        {
+            "subject": "StartInstant",
+            "predicate": "hasDay",
+            "object": 19
+        },
+        {
+            "subject": "StartInstant",
+            "predicate": "hasHour",
+            "object": 10
+        },
+        {
+            "subject": "StartInstant",
+            "predicate": "hasMinute",
+            "object": 0
+        },
+        {
+            "subject": "StartInstant",
+            "predicate": "hasSecond",
+            "object": 0
+        },
+        {
+            "subject": "EndInstant",
+            "predicate": "is_A",
+            "object": "Instant"
+        },
+        {
+            "subject": "EndInstant",
+            "predicate": "hasYear",
+            "object": 2025
+        },
+        {
+            "subject": "EndInstant",
+            "predicate": "hasMonth",
+            "object": 2
+        },
+        {
+            "subject": "EndInstant",
+            "predicate": "hasDay",
+            "object": 19
+        },
+        {
+            "subject": "EndInstant",
+            "predicate": "hasHour",
+            "object": 11
+        },
+        {
+            "subject": "EndInstant",
+            "predicate": "hasMinute",
+            "object": 0
+        },
+        {
+            "subject": "EndInstant",
+            "predicate": "hasSecond",
+            "object": 0
+        },
+        {
+            "subject": "Adam",
+            "predicate": "isEngagedIn",
+            "object": "FreePlay"
+        },
+        {
+            "subject": "AdamSituation",
+            "predicate": "is_A",
+            "object": "SocialSituation"
+        },
+        {
+            "subject": "AdamSituation",
+            "predicate": "hasPatient",
+            "object": "Adam"
+        },
+        {
+            "subject": "AdamSituation",
+            "predicate": "hasTemporalEntity",
+            "object": "ActivityInterval"
+        },
+        {
+            "subject": "AdamSituation",
+            "predicate": "hasEnvironment",
+            "object": "OutdoorEnvironment"
+        },
+        {
+            "subject": "OutdoorEnvironment",
+            "predicate": "is_A",
+            "object": "PlayingEnvironment"
+        }
+    ]
+}

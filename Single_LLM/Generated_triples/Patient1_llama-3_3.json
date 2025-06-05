@@ -1,0 +1,259 @@
+{
+    "triples": [
+        {
+            "subject": "Bruno",
+            "predicate": "is_A",
+            "object": "Patient"
+        },
+        {
+            "subject": "Bruno",
+            "predicate": "hasName",
+            "object": "Bruno"
+        },
+        {
+            "subject": "Bruno",
+            "predicate": "hasDateOfBirth",
+            "object": "2019-02-10"
+        },
+        {
+            "subject": "Bruno",
+            "predicate": "hasAge",
+            "object": 6
+        },
+        {
+            "subject": "Bruno",
+            "predicate": "hasGender",
+            "object": "Male"
+        },
+        {
+            "subject": "Bruno",
+            "predicate": "hasDiagnosis",
+            "object": "ADHD Diagnosis"
+        },
+        {
+            "subject": "Bruno",
+            "predicate": "hasDiagnosis",
+            "object": "OppositionalDefiantDisorder Diagnosis"
+        },
+        {
+            "subject": "ADHD Diagnosis",
+            "predicate": "hasDiagnosisDisorder",
+            "object": "MixedADHD"
+        },
+        {
+            "subject": "OppositionalDefiantDisorder Diagnosis",
+            "predicate": "hasDiagnosisDisorder",
+            "object": "OppositionalDefiantDisorder"
+        },
+        {
+            "subject": "MixedADHD",
+            "predicate": "is_A",
+            "object": "Disorder"
+        },
+        {
+            "subject": "OppositionalDefiantDisorder",
+            "predicate": "is_A",
+            "object": "Disorder"
+        },
+        {
+            "subject": "Bruno",
+            "predicate": "hasChallenge",
+            "object": "AcademicChallenge"
+        },
+        {
+            "subject": "Bruno",
+            "predicate": "hasChallenge",
+            "object": "EmotionalChallenge"
+        },
+        {
+            "subject": "AcademicChallenge",
+            "predicate": "is_A",
+            "object": "Challenge"
+        },
+        {
+            "subject": "EmotionalChallenge",
+            "predicate": "is_A",
+            "object": "Challenge"
+        },
+        {
+            "subject": "MathCourse",
+            "predicate": "is_A",
+            "object": "EducationalActivity"
+        },
+        {
+            "subject": "MathCourse",
+            "predicate": "isWith",
+            "object": "Mathieu"
+        },
+        {
+            "subject": "Mathieu",
+            "predicate": "is_A",
+            "object": "Teacher"
+        },
+        {
+            "subject": "SchoolClassroom",
+            "predicate": "is_A",
+            "object": "LearningEnvironment"
+        },
+        {
+            "subject": "SituationInterval",
+            "predicate": "is_A",
+            "object": "TemporalEntity"
+        },
+        {
+            "subject": "SituationInterval",
+            "predicate": "hasStart",
+            "object": "StartInstant"
+        },
+        {
+            "subject": "StartInstant",
+            "predicate": "is_A",
+            "object": "Instant"
+        },
+        {
+            "subject": "StartInstant",
+            "predicate": "hasYear",
+            "object": 2025
+        },
+        {
+            "subject": "StartInstant",
+            "predicate": "hasMonth",
+            "object": 5
+        },
+        {
+            "subject": "StartInstant",
+            "predicate": "hasDay",
+            "object": 14
+        },
+        {
+            "subject": "StartInstant",
+            "predicate": "hasHour",
+            "object": 8
+        },
+        {
+            "subject": "StartInstant",
+            "predicate": "hasMinute",
+            "object": 0
+        },
+        {
+            "subject": "StartInstant",
+            "predicate": "hasSecond",
+            "object": 0
+        },
+        {
+            "subject": "SituationInterval",
+            "predicate": "hasEnd",
+            "object": "EndInstant"
+        },
+        {
+            "subject": "EndInstant",
+            "predicate": "is_A",
+            "object": "Instant"
+        },
+        {
+            "subject": "EndInstant",
+            "predicate": "hasYear",
+            "object": 2025
+        },
+        {
+            "subject": "EndInstant",
+            "predicate": "hasMonth",
+            "object": 5
+        },
+        {
+            "subject": "EndInstant",
+            "predicate": "hasDay",
+            "object": 14
+        },
+        {
+            "subject": "EndInstant",
+            "predicate": "hasHour",
+            "object": 10
+        },
+        {
+            "subject": "EndInstant",
+            "predicate": "hasMinute",
+            "object": 0
+        },
+        {
+            "subject": "EndInstant",
+            "predicate": "hasSecond",
+            "object": 0
+        },
+        {
+            "subject": "BrunoSituation",
+            "predicate": "is_A",
+            "object": "AcademicSituation"
+        },
+        {
+            "subject": "BrunoSituation",
+            "predicate": "hasPatient",
+            "object": "Bruno"
+        },
+        {
+            "subject": "BrunoSituation",
+            "predicate": "hasTemporalEntity",
+            "object": "SituationInterval"
+        },
+        {
+            "subject": "BrunoSituation",
+            "predicate": "hasEnvironment",
+            "object": "SchoolClassroom"
+        },
+        {
+            "subject": "Bruno",
+            "predicate": "isEngagedIn",
+            "object": "MathCourse"
+        },
+        {
+            "subject": "MixedADHD",
+            "predicate": "hasSymptom",
+            "object": "InattentionSymptoms"
+        },
+        {
+            "subject": "MixedADHD",
+            "predicate": "hasSymptom",
+            "object": "HyperactivitySymptoms"
+        },
+        {
+            "subject": "MixedADHD",
+            "predicate": "hasSymptom",
+            "object": "ImpulsivitySymptoms"
+        },
+        {
+            "subject": "InattentionSymptoms",
+            "predicate": "is_A",
+            "object": "Symptom"
+        },
+        {
+            "subject": "HyperactivitySymptoms",
+            "predicate": "is_A",
+            "object": "Symptom"
+        },
+        {
+            "subject": "ImpulsivitySymptoms",
+            "predicate": "is_A",
+            "object": "Symptom"
+        },
+        {
+            "subject": "Bruno",
+            "predicate": "hasChallenge",
+            "object": "ChronicStress"
+        },
+        {
+            "subject": "Bruno",
+            "predicate": "hasChallenge",
+            "object": "LowSelfEsteem"
+        },
+        {
+            "subject": "ChronicStress",
+            "predicate": "is_A",
+            "object": "Challenge"
+        },
+        {
+            "subject": "LowSelfEsteem",
+            "predicate": "is_A",
+            "object": "Challenge"
+        }
+    ]
+}

@@ -1,0 +1,21 @@
+{
+  "nom": "p2",
+  "prenom": "Adam",
+  "dateNaissance": "15-06-2018",
+  "classe": "GS",
+  "profil": {},
+  "challenges":["Difficulte à faire des amis"],
+  "planningEcole": [ ],
+  "autrePlanning": [
+    {
+      "annee": 2025,
+      "mois" : 2,
+      "jour": 19,
+      "heureDebut": "10:00",
+      "heureFin": "11:00",
+      "matiere": "Jeux libres",
+      "nomEnseignant": "Animateur Louis",
+      "enClasse": "False"
+    }
+  ]
+}

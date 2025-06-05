@@ -1,0 +1,24 @@
+{
+  "triplets": [
+    {"subject": "SituationInterval", "predicate": "is_A", "object": "Interval"},
+    {"subject": "SituationInterval", "predicate": "hasStart", "object": "StartInstant"},
+    {"subject": "SituationInterval", "predicate": "hasEnd", "object": "EndInstant"},
+    {"subject": "StartInstant","predicate": "is_A",  "object": "Instant"},
+    {"subject": "EndInstant","predicate": "is_A",  "object": "Instant"},
+    {"subject": "StartInstant","predicate": "hasYear",  "object": 2025},
+    {"subject": "StartInstant", "predicate": "hasMonth", "object": 2},
+    {"subject": "StartInstant", "predicate": "hasDay",  "object": 19},
+    {"subject": "StartInstant", "predicate": "hasHour",  "object": 10},
+    {"subject": "StartInstant", "predicate": "hasMinute",  "object": 0},
+    {"subject": "EndInstant", "predicate": "hasYear",  "object": 2025},
+    {"subject": "EndInstant", "predicate": "hasMonth", "object": 2},
+    {"subject": "EndInstant", "predicate": "hasDay",  "object": 19},
+    {"subject": "EndInstant", "predicate": "hasHour",  "object": 11},
+    {"subject": "EndInstant", "predicate": "hasMinute",  "object": 0},
+    {"subject": "Adam", "predicate": "hasBirthDate", "object": "BirthInstant"},
+    {"subject": "BirthInstant", "predicate": "is_A", "object": "Instant"},
+    {"subject": "BirthInstant", "predicate": "hasYear", "object": 2018},
+    {"subject": "BirthInstant", "predicate": "hasMonth", "object": 6},
+    {"subject": "BirthInstant", "predicate": "hasDay", "object": 15}
+  ]
+}

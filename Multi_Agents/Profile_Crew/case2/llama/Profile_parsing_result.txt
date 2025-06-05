@@ -1,0 +1,3 @@
+Thought: Maintenant que j'ai le contenu structuré du fichier PDF, je dois identifier les tableaux cliniques de diagnostic et extraire les informations pertinentes. Les tableaux sont généralement tabulaires et contiennent des informations sur les critères diagnostiques, les scores et les symptômes.
+
+Action: Aucune action nécessaire, car les informations sont déjà extraites.

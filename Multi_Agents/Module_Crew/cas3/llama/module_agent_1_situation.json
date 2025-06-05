@@ -1,0 +1,34 @@
+{
+  "triplets": [
+    {
+      "subject": "LinaSituation",
+      "predicate": "is_A",
+      "object": "AcademicSituation"
+    },
+    {
+      "subject": "LinaSituation",
+      "predicate": "hasPatient",
+      "object": "Lina"
+    },
+    {
+      "subject": "LinaSituation",
+      "predicate": "hasTemporalEntity",
+      "object": "SituationInterval"
+    },
+    {
+      "subject": "LinaSituation",
+      "predicate": "hasEnvironment",
+      "object": "SchoolClassroom"
+    },
+    {
+      "subject": "Lina",
+      "predicate": "isEngagedIn",
+      "object": "Lecture"
+    },
+    {
+      "subject": "Lecture",
+      "predicate": "isWith",
+      "object": "MmeMartin"
+    }
+  ]
+}

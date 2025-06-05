@@ -1,0 +1,9 @@
+{
+  "triplets": [
+    {
+      "subject": "FreePlay",
+      "predicate": "is_A",
+      "object": "GameActivity"
+    }
+  ]
+}

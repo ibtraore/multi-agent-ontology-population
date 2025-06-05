@@ -1,0 +1,146 @@
+{
+  "title": "Activity Ontology",
+  "id": "ont_activity",
+  "concepts": [
+    {
+      "qid": "Activity",
+      "label": "Activity"
+    },
+    {
+      "qid": "ActivityState",
+      "label": "ActivityState"
+    },
+    {
+      "qid": "Adventure",
+      "label": "Adventure"
+    },
+    {
+      "qid": "OutdoorActivity",
+      "label": "OutdoorActivity"
+    },
+    {
+      "qid": "ArtCourse",
+      "label": "ArtCourse"
+    },
+    {
+      "qid": "EducationalActivity",
+      "label": "EducationalActivity"
+    },
+    {
+      "qid": "BoardGame",
+      "label": "BoardGame"
+    },
+    {
+      "qid": "GameActivity",
+      "label": "GameActivity"
+    },
+    {
+      "qid": "CommunityService",
+      "label": "CommunityService"
+    },
+    {
+      "qid": "SocialActivity",
+      "label": "SocialActivity"
+    },
+    {
+      "qid": "Conversation",
+      "label": "Conversation"
+    },
+    {
+      "qid": "FamillyActivity",
+      "label": "FamillyActivity"
+    },
+    {
+      "qid": "Cooking",
+      "label": "Cooking"
+    },
+    {
+      "qid": "CulturalActivity",
+      "label": "CulturalActivity"
+    },
+    {
+      "qid": "CulturalFestival",
+      "label": "CulturalFestival"
+    },
+    {
+      "qid": "CulturalLearning",
+      "label": "CulturalLearning"
+    },
+    {
+      "qid": "Eating",
+      "label": "Eating"
+    },
+    {
+      "qid": "EnvironmentalProject",
+      "label": "EnvironmentalProject"
+    },
+    {
+      "qid": "Fitness",
+      "label": "Fitness"
+    },
+    {
+      "qid": "PhysicalActivity",
+      "label": "PhysicalActivity"
+    },
+    {
+      "qid": "GroupGame",
+      "label": "GroupGame"
+    },
+    {
+      "qid": "GroupWork",
+      "label": "GroupWork"
+    },
+    {
+      "qid": "HomeWork",
+      "label": "HomeWork"
+    },
+    {
+      "qid": "LanguageCourse",
+      "label": "LanguageCourse"
+    },
+    {
+      "qid": "MathCourse",
+      "label": "MathCourse"
+    },
+    {
+      "qid": "MuseumVisit",
+      "label": "MuseumVisit"
+    },
+    {
+      "qid": "NatureExploration",
+      "label": "NatureExploration"
+    },
+    {
+      "qid": "Picnic",
+      "label": "Picnic"
+    },
+    {
+      "qid": "Puzzle",
+      "label": "Puzzle"
+    },
+    {
+      "qid": "SchoolExam",
+      "label": "SchoolExam"
+    },
+    {
+      "qid": "Sport",
+      "label": "Sport"
+    },
+    {
+      "qid": "VideoGame",
+      "label": "VideoGame"
+    },
+    {
+      "qid": "WatchingMovie",
+      "label": "WatchingMovie"
+    }
+  ],
+  "relations": [
+    {
+      "pid": "hasActivityState",
+      "label": "hasActivityState",
+      "domain": "Activity",
+      "range": "ActivityState"
+    }
+  ]
+}

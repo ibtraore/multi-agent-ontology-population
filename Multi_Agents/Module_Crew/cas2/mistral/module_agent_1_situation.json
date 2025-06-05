@@ -1,0 +1,39 @@
+{
+  "triplets": [
+    {
+      "subject": "AdamSituation",
+      "predicate": "is_A",
+      "object": "SocialSituation"
+    },
+    {
+      "subject": "AdamSituation",
+      "predicate": "hasPatient",
+      "object": "Adam"
+    },
+    {
+      "subject": "AdamSituation",
+      "predicate": "hasTemporalEntity",
+      "object": "SituationInterval"
+    },
+    {
+      "subject": "AdamSituation",
+      "predicate": "hasEnvironment",
+      "object": "Playground"
+    },
+    {
+      "subject": "AdamSituation",
+      "predicate": "hasChallenge",
+      "object": "FriendshipChallenge"
+    },
+    {
+      "subject": "Adam",
+      "predicate": "isEngagedIn",
+      "object": "FreePlay"
+    },
+    {
+      "subject": "FreePlay",
+      "predicate": "isWith",
+      "object": "AnimateurLouis"
+    }
+  ]
+}
