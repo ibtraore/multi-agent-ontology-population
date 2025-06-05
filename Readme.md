@@ -6,6 +6,8 @@ Given a modular ontology and a set of documents, the task is to extract instance
 while complying to the given ontology (concepts, relations, domain/range constraints).
 ## ADHD Semantic Model
 
+<img width="1258" alt="music3" src="https://github.com/ibtraore/multi-agent-ontology-population/blob/main/ADHD_Semantic_Model.jpeg?raw=true">
+
 ## Repo content
 The structure of the repo is as the following.
 
