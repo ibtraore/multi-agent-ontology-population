@@ -11,6 +11,10 @@ while complying to the given ontology (concepts, relations, domain/range constra
 
 <img width="1258" alt="music3" src="https://github.com/ibtraore/multi-agent-ontology-population/blob/main/ADHD_Semantic_Model.jpeg?raw=true">
 
+## The proposed Multi-Agent System
+
+<img width="1258" alt="music3" src="https://github.com/ibtraore/multi-agent-ontology-population/blob/main/Multi_agents_approach.jpg?raw=true">
+
 ## Repo content
 The structure of the repo is as the following.
 
