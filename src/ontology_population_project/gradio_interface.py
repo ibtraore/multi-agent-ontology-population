@@ -15,7 +15,7 @@ import base64
 from contextlib import redirect_stdout, redirect_stderr, contextmanager
 import signal
 import multiprocessing as mp
-import pandas as pd
+
 from src.ontology_population_project.crew.profile_crew.profile_crew import ProfileCrew
 from src.ontology_population_project.crew.modules_crew.module_crew import ModuleCrew
 from src.ontology_population_project.tools.aggregate_json import aggregate_triplets_json
@@ -346,9 +346,9 @@ def get_patient_files(patient_dir: str) -> Tuple[str, str, str, str]:
     return pdf_html, llama_content, agent2_content, agent4_content
 
 def get_module_files(patient_dir: str) -> Tuple[str, str, str, str, str, str]:
-    """Retrieves the contents of the 6 Module files for a patient"""
+    """Retrieves the contents of the 6 ModuleCrew files for a patient"""
     
-    # The 6 Module files (all in JSON)
+    # The 6 ModuleCrew files (all in JSON)
     module_files = [
         "module_extraction_time.json",
         "module_extraction_situation.json", 
@@ -503,11 +503,12 @@ def run_pipeline_async(pdf_file, patient_name, planning_json):
     
     return status
 
-def run_pipeline_with_realtime_updates(pdf_file, patient_name, planning_excel, planning_json_preview):
+def run_pipeline_with_realtime_updates(pdf_file, patient_name, planning_json):
     """Launch the pipeline with real-time updates"""
 
     def pipeline_thread():
-        return run_pipeline_async(pdf_file, patient_name, planning_json_preview)    
+        return run_pipeline_async(pdf_file, patient_name, planning_json)
+    
     # Launch the pipeline in a separate thread
     thread = threading.Thread(target=pipeline_thread)
     thread.daemon = True
@@ -569,7 +570,7 @@ def load_patient_results(patient_name):
     return get_patient_files(patient_dir)
 
 def load_module_results(patient_name):
-    """Loads Module results for an existing patient"""
+    """Loads ModuleCrew results for an existing patient"""
     if not patient_name:
         return "", "", "", "", "", ""
     
@@ -580,15 +581,16 @@ def load_module_results(patient_name):
     return get_module_files(patient_dir)
 
 def get_example_json():
-    """Returns a JSON example for planning with all required fields"""
+    """Returns a JSON example for planning"""
     return json.dumps({
-        "nom": "P1",
-        "dateNaissance": "10-02-2019",
-        "classe": "CP1",
-        "challenges": ["Frustration", "Faible estime de soi", "Stress chronique"],
-        "planningEcole": [
-            {
-                "annee": 2025,
+            "nom": "P1",
+            "prenom": "Bruno",
+            "dateNaissance": "10-02-2019",
+            "classe": "CP1",
+            "challenges":["Frustration","Faible estime de soi", "Stress chronique"],
+            "profil": {},
+            "planningEcole": [
+                { "annee": 2025,
                 "mois": "mai",  
                 "jour": 14,
                 "heureDebut": "08:00",
@@ -596,10 +598,9 @@ def get_example_json():
                 "matiere": "Math",
                 "nomEnseignant": "Mathieu",
                 "enClasse": "True"
-            }
-        ]
-    }, indent=2, ensure_ascii=False)
-
+                }
+  ]
+}, indent=2, ensure_ascii=False)
 
 def list_ground_truth_files() -> List[str]:
     """Lists all ground truth files"""
@@ -628,13 +629,15 @@ def create_metrics_table(evaluation_result, patient_name: str, model_name: str =
     
     # Handle tuple format (metrics_dict, other_data)
     if isinstance(evaluation_result, tuple) and len(evaluation_result) >= 1:
-        metrics = evaluation_result[0]  
+        metrics = evaluation_result[0]  # Premier élément du tuple
     elif isinstance(evaluation_result, list) and len(evaluation_result) > 0:
+        # Si c'est une liste, prendre le premier élément
         if isinstance(evaluation_result[0], tuple):
-            metrics = evaluation_result[0][0]  
+            metrics = evaluation_result[0][0]  # Premier élément du premier tuple
         else:
             metrics = evaluation_result[0]
     elif isinstance(evaluation_result, dict):
+        # Si c'est directement un dict, l'utiliser
         metrics = evaluation_result
     else:
         return f"<div style='padding: 20px; text-align: center; color: #dc3545;'><h3>❌ Invalid evaluation result format</h3><p>Type: {type(evaluation_result)}</p></div>"
@@ -642,7 +645,7 @@ def create_metrics_table(evaluation_result, patient_name: str, model_name: str =
     print(f"🔍 Debug - Extracted metrics: {metrics}")
     print(f"🔍 Debug - Metrics type: {type(metrics)}")
     
-    # Verify metrics
+    # Vérifier si metrics contient les clés attendues
     expected_keys = ["precision", "recall", "f1", "onto_conf", "rel_halluc", "sub_halluc", "obj_halluc"]
     if not isinstance(metrics, dict) or not any(key in metrics for key in expected_keys):
         available_keys = list(metrics.keys()) if isinstance(metrics, dict) else "Not a dictionary"
@@ -654,7 +657,7 @@ def create_metrics_table(evaluation_result, patient_name: str, model_name: str =
         </div>
         """
     
-    # Create the HTML table
+    # Créer le tableau HTML
     html_table = f"""
     <div style="max-width: 800px; margin: 20px auto; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
         <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 20px; border-radius: 12px 12px 0 0; text-align: center;">
@@ -681,7 +684,7 @@ def create_metrics_table(evaluation_result, patient_name: str, model_name: str =
             <tbody>
     """
     
-    # Informations about metrics
+    # Informations sur les métriques avec icônes et descriptions
     metric_info = {
         "precision": {"icon": "🎯", "name": "Precision", "description": "Accuracy of positive predictions"},
         "recall": {"icon": "🔍", "name": "Recall", "description": "Coverage of actual positives"},
@@ -692,7 +695,7 @@ def create_metrics_table(evaluation_result, patient_name: str, model_name: str =
         "obj_halluc": {"icon": "🎯", "name": "Object Hallucination", "description": "Rate of hallucinated objects"}
     }
     
-    
+    # Ajouter les lignes pour chaque métrique qui existe
     row_count = 0
     for key, info in metric_info.items():
         if key in metrics:
@@ -701,16 +704,19 @@ def create_metrics_table(evaluation_result, patient_name: str, model_name: str =
             # Convert in a percentage
             try:
                 percentage = f"{float(value) * 100:.1f}%"
+                # Codage couleur basé sur le type de métrique et la valeur
                 if key in ["precision", "recall", "f1", "onto_conf"]:
+                    # Plus c'est haut, mieux c'est
                     color = "#28a745" if float(value) >= 0.8 else "#ffc107" if float(value) >= 0.6 else "#dc3545"
                 else:
+                    # Plus c'est bas, mieux c'est (hallucinations)
                     color = "#28a745" if float(value) <= 0.1 else "#ffc107" if float(value) <= 0.3 else "#dc3545"
                 
             except (ValueError, TypeError):
                 percentage = "N/A"
                 color = "#6c757d"
             
-        
+            # Couleurs alternées pour les lignes
             bg_color = "#f8f9fa" if row_count % 2 == 0 else "#ffffff"
             
             html_table += f"""
@@ -818,225 +824,14 @@ def load_evaluation_results(patient_name: str) -> str:
     
     return load_file_safely(eval_path)
 
-def excel_to_json(excel_file_path, nom_patient, date_naissance, classe, challenges):
-    """Convert an Excel file to JSON with patient information"""
-    if not excel_file_path or not os.path.exists(excel_file_path):
-        return json.dumps({
-            "nom": nom_patient or "",
-            "dateNaissance": date_naissance or "",
-            "classe": classe or "",
-            "challenges": [c.strip() for c in challenges.split(',') if c.strip()] if challenges else [],
-            "planningEcole": []
-        }, indent=2, ensure_ascii=False)
-    
-    try:
-        # Read the Excel file
-        df = pd.read_excel(excel_file_path)
-        
-        # Clean column names (remove spaces)
-        df.columns = df.columns.str.strip()
-        
-        # Create the base JSON structure
-        json_data = {
-            "nom": nom_patient or "",
-            "dateNaissance": date_naissance or "",
-            "classe": classe or "",
-            "challenges": [c.strip() for c in challenges.split(',') if c.strip()] if challenges else [],
-            "planningEcole": []
-        }
-        
-        # Map columns according to your Excel format
-        # Expected columns: Date, Start Time, End Time, Activity, Location, Teacher
-        column_mapping = {
-            'Date': ['Date', 'date', 'DATE'],
-            'Heure de début': ['Heure de début', 'heure de début', 'Heure début', 'heureDebut'],
-            'Heure de fin': ['Heure de fin', 'heure de fin', 'Heure fin', 'heureFin'], 
-            'Activité': ['Activité', 'activité', 'Activite', 'matiere', 'Matière'],
-            'Lieu': ['Lieu', 'lieu', 'LIEU', 'enClasse'],
-            'Enseignant': ['Enseignant', 'enseignant', 'nomEnseignant', 'Professeur']
-        }
-        
-        def find_column(df, possible_names):
-            """Find the matching column in the DataFrame"""
-            for col in df.columns:
-                if col in possible_names:
-                    return col
-            return None
-        
-        # Find matching columns
-        date_col = find_column(df, column_mapping['Date'])
-        heure_debut_col = find_column(df, column_mapping['Heure de début'])
-        heure_fin_col = find_column(df, column_mapping['Heure de fin'])
-        activite_col = find_column(df, column_mapping['Activité'])
-        lieu_col = find_column(df, column_mapping['Lieu'])
-        enseignant_col = find_column(df, column_mapping['Enseignant'])
-        
-        # Convert each row into a planning entry
-        for _, row in df.iterrows():
-            try:
-                # Parse the date
-                date_str = str(row[date_col]) if date_col and pd.notna(row[date_col]) else ""
-                
-                # Try to parse different date formats
-                annee, mois, jour = None, None, None
-                if date_str:
-                    try:
-                        # Format DD/MM/YYYY
-                        if '/' in date_str:
-                            parts = date_str.split('/')
-                            if len(parts) == 3:
-                                jour = int(parts[0])
-                                mois = int(parts[1])
-                                annee = int(parts[2])
-                        # Format YYYY-MM-DD
-                        elif '-' in date_str:
-                            parts = date_str.split('-')
-                            if len(parts) == 3:
-                                annee = int(parts[0])
-                                mois = int(parts[1])
-                                jour = int(parts[2])
-                    except (ValueError, IndexError):
-                        # If parsing fails, use default values
-                        annee, mois, jour = 2025, 6, 20
-                
-                # Convert numeric month to name
-                mois_noms = {
-                    1: 'janvier', 2: 'février', 3: 'mars', 4: 'avril',
-                    5: 'mai', 6: 'juin', 7: 'juillet', 8: 'août',
-                    9: 'septembre', 10: 'octobre', 11: 'novembre', 12: 'décembre'
-                }
-                mois_nom = mois_noms.get(mois, 'juin') if mois else 'juin'
-                
-                # Create the planning entry
-                entry = {
-                    "annee": annee or 2025,
-                    "mois": mois_nom,
-                    "jour": jour or 20,
-                    "heureDebut": str(row[heure_debut_col]) if heure_debut_col and pd.notna(row[heure_debut_col]) else "08:00",
-                    "heureFin": str(row[heure_fin_col]) if heure_fin_col and pd.notna(row[heure_fin_col]) else "09:00",
-                    "matiere": str(row[activite_col]) if activite_col and pd.notna(row[activite_col]) else "Activité",
-                    "nomEnseignant": str(row[enseignant_col]) if enseignant_col and pd.notna(row[enseignant_col]) else "Enseignant",
-                    "enClasse": "True" if lieu_col and str(row[lieu_col]).upper() in ['SCHOOL', 'CLASSE', 'TRUE', 'ECOLE'] else "False"
-                }
-                
-                json_data["planningEcole"].append(entry)
-                
-            except Exception as e:
-                print(f"Error processing row: {e}")
-                continue
-        
-        return json.dumps(json_data, indent=2, ensure_ascii=False)
-        
-    except Exception as e:
-        print(f"Error reading the Excel file: {e}")
-        # Return JSON with patient info even in case of error
-        return json.dumps({
-            "nom": nom_patient or "",
-            "dateNaissance": date_naissance or "",
-            "classe": classe or "",
-            "challenges": [c.strip() for c in challenges.split(',') if c.strip()] if challenges else [],
-            "planningEcole": []
-        }, indent=2, ensure_ascii=False)
-    
-def create_example_excel():
-    """Creates a sample Excel file and returns the corresponding JSON"""
-    # Create a sample DataFrame with the new format
-    example_data = {
-        'Date': ['20/06/2025', '21/06/2025', '22/06/2025', '23/06/2025', '24/06/2025'],
-        'Heure de début': ['08:30', '09:30', '14:00', '08:00', '10:30'],
-        'Heure de fin': ['10:00', '11:00', '15:30', '09:30', '12:00'],
-        'Activité': ['MATHS', 'DESSIN', 'Sciences', 'Histoire', 'Géographie'],
-        'Lieu': ['SCHOOL', 'SCHOOL', 'MAISON', 'SCHOOL', 'SCHOOL'],
-        'Enseignant': ['ALEX', 'MONIQUE', 'Pierre', 'Marie', 'Jean']
-    }
-    
-    df = pd.DataFrame(example_data)
-    
-    # Save the example
-    example_path = os.path.join(GRADIO_OUTPUT_DIR, "example_planning.xlsx")
-    df.to_excel(example_path, index=False)
-    
-    print(f"📊 Sample Excel file created: {example_path}")
-    print(f"📊 Example DataFrame:\n{df}")
-    
-    # Create the corresponding JSON structure for preview
-    example_json = {
-        "nom": "P1",
-        "dateNaissance": "10-02-2019",
-        "classe": "CP1",
-        "challenges": ["Frustration", "Faible estime de soi", "Stress chronique"],
-        "planningEcole": []
-    }
-    
-    # Convert the DataFrame into planning entries
-    for _, row in df.iterrows():
-        # Parse the date
-        date_parts = row['Date'].split('/')
-        jour = int(date_parts[0])
-        mois = int(date_parts[1])
-        annee = int(date_parts[2])
-        
-        # Convert numeric month to name
-        mois_noms = {
-            1: 'janvier', 2: 'février', 3: 'mars', 4: 'avril',
-            5: 'mai', 6: 'juin', 7: 'juillet', 8: 'août',
-            9: 'septembre', 10: 'octobre', 11: 'novembre', 12: 'décembre'
-        }
-        
-        entry = {
-            "annee": annee,
-            "mois": mois_noms[mois],
-            "jour": jour,
-            "heureDebut": str(row['Heure de début']),
-            "heureFin": str(row['Heure de fin']),
-            "matiere": str(row['Activité']),
-            "nomEnseignant": str(row['Enseignant']),
-            "enClasse": "True" if row['Lieu'].upper() == 'SCHOOL' else "False"
-        }
-        example_json["planningEcole"].append(entry)
-    
-    return json.dumps(example_json, indent=2, ensure_ascii=False)
-
-def update_json_preview(excel_file, nom_patient, date_naissance, classe, challenges):
-    """Updates the JSON preview with patient info and planning data"""
-    return excel_to_json(excel_file, nom_patient, date_naissance, classe, challenges)
-
-def create_and_return_example_excel():
-    """Creates and returns the path to the example Excel file for download"""
-    try:
-        # Create example data with multiple planning entries
-        example_data = {
-            'annee': [2025, 2025, 2025, 2025, 2025],
-            'mois': ['mai', 'mai', 'mai', 'juin', 'juin'],
-            'jour': [14, 15, 16, 17, 18],
-            'heureDebut': ['08:00', '09:30', '14:00', '08:00', '10:30'],
-            'heureFin': ['10:00', '11:00', '15:30', '09:30', '12:00'],
-            'matiere': ['Math', 'Français', 'Sciences', 'Histoire', 'Géographie'],
-            'nomEnseignant': ['Mathieu', 'Sophie', 'Pierre', 'Marie', 'Jean'],
-            'enClasse': ['True', 'True', 'False', 'True', 'True']
-        }
-        
-        df = pd.DataFrame(example_data)
-        
-        # Create the example file
-        example_path = os.path.join(GRADIO_OUTPUT_DIR, "example_planning.xlsx")
-        df.to_excel(example_path, index=False)
-        
-        print(f"📊 Example Excel file created: {example_path}")
-        return example_path
-        
-    except Exception as e:
-        print(f"❌ Error creating example Excel: {e}")
-        return None
-    
 
 def create_interface():
-    with gr.Blocks(title="PATCHES Ontology", theme=gr.themes.Soft()) as demo:
+    with gr.Blocks(title="Modular Ontology Population", theme=gr.themes.Soft()) as demo:
         gr.Markdown("""
-        # 🤖 PATCHES : knowledge Extraction Crew (PEC)
+        # 🤖 Multi-LLM Agent System for Modular Ontology Population
         
-        This interface allows you to execute PEC for information extraction 
-        from PDF and Excel documents.
+        This interface allows you to execute a Multi-Agent system for information extraction 
+        from PDF and Json documents.
         """)
         
         with gr.Tab("🚀 New Analysis"):
@@ -1057,61 +852,26 @@ def create_interface():
                         value="<div style='text-align: center; padding: 20px; color: #666;'>No file selected</div>"
                     )
                     
-                    # Patient information section
-                    gr.Markdown("### 👤 Patient Information")
-                    
                     # Patient name
                     patient_input = gr.Textbox(
-                        label="👤 Patient Name (nom)",
+                        label="👤 Patient Name",
                         placeholder="Enter patient name...",
                         value=""
                     )
                     
-                    # Date of birth
-                    date_naissance_input = gr.Textbox(
-                        label="📅 Date of Birth (dateNaissance)",
-                        placeholder="DD-MM-YYYY (e.g., 10-02-2019)",
-                        value=""
-                    )
-                    
-                    # Class
-                    classe_input = gr.Textbox(
-                        label="🎓 Class (classe)",
-                        placeholder="Enter class (e.g., CP1, CE1, etc.)",
-                        value=""
-                    )
-                    
-                    # Challenges
-                    challenges_input = gr.Textbox(
-                        label="🎯 Challenges",
-                        placeholder="Enter challenges separated by commas (e.g., Frustration, Faible estime de soi, Stress chronique)",
-                        lines=3,
-                        value=""
-                    )
-                    
-                    # Excel planning file upload
-                    gr.Markdown("### 📅 Planning Data (Excel File)")
-                    
-                    planning_excel_input = gr.File(
-                        label="📊 Excel Planning File",
-                        file_types=['.xlsx', '.xls'],
-                        type="filepath"
-                    )
-                    
-                    # JSON preview (lecture seule)
-                    planning_json_preview = gr.Textbox(
-                        label="📋 Complete JSON Preview (Patient Info + Planning)",
-                        lines=15,
-                        max_lines=20,
-                        interactive=False,
-                        placeholder="Fill in patient information and upload Excel file to see the complete JSON preview..."
-                    )
+                    # JSON planning data
+                    gr.Markdown("### 📅 Planning Data (JSON Format)")
                     
                     with gr.Row():
                         example_btn = gr.Button("📝 Load Example", size="sm")
-                        download_example_btn = gr.Button("📥 Download Example Excel", size="sm")
-                        update_json_btn = gr.Button("🔄 Update JSON Preview", size="sm")
-                                        
+                    
+                    planning_input = gr.Textbox(
+                        label="Planning (JSON)",
+                        placeholder="Paste JSON planning data...",
+                        lines=10,
+                        max_lines=15
+                    )
+                    
                     # Execute button
                     run_btn = gr.Button(
                         "🚀 Launch Pipeline", 
@@ -1128,7 +888,7 @@ def create_interface():
                         interactive=False
                     )
                     
-                    # Logs with auto-scroll 
+                    # Logs with auto-scroll and terminal style
                     logs_output = gr.Textbox(
                         label="📋 Execution Logs (Real-time)",
                         lines=20,
@@ -1139,8 +899,8 @@ def create_interface():
                         autoscroll=True
                     )
             
-            # Profile results section in 4 parts
-            gr.Markdown("## 📂 Profile Results")
+            # ProfileCrew results section in 4 parts
+            gr.Markdown("## 📂 ProfileCrew Results")
             
             with gr.Row():
                 with gr.Column():
@@ -1161,7 +921,7 @@ def create_interface():
             with gr.Row():
                 with gr.Column():
                     agent2_display = gr.Textbox(
-                        label="🧠 Profile Interpretation Agent ",
+                        label="🧠 Profile Interpretation Agent",
                         lines=20,
                         max_lines=25,
                         interactive=False,
@@ -1177,8 +937,8 @@ def create_interface():
                         placeholder="Final JSON results will appear here..."
                     )
             
-            # Module results section in 2x3 grid
-            gr.Markdown("## 🔧 Module Results")
+            # ModuleCrew results section in 2x3 grid
+            gr.Markdown("## 🔧 ModuleCrew Results")
             
             with gr.Row():
                 with gr.Column():
@@ -1236,8 +996,8 @@ def create_interface():
                         placeholder="Activity results will appear here..."
                     )
         
-        with gr.Tab("📚 Profile History"):
-            gr.Markdown("## 🔍 View Previous Profile Analyses")
+        with gr.Tab("📚 ProfileCrew History"):
+            gr.Markdown("## 🔍 View Previous ProfileCrew Analyses")
             
             with gr.Row():
                 with gr.Column(scale=1):
@@ -1252,8 +1012,8 @@ def create_interface():
                 with gr.Column(scale=3):
                     pass
             
-            # Historical Profile results display
-            gr.Markdown("### Profile Results")
+            # Historical ProfileCrew results display
+            gr.Markdown("### ProfileCrew Results")
             
             with gr.Row():
                 with gr.Column():
@@ -1272,7 +1032,7 @@ def create_interface():
             with gr.Row():
                 with gr.Column():
                     hist_agent2_display = gr.Textbox(
-                        label="🧠 Profile Interpretation Agent ",
+                        label="🧠 Profile Interpretation Agent",
                         lines=15,
                         interactive=False
                     )
@@ -1284,8 +1044,8 @@ def create_interface():
                         interactive=False
                     )
         
-        with gr.Tab("🔧 Module History"):
-            gr.Markdown("## 🔍 View Previous Module Analyses")
+        with gr.Tab("🔧 ModuleCrew History"):
+            gr.Markdown("## 🔍 View Previous ModuleCrew Analyses")
             
             with gr.Row():
                 with gr.Column(scale=1):
@@ -1300,8 +1060,8 @@ def create_interface():
                 with gr.Column(scale=3):
                     pass
             
-            # Historical Module results display in 2x3 grid
-            gr.Markdown("### Module Results")
+            # Historical ModuleCrew results display in 2x3 grid
+            gr.Markdown("### ModuleCrew Results")
             
             with gr.Row():
                 with gr.Column():
@@ -1437,57 +1197,21 @@ def create_interface():
             inputs=pdf_input,
             outputs=pdf_preview
         )
-
-        # Auto-update JSON when any field changes
-        planning_excel_input.change(
-            fn=update_json_preview,
-            inputs=[planning_excel_input, patient_input, date_naissance_input, classe_input, challenges_input],
-            outputs=planning_json_preview
-        )
-
-        patient_input.change(
-            fn=update_json_preview,
-            inputs=[planning_excel_input, patient_input, date_naissance_input, classe_input, challenges_input],
-            outputs=planning_json_preview
-        )
-
-        date_naissance_input.change(
-            fn=update_json_preview,
-            inputs=[planning_excel_input, patient_input, date_naissance_input, classe_input, challenges_input],
-            outputs=planning_json_preview
-        )
-
-        classe_input.change(
-            fn=update_json_preview,
-            inputs=[planning_excel_input, patient_input, date_naissance_input, classe_input, challenges_input],
-            outputs=planning_json_preview
-        )
-
-        challenges_input.change(
-            fn=update_json_preview,
-            inputs=[planning_excel_input, patient_input, date_naissance_input, classe_input, challenges_input],
-            outputs=planning_json_preview
-        )
-
+        
         example_btn.click(
             fn=get_example_json,
-            outputs=planning_json_preview
+            outputs=planning_input
         )
-
-        update_json_btn.click(
-            fn=update_json_preview,
-            inputs=[planning_excel_input, patient_input, date_naissance_input, classe_input, challenges_input],
-            outputs=planning_json_preview
-        )
-
+        
+        # Utiliser la nouvelle fonction avec mises à jour en temps réel
         run_btn.click(
             fn=run_pipeline_with_realtime_updates,
-            inputs=[pdf_input, patient_input, planning_excel_input, planning_json_preview],
+            inputs=[pdf_input, patient_input, planning_input],
             outputs=[status_output, logs_output, pdf_display, llama_display, agent2_display, agent4_display, 
                     time_display, situation_display, person_display, environment_display, challenge_display, activity_display]
         )
-
-        # # Events for "Profile History" tab
+        
+        # # Events for "ProfileCrew History" tab
         # refresh_patients_btn.click(
         #     fn=list_processed_patients,
         #     outputs=patients_dropdown
@@ -1500,7 +1224,7 @@ def create_interface():
             outputs=[hist_pdf_display, hist_llama_display, hist_agent2_display, hist_agent4_display]
         )
         
-        # # Events for "Module History" tab
+        # # Events for "ModuleCrew History" tab
         # refresh_module_patients_btn.click(
         #     fn= list_processed_patients,
         #     outputs=module_patients_dropdown
@@ -1549,11 +1273,6 @@ def create_interface():
             fn=run_evaluation,
             inputs=[eval_patient_name, ground_truth_dropdown],
             outputs=[evaluation_metrics, evaluation_raw]
-        )
-
-        download_example_btn.click(
-            fn=create_and_return_example_excel,
-            outputs=gr.File(label="📥 Example Excel File")
         )
     
     return demo
