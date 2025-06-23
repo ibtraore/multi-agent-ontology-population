@@ -1,0 +1,283 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/author/ontologies/2024/4/challenge/"
+     xml:base="http://www.semanticweb.org/author/ontologies/2024/4/challenge/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:swrl="http://www.w3.org/2003/11/swrl#"
+     xmlns:swrla="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#"
+     xmlns:swrlb="http://www.w3.org/2003/11/swrlb#"
+     xmlns:adhd-profile="http://www.semanticweb.org/author/ontologies/2024/4/adhd-profile#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/author/ontologies/2024/4/challenge"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled -->
+
+    <owl:AnnotationProperty rdf:about="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Datatypes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.w3.org/2001/XMLSchema#date -->
+
+    <rdfs:Datatype rdf:about="http://www.w3.org/2001/XMLSchema#date"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/author/ontologies/2024/4/challenge#hasLevel -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/author/ontologies/2024/4/challenge#hasLevel">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/author/ontologies/2024/4/challenge#Challenge"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/author/ontologies/2024/4/challenge#ChallengeLevel"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/author/ontologies/2024/4/challenge#AcademicChallenges -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/author/ontologies/2024/4/challenge#AcademicChallenges">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/author/ontologies/2024/4/challenge#Challenge"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/author/ontologies/2024/4/challenge#ArtChallenges -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/author/ontologies/2024/4/challenge#ArtChallenges">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/author/ontologies/2024/4/challenge#AcademicChallenges"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/author/ontologies/2024/4/challenge#AuditoryStimuli -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/author/ontologies/2024/4/challenge#AuditoryStimuli">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/author/ontologies/2024/4/challenge#EnvironmentalStimuli"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/author/ontologies/2024/4/challenge#Challenge -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/author/ontologies/2024/4/challenge#Challenge"/>
+    
+
+
+    <!-- http://www.semanticweb.org/author/ontologies/2024/4/challenge#ChallengeLevel -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/author/ontologies/2024/4/challenge#ChallengeLevel"/>
+    
+
+
+    <!-- http://www.semanticweb.org/author/ontologies/2024/4/challenge#ChronicStress -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/author/ontologies/2024/4/challenge#ChronicStress">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/author/ontologies/2024/4/challenge#EmotionalChallenges"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/author/ontologies/2024/4/challenge#ConflictWithPeers -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/author/ontologies/2024/4/challenge#ConflictWithPeers">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/author/ontologies/2024/4/challenge#SocialChallenges"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/author/ontologies/2024/4/challenge#DifficultyMakingFriend -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/author/ontologies/2024/4/challenge#DifficultyMakingFriend">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/author/ontologies/2024/4/challenge#SocialChallenges"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/author/ontologies/2024/4/challenge#EmotionalChallenges -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/author/ontologies/2024/4/challenge#EmotionalChallenges">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/author/ontologies/2024/4/challenge#Challenge"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/author/ontologies/2024/4/challenge#EnvironmentalStimuli -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/author/ontologies/2024/4/challenge#EnvironmentalStimuli">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/author/ontologies/2024/4/challenge#Challenge"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/author/ontologies/2024/4/challenge#ExamChallenges -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/author/ontologies/2024/4/challenge#ExamChallenges">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/author/ontologies/2024/4/challenge#AcademicChallenges"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/author/ontologies/2024/4/challenge#Frustration -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/author/ontologies/2024/4/challenge#Frustration">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/author/ontologies/2024/4/challenge#EmotionalChallenges"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/author/ontologies/2024/4/challenge#GroupWorkChallenges -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/author/ontologies/2024/4/challenge#GroupWorkChallenges">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/author/ontologies/2024/4/challenge#AcademicChallenges"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/author/ontologies/2024/4/challenge#HomeWorkChallenges -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/author/ontologies/2024/4/challenge#HomeWorkChallenges">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/author/ontologies/2024/4/challenge#AcademicChallenges"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/author/ontologies/2024/4/challenge#LanguageChallenges -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/author/ontologies/2024/4/challenge#LanguageChallenges">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/author/ontologies/2024/4/challenge#AcademicChallenges"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/author/ontologies/2024/4/challenge#LowSelfEsteem -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/author/ontologies/2024/4/challenge#LowSelfEsteem">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/author/ontologies/2024/4/challenge#EmotionalChallenges"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/author/ontologies/2024/4/challenge#MathChallenges -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/author/ontologies/2024/4/challenge#MathChallenges">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/author/ontologies/2024/4/challenge#AcademicChallenges"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/author/ontologies/2024/4/challenge#PeerRejection -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/author/ontologies/2024/4/challenge#PeerRejection">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/author/ontologies/2024/4/challenge#SocialChallenges"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/author/ontologies/2024/4/challenge#SocialChallenges -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/author/ontologies/2024/4/challenge#SocialChallenges">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/author/ontologies/2024/4/challenge#Challenge"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/author/ontologies/2024/4/challenge#TactileStimuli -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/author/ontologies/2024/4/challenge#TactileStimuli">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/author/ontologies/2024/4/challenge#EnvironmentalStimuli"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/author/ontologies/2024/4/challenge#TeacherRelationship -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/author/ontologies/2024/4/challenge#TeacherRelationship">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/author/ontologies/2024/4/challenge#SocialChallenges"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/author/ontologies/2024/4/challenge#VisualStimuli -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/author/ontologies/2024/4/challenge#VisualStimuli">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/author/ontologies/2024/4/challenge#EnvironmentalStimuli"/>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/author/ontologies/2024/4/challenge#High -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/author/ontologies/2024/4/challenge#High">
+        <rdf:type rdf:resource="http://www.semanticweb.org/author/ontologies/2024/4/challenge#ChallengeLevel"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/author/ontologies/2024/4/challenge#Medium -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/author/ontologies/2024/4/challenge#Medium">
+        <rdf:type rdf:resource="http://www.semanticweb.org/author/ontologies/2024/4/challenge#ChallengeLevel"/>
+    </owl:NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi -->
+

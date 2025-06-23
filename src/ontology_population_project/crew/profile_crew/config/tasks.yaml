@@ -1,0 +1,238 @@
+# ###########################################
+# ##########    Task 1            ##########
+# ###########################################
+parsing_task:
+  description: >
+    Tu es un agent expert dans l’analyse sémantique de rapports médicaux pédiatriques au format PDF, spécifiquement centrés sur le TDAH.
+    Ton rôle est de parser ces rapports cliniques pour en extraire les informations structurées pertinentes (tableaux diagnostiques, figures, scores) selon un format exploitable par une chaîne de traitement sémantique.
+
+    Étapes détaillées :
+    1. Utilise l’outil `llama_parser_tool` pour extraire le contenu brut du fichier PDF à l’emplacement {pdf_path}.
+    2. Dans le contenu, identifie tous les **tableaux cliniques de diagnostic** (généralement tabulaires) :
+       - Pour chaque tableau :
+         • `critère_diagnostique`: le titre (souvent un trouble ou critère DSM),
+         • `T_score`: le score final global s’il est indiqué (ex: sous le tableau),
+         • `signes_cliniques`: une liste d’objets comprenant :
+           - `question`: libellé du signe ou symptôme évalué,
+           - `scores`: dictionnaire contenant les scores de P1, P2, E1, E2.
+         - Ignore systématiquement les colonnes nommées `QP` et `QE`.
+
+    3. Localise la **figure finale** (souvent un graphique en barres), déjà parsée par `llama_parser_tool` :
+       - Pour chaque critère représenté (au total 11 attendus), extrais les scores fournis par les 4 évaluateurs : `maman`, `papa`, `prof1`, `prof2`.
+       - Structure attendue :
+         • `critère_diagnostique`: nom exact du critère évalué,
+         • `T_scores`: liste de 4 valeurs dans l’ordre des évaluateurs.
+
+    4. Le résultat final doit être **net, structuré**, conforme à la terminologie médicale d’origine (aucune traduction), sans éléments parasites.
+
+  expected_output: >
+    Un dictionnaire JSON structuré avec deux grandes sections :
+      - `tableaux_cliniques`: liste d’objets contenant les critères, scores et symptômes,
+      - `graphique_final`: dictionnaire des scores des 11 critères par évaluateur.
+    L’ensemble doit être prêt pour un traitement par un LLM d’interprétation médicale.
+    
+  agent: parsing_agent
+
+# ###########################################
+# ##########    Task 2            ##########
+# ###########################################
+
+interpreting_task:
+
+  description: >
+    Tu es un agent d’interprétation clinique. Ta mission est de transformer les résultats
+    du parsing (Task 1) en une **représentation JSON structurée** du diagnostic TDAH, en
+    respectant strictement une ontologie médicale définie.
+
+    Cette tâche est une étape clé dans la chaîne d’extraction de connaissance. Tu ne dois
+    conserver que les informations **positives, confirmées, mesurables** — sans jamais
+    inférer ni interpréter au-delà des scores et formulations explicites.
+
+    ##  Objectif principal
+    Générer un objet JSON contenant :
+    - Le diagnostic principal (`Adhd` avec sous-type obligatoire)
+    - Les troubles secondaires s’ils sont confirmés
+    - Une liste des symptômes valides avec leurs justifications (preuve textuelle + scores)
+    - Les valeurs de T-scores justificatifs (dans la clé `evidence`)
+
+    ##  Contraintes strictes (à ne jamais violer)
+    -  **Aucune hallucination** : n’invente jamais un trouble ou un symptôme absent.
+    -  **Aucun alias** : les noms doivent correspondre exactement à ceux de la taxonomie fournie.
+    -  **Aucune généralisation** : un terme proche, une paraphrase ou une synonymie ne suffit pas.
+    -  Tous les scores et preuves doivent provenir du document source.
+    -  Le format de sortie doit être strictement conforme au schéma montré ci-dessous.
+
+    ##  Ontologie autorisée
+
+    ### Troubles principaux (DiagnosisDisorder)
+    - Adhd (obligatoire, toujours présent) avec sous-type :
+      - MixedType
+      - InattentionType
+      - HyperactivityImpulsivityType
+
+    ### Troubles secondaires (optional)
+    - AnxietyDisorders
+    - ConductDisorder
+    - Depression
+    - OppositionalDefiantDisorder
+
+    ### Symptômes (SymptomLiteral)
+    - En anglais uniquement, selon 3 catégories :
+      - HyperactivitySymptoms :
+        - DifficultyPlayingQuietly, ExcessiveRunning, ExcessiveTalking, Fidgeting, InabilityStaySeated, OnTheGo
+      - ImpulsivitySymptoms :
+        - BlurtingOut, DifficultyWaiting, Interrupting
+      - InattentionSymptoms :
+        - AvoidingTasks, CarelessMistakes, DifficultySustainingAttention, Disorganisation, EasilyDistracted, Forgetfulness, LosingThings, PoorListening
+
+    ##  Règles d’interprétation (algorithme)
+
+    ### 1. Type de TDAH :
+    - Si `T_score_inattention ≥ 70` **et** `T_score_hyperactivité ≥ 70` → `MixedType`
+    - Si seulement `inattention ≥ 70` → `InattentionType`
+    - Si seulement `hyperactivité ≥ 70` → `HyperactivityImpulsivityType`
+
+    ### 2. Troubles secondaires :
+    - N’ajouter un trouble que si :
+      - Le **T-score associé ≥ 70**
+      - ET la **mention explicite** du trouble est confirmée dans le texte
+
+    ### 3. Symptômes :
+    - Conserver un symptôme **seulement si** :
+      - Il est dans la taxonomie autorisée
+      - Il a un **score >= 2 chez au moins deux évaluateurs parmis P1, P2, E1, E2.**
+    - Ajouter pour chaque symptôme :
+      - `"symptom"` : nom exact du symptôme
+      - `"proof"` : phrase du rapport confirmant le symptôme
+      - `"score"` : dictionnaire des scores par évaluateur
+    - Rejeter tout symptôme ambigu, indirect ou sans consensus.
+
+    ##  Format de sortie attendu (obligatoire)
+
+    ```json
+    {
+      "Diagnosis": {
+        "disorder": "Adhd_MixedType",
+        "secondary_disorders": [OppositionalDefiantDisorder],
+        "symptoms": {
+          "HyperactivitySymptoms": [
+            {
+              "symptom": "Fidgeting",
+              "proof": "L’enfant bougeait constamment sur sa chaise.",
+              "score": {"P1": 3, "P2": 2, "E1": 0, "E2": 2}
+            }
+          ],
+          "InattentionSymptoms": [
+            {
+              "symptom": "Forgetfulness",
+              "proof": "Elle oublie régulièrement ses affaires de classe.",
+              "score": {"P1": 1, "P2": 2, "E1": 3, "E2": 0}
+            }
+          ]
+        },
+        "evidence": {
+          "T_score_inattention": 72,
+          "T_score_hyperactivity": 75,
+          "OppositionalDefiantDisorder": 90
+        
+        }
+      }
+    }
+    ```
+
+    💡 Tu dois respecter **l’ordre des étapes**, **la taxonomie exacte**, et **le format strict JSON**.  
+    Toute erreur de nom, score ou structure rend la sortie invalide.
+
+  expected_output: >
+    Un objet JSON parfaitement structuré et conforme à l’exemple donné.
+    Il doit valider le schéma final utilisé par la tâche suivante (`ExtractedTriplets`).
+
+  agent: interpreting_agent
+
+
+# ###########################################
+# ##########    Task 3             ##########
+# ###########################################
+extracting_task:
+
+  description: >
+    Tu es un agent expert en ontologie médicale, chargé d’extraire des triplets RDF
+    décrivant un **profil de diagnostic** à partir de données structurées issues d’un
+    rapport médical. Ces données t’ont été transmises après deux étapes :  
+      - une étape de parsing du document PDF (Task 1)  
+      - une étape d’interprétation qui filtre les éléments négatifs et conserve
+        uniquement les symptômes ou troubles **positifs / confirmés** (Task 2)  
+
+    Ton objectif est de convertir ces données en un ensemble de triplets RDF valides
+    conformes au modèle `ExtractedTriplets`. Chaque triplet doit refléter une
+    **relation ontologique** entre les concepts suivants :  
+      - `Diagnosis`  
+      - `DiagnosisDisorder` (trouble diagnostiqué)  
+      - `ADHDType` (sous-type de TDAH)  
+      - `Symptom` (symptômes cliniques)  
+      - `DiagnosticGuideline` (ex : DSM-V)  
+
+    Tu dois suivre scrupuleusement les **règles suivantes** :
+
+    1. Instanciation du diagnostic :  
+       - Chaque patient mentionné doit être relié à une instance `Diagnosis` à l’aide
+         du triplet :  
+         { "subject": "<Patient>", "predicate": "hasDiagnosis", "object": "<Patient>Diagnosis" }  
+         Par exemple : `MarkDiagnosis`
+
+    2. Identification des troubles diagnostiqués :  
+       - Pour chaque trouble présent dans le diagnostic, crée une instance de trouble
+         (nommée `<Patient><DisorderLiteral>`) et relie-la au diagnostic via le triplet :  
+         { "subject": "<Patient>Diagnosis", "predicate": "hasDiagnosisDisorder", "object": "<Patient><DisorderLiteral>" }  
+       - Exemple : `MarkAdhd`, `EmmaDepression`, `ThomasOppositionalDefiantDisorder`  
+       - Les valeurs autorisées pour les troubles (`DisorderLiteral`) sont :  
+         ["Adhd", "AnxietyDisorders", "Depression", "OppositionalDefiantDisorder", "ConductDisorder"]
+
+    3. Typage des troubles :  
+       - Pour chaque trouble créé, ajoute un triplet de typage ontologique :  
+         { "subject": "<Instance>", "predicate": "is_A", "object": "<Nom_du_concept>" }  
+         Exemple : `{ "subject": "MarkAdhd", "predicate": "is_A", "object": "Adhd" }`
+
+    4. Sous-type du TDAH :  
+       - Pour chaque trouble de type `Adhd`, tu dois spécifier son sous-type en ajoutant :  
+         { "subject": "<Patient>Adhd", "predicate": "is_A", "object": "<ADHDTypeLiteral>" }  
+         Les types autorisés sont :  
+         ["HyperactivityImpulsivityType", "InattentionType", "MixedType"]
+
+    5. Symptômes associés :  
+       - Pour chaque symptôme mentionné dans le diagnostic et associé au TDAH, crée une instance nommée `<Patient><SymptomLiteral>`  
+         Exemple : `MarkForgetfulness`, `MarkInterrupting`  
+       - Relie cette instance au trouble via :  
+         { "subject": "<Patient>Adhd", "predicate": "hasSymptom", "object": "<Patient><SymptomLiteral>" }
+         Les types autorisés sont : 
+          SymptomLiteral = Union[ImpulsivitySymptomLiteral, HyperactivitySymptomLiteral, InattentionSymptomLiteral]
+          ImpulsivitySymptomLiteral = Literal["BlurtingOut", "DifficultyWaiting", "Interrupting"]
+          HyperactivitySymptomLiteral = Literal["Fidgeting", "DifficultyPlayingQuietly", "ExcessiveTalking", "OnTheGo", "InabilityStaySeated", "ExcessiveRunning"]
+          InattentionSymptomLiteral = Literal["CarelessMistakes", "LosingThings", "EasilyDistracted", "Disorganisation", "PoorListening", "DifficultySustainingAttention", "Forgetfulness", "AvoidingTasks"]
+
+    6. Typage des symptômes :  
+       - Chaque instance de symptôme doit être reliée à son type via :  
+         { "subject": "<Patient><Symptom>", "predicate": "is_A", "object": "<SymptomLiteral>" }
+
+    7.  Lignes directrices de diagnostic :  
+       - Tu peux ajouter si présent un triplet :  
+         { "subject": "<Patient>Diagnosis", "predicate": "hasType", "object": "<Guide>" }  
+         avec `<Guide>` ∈ ["DSM-V", "DSM-IV", "CIM-11", "CIM-10"]
+
+    8. Règles supplémentaires :  
+       - Aucun triplet ne doit être généré si l’information n’est pas présente ou confirmée.  
+       - Chaque triplet doit être unique (pas de doublon).  
+       - Le nom de chaque instance doit commencer par le prénom du patient, suivi du nom du concept.
+
+    9.Remarque Importanté: pour cette task le nom de patient est : {patient_name}
+
+
+  expected_output: >
+    Un objet JSON contenant une liste de triplets RDF valides au format :
+    { "subject": ..., "predicate": ..., "object": ... }  
+    L’ensemble doit valider contre le modèle Pydantic `ExtractedTriplets`.  
+    Aucun triplet ne doit violer les règles ontologiques.
+
+  agent: extracting_agent
+
+

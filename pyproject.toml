@@ -1,0 +1,38 @@
+[project]
+name = "ontology_population_project"
+version = "0.1.0"
+description = "PATCHES population using crewAI"
+authors = [{ name = "Author", email = "author@author.com" }]
+requires-python = ">=3.10,<3.13"
+dependencies = [
+    "crewai[tools]>=0.118.0,<1.0.0", 
+    "llama-parse>=0.6.12",
+    "matplotlib>=3.10.3",
+    "scikit-learn==1.6.1",
+    "scipy==1.15.3",
+    "numpy<2.0.0",
+    "gradio==5.33.0",
+    "nest-asyncio>=1.5.6",
+    "uvicorn>=0.20.0",
+    "pymongo>=4.12.1",
+    "sentence-transformers==2.3.1",
+    "torch==2.2.0",
+    "pandas==2.2.3"
+
+
+]
+
+[project.scripts]
+ontologie_population_project = "ontology_population_project.main:run"
+run_crew = "ontology_population_project.main:kickoff"
+plot = "ontology_population_project.main:plot"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.crewai]
+type = "crew"
+
+
+

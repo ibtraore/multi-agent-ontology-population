@@ -1,0 +1,78 @@
+{
+  "title": "Time Ontology",
+  "id": "ont_time",
+  "concepts": [
+    {
+      "qid": "Interval",
+      "label": "Interval"
+    },
+    {
+      "qid": "Instant",
+      "label": "Instant"
+    },
+    {
+      "qid": "TemporalEntity",
+      "label": "TemporalEntity"
+    },
+    {
+      "qid": "TimeState",
+      "label": "TimeState"
+    }
+  ],
+  "relations": [
+    {
+      "pid": "hasDay",
+      "label": "hasDay",
+      "domain": "Instant",
+      "range": "int"
+    },
+    {
+      "pid": "hasHour",
+      "label": "hasHour",
+      "domain": "Instant",
+      "range": "int"
+    },
+    {
+      "pid": "hasMinute",
+      "label": "hasMinute",
+      "domain": "Instant",
+      "range": "int"
+    },
+    {
+      "pid": "hasMonth",
+      "label": "hasMonth",
+      "domain": "Instant",
+      "range": "int"
+    },
+    {
+      "pid": "hasSecond",
+      "label": "hasSecond",
+      "domain": "Instant",
+      "range": "int"
+    },
+    {
+      "pid": "hasYear",
+      "label": "hasYear",
+      "domain": "Instant",
+      "range": "int"
+    },
+    {
+      "pid": "hasEnd",
+      "label": "hasEnd",
+      "domain": "Interval",
+      "range": "Instant"
+    },
+    {
+      "pid": "hasStart",
+      "label": "hasStart",
+      "domain": "Interval",
+      "range": "Instant"
+    },
+    {
+      "pid": "hasTimeState",
+      "label": "hasTimeState",
+      "domain": "TemporalEntity",
+      "range": "TimeState"
+    }
+  ]
+}

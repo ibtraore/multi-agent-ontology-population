@@ -1,0 +1,261 @@
+```json
+{
+  "tableaux_cliniques": [
+    {
+      "critère_diagnostique": "DSM-IV-TR Inattention",
+      "T_score": [77, 86, 43, 43],
+      "signes_cliniques": [
+        {
+          "question": "Oublie durant des activités quotidiennes.",
+          "scores": {"P1": 2, "P2": 2, "E1": 0, "E2": 0}
+        },
+        {
+          "question": "Évite ou n'aime pas les choses qui demandent beaucoup d'efforts et qui ne",
+          "scores": {"P1": 1, "P2": 2, "E1": 0, "E2": 0}
+        },
+        {
+          "question": "Ne semble pas écouter ce qui lui est dit.",
+          "scores": {"P1": 1, "P2": 3, "E1": 0, "E2": 0}
+        },
+        {
+          "question": "Ne porte pas attention aux détails; fait des fautes d'inattention.",
+          "scores": {"P1": 2, "P2": 2, "E1": 0, "E2": 0}
+        },
+        {
+          "question": "Ne suit pas les consignes (même lorsqu'il/elle les comprend et essaie de coopérer).",
+          "scores": {"P1": 2, "P2": 3, "E1": 0, "E2": 0}
+        },
+        {
+          "question": "Ne complète pas ses travaux scolaires ou ses tâches (même lorsqu'il/elle",
+          "scores": {"P1": 2, "P2": 1, "E1": 0, "E2": 0}
+        },
+        {
+          "question": "A de la difficulté à organiser des tâches ou des activités.",
+          "scores": {"P1": 2, "P2": 1, "E1": 0, "E2": 0}
+        },
+        {
+          "question": "A de la difficulté à demeurer concentré/e sur un travail ou un jeu pour une longue période de temps.",
+          "scores": {"P1": 2, "P2": 2, "E1": 0, "E2": 0}
+        },
+        {
+          "question": "Perd des choses (par exemple, des travaux scolaires, des crayons, des livres, des outils ou des jouets).",
+          "scores": {"P1": 1, "P2": 2, "E1": 0, "E2": 0}
+        },
+        {
+          "question": "Est facilement distrait/e par ce qu'il/elle voit ou entend.",
+          "scores": {"P1": 2, "P2": 3, "E1": 0, "E2": 0}
+        }
+      ]
+    },
+    {
+      "critère_diagnostique": "DSM-IV-TR Trouble des conduites",
+      "T_score": [90, 90, 47, 47],
+      "signes_cliniques": [
+        {
+          "question": "Il/elle sèche des cours (absent de l'école sans autorisation).",
+          "scores": {"P1": 0, "P2": 0, "E1": 0, "E2": 0}
+        },
+        {
+          "question": "A forcé quelqu'un à avoir des activités sexuelles.",
+          "scores": {"P1": 2, "P2": 0, "E1": 0, "E2": 0}
+        },
+        {
+          "question": "Intimide, menace ou fait peur aux autres.",
+          "scores": {"P1": 1, "P2": 0, "E1": 0, "E2": 0}
+        },
+        {
+          "question": "Se sert d'une arme (par exemple, un bâton, une brique, une bouteille",
+          "scores": {"P1": 0, "P2": 0, "E1": 0, "E2": 0}
+        },
+        {
+          "question": "Initie délibérément des batailles avec les autres.",
+          "scores": {"P1": 1, "P2": 0, "E1": 0, "E2": 0}
+        },
+        {
+          "question": "Blesse physiquement les gens.",
+          "scores": {"P1": 0, "P2": 0, "E1": 0, "E2": 0}
+        },
+        {
+          "question": "Est cruel/le envers les animaux.",
+          "scores": {"P1": 0, "P2": 0, "E1": 0, "E2": 0}
+        },
+        {
+          "question": "Ment afin d'éviter de faire certaines choses ou afin d'obtenir les choses qu'il/elle veut.",
+          "scores": {"P1": 2, "P2": 3, "E1": 0, "E2": 0}
+        },
+        {
+          "question": "Vole en cachette (par exemple, vol à l'étalage ou falsification).",
+          "scores": {"P1": 1, "P2": 2, "E1": 0, "E2": 0}
+        },
+        {
+          "question": "Endommage ou détruit volontairement les choses des autres.",
+          "scores": {"P1": 1, "P2": 1, "E1": 0, "E2": 0}
+        },
+        {
+          "question": "S'enfuit de la maison pour au moins une nuit (fugue).",
+          "scores": {"P1": 0, "P2": 0, "E1": 0, "E2": 0}
+        },
+        {
+          "question": "A délibérément mis le feu afin de causer des dommages.",
+          "scores": {"P1": 0, "P2": 0, "E1": 0, "E2": 0}
+        },
+        {
+          "question": "Est déjà entré/e par effraction dans la maison, l'édifice ou la voiture de quelqu'un.",
+          "scores": {"P1": 0, "P2": 0, "E1": 0, "E2": 0}
+        },
+        {
+          "question": "Sort tard le soir, même si c'est contre les règles.",
+          "scores": {"P1": 0, "P2": 0, "E1": 0, "E2": 0}
+        },
+        {
+          "question": "Vole en confrontant quelqu'un (par exemple, agression, vol de sac à main ou vol à main armée).",
+          "scores": {"P1": 0, "P2": 1, "E1": 0, "E2": 0}
+        }
+      ]
+    },
+    {
+      "critère_diagnostique": "DSM-IV-TR Impulsivité-Hyperactivité",
+      "T_score": [90, 90, 44, 44],
+      "signes_cliniques": [
+        {
+          "question": "Parle trop.",
+          "scores": {"P1": 3, "P2": 3, "E1": 0, "E2": 0}
+        },
+        {
+          "question": "Donne la réponse avant la fin de la question.",
+          "scores": {"P1": 2, "P2": 1, "E1": 0, "E2": 0}
+        },
+        {
+          "question": "Bouge constamment.",
+          "scores": {"P1": 2, "P2": 2, "E1": 0, "E2": 0}
+        },
+        {
+          "question": "Agit comme s'il/elle était animé/e par un moteur.",
+          "scores": {"P1": 3, "P2": 2, "E1": 0, "E2": 0}
+        },
+        {
+          "question": "A de la difficulté à attendre son tour.",
+          "scores": {"P1": 3, "P2": 3, "E1": 0, "E2": 0}
+        },
+        {
+          "question": "Court ou grimpe quand il/elle ne devrait pas le faire.",
+          "scores": {"P1": 3, "P2": 2, "E1": 0, "E2": 0}
+        },
+        {
+          "question": "Est bruyant/e lors des jeux et des temps libres.",
+          "scores": {"P1": 2, "P2": 2, "E1": 0, "E2": 0}
+        },
+        {
+          "question": "Quitte son siège lorsqu'il/elle devrait rester assis/e.",
+          "scores": {"P1": 1, "P2": 3, "E1": 0, "E2": 0}
+        },
+        {
+          "question": "Gigote ou se tortille sur son siège.",
+          "scores": {"P1": 1, "P2": 2, "E1": 0, "E2": 0}
+        },
+        {
+          "question": "Agité/e ou hyperactif/ve.",
+          "scores": {"P1": 2, "P2": 2, "E1": 0, "E2": 0}
+        },
+        {
+          "question": "Interrompt les autres (par exemple, leurs conversations ou leurs jeux).",
+          "scores": {"P1": 3, "P2": 3, "E1": 0, "E2": 0}
+        }
+      ]
+    },
+    {
+      "critère_diagnostique": "DSM-IV-TR Trouble oppositionnel/provocation",
+      "T_score": [90, 90, 46, 46],
+      "signes_cliniques": [
+        {
+          "question": "Se met en colère.",
+          "scores": {"P1": 3, "P2": 3, "E1": 0, "E2": 0}
+        },
+        {
+          "question": "Blâme les autres pour ses erreurs ou ses mauvais comportements.",
+          "scores": {"P1": 2, "P2": 2, "E1": 0, "E2": 0}
+        },
+        {
+          "question": "Est en colère et éprouve du ressentiment.",
+          "scores": {"P1": 3, "P2": 0, "E1": 0, "E2": 0}
+        },
+        {
+          "question": "Essaie de se venger.",
+          "scores": {"P1": 1, "P2": 1, "E1": 0, "E2": 0}
+        },
+        {
+          "question": "Embête ou ennuie délibérément les autres.",
+          "scores": {"P1": 1, "P2": 1, "E1": 0, "E2": 0}
+        },
+        {
+          "question": "Est irritable et facilement embêté/e par les autres.",
+          "scores": {"P1": 2, "P2": 2, "E1": 0, "E2": 0}
+        },
+        {
+          "question": "Refuse activement de faire ce que les adultes lui demandent.",
+          "scores": {"P1": 2, "P2": 3, "E1": 0, "E2": 0}
+        },
+        {
+          "question": "S'obstine avec les adultes.",
+          "scores": {"P1": 2, "P2": 2, "E1": 0, "E2": 0}
+        }
+      ]
+    },
+    {
+      "critère_diagnostique": "Anxiété",
+      "signes_cliniques": [
+        {
+          "question": "S'inquiète de beaucoup de choses.",
+          "scores": {"P1": 2, "P2": 2, "E1": 0, "E2": 0}
+        },
+        {
+          "question": "A de la difficulté à contrôler ses inquiétudes.",
+          "scores": {"P1": 3, "P2": 3, "E1": 0, "E2": 0}
+        },
+        {
+          "question": "Semble 'sur les nerfs', nerveux/se ou tendu/e.",
+          "scores": {"P1": 2, "P2": 2, "E1": 0, "E2": 0}
+        },
+        {
+          "question": "Devient irritable lorsqu'anxieux/se.",
+          "scores": {"P1": 3, "P2": 3, "E1": 0, "E2": 0}
+        }
+      ]
+    },
+    {
+      "critère_diagnostique": "Dépression",
+      "signes_cliniques": [
+        {
+          "question": "Se sent sans valeur.",
+          "scores": {"P1": 3, "P2": 2, "E1": 0, "E2": 0}
+        },
+        {
+          "question": "Semble fatigué/e; a peu d'énergie.",
+          "scores": {"P1": 0, "P2": 1, "E1": 0, "E2": 0}
+        },
+        {
+          "question": "N'a plus de plaisir ou d'intérêt pour les activités.",
+          "scores": {"P1": 0, "P2": 1, "E1": 0, "E2": 0}
+        },
+        {
+          "question": "Est triste, morose ou irritable durant plusieurs journées consécutives.",
+          "scores": {"P1": 1, "P2": 2, "E1": 0, "E2": 0}
+        }
+      ]
+    }
+  ],
+  "graphique_final": {
+    "Inattention": {"T_scores": [77, 86, 43, 43]},
+    "Trouble des conduites": {"T_scores": [90, 90, 47, 47]},
+    "Impulsivité-Hyperactivité": {"T_scores": [90, 90, 44, 44]},
+    "Trouble oppositionnel/provocation": {"T_scores": [90, 90, 46, 46]},
+    "Anxiété": {"T_scores": [0, 0, 0, 0]},
+    "Dépression": {"T_scores": [0, 0, 0, 0]},
+    "Critère 7": {"T_scores": [0, 0, 0, 0]},
+    "Critère 8": {"T_scores": [0, 0, 0, 0]},
+    "Critère 9": {"T_scores": [0, 0, 0, 0]},
+    "Critère 10": {"T_scores": [0, 0, 0, 0]},
+    "Critère 11": {"T_scores": [0, 0, 0, 0]}
+  }
+}
+```

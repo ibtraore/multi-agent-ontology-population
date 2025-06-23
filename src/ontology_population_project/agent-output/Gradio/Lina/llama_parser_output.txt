@@ -1,0 +1,119 @@
+
+
+# Résultats des questionnaires de Conners 3 parents et enseignants
+
+## Critères majeurs et conditions de validité
+
+### DSM-IV-TR Inattention
+
+| Signe clinique                                                                                           | P1 | P2 | E1 | E2 |
+| -------------------------------------------------------------------------------------------------------- | -- | -- | -- | -- |
+| Oublie durant des activités quotidiennes.                                                                | 2  | 2  | 0  | 0  |
+| Évite ou n'aime pas les choses qui demandent beaucoup d'efforts et qui ne                                | 3  | 3  | 0  | 0  |
+| Ne semble pas écouter ce qui lui est dit.                                                                | 2  | 2  | 0  | 0  |
+| Ne porte pas attention aux détails; fait des fautes d'inattention.                                       | 3  | 1  | 0  | 0  |
+| Ne suit pas les consignes (même lorsqu'il/elle les comprend et essaie de coopérer).                      | 1  | 1  | 0  | 0  |
+| Ne complète pas ses travaux scolaires ou ses tâches (même lorsqu'il/elle                                 | 2  | 0  | 0  | 0  |
+| A de la difficulté à organiser des tâches ou des activités.                                              | 2  | 2  | 0  | 0  |
+| A de la difficulté à demeurer concentré/e sur un travail ou un jeu pour une longue période de temps.     | 3  | 2  | 0  | 0  |
+| Perd des choses (par exemple, des travaux scolaires, des crayons, des livres, des outils ou des jouets). | 1  | 1  | 0  | 0  |
+| Est facilement distrait/e par ce qu'il/elle voit ou entend.                                              | 3  | 2  | 0  | 0  |
+| T-Score                                                                                                  | 87 | 74 | 42 | 42 |
+| Nombre de critères majeurs validés                                                                       | 7  | 6  | 0  | 0  |
+
+
+### DSM-IV-TR Trouble des conduites
+
+| Signe clinique                                                                                 | P1 | P2 | E1 | E2 |
+| ---------------------------------------------------------------------------------------------- | -- | -- | -- | -- |
+| Il/elle sèche des cours (absent de l'école sans autorisation).                                 | 0  | 0  | 0  | 0  |
+| A forcé quelqu'un à avoir des activités sexuelles.                                             | 0  | 0  | 0  | 0  |
+| Intimide, menace ou fait peur aux autres.                                                      | 0  | 0  | 0  | 0  |
+| Se sert d'une arme (par exemple, un bâton, une brique, une bouteille                           | 0  | 0  | 0  | 0  |
+| Initie délibérément des batailles avec les autres.                                             | 0  | 0  | 0  | 0  |
+| Blesse physiquement les gens.                                                                  | 0  | 0  | 0  | 0  |
+| Est cruel/le envers les animaux.                                                               | 0  | 0  | 0  | 0  |
+| Ment afin d'éviter de faire certaines choses ou afin d'obtenir les choses qu'il/elle veut.     | 3  | 1  | 0  | 0  |
+| Vole en cachette (par exemple, vol à l'étalage ou falsification).                              | 0  | 0  | 0  | 0  |
+| Endommage ou détruit volontairement les choses des autres.                                     | 0  | 0  | 0  | 0  |
+| S'enfuit de la maison pour au moins une nuit (fugue).                                          | 0  | 0  | -  | -  |
+| A délibérément mis le feu afin de causer des dommages.                                         | 0  | 0  | 0  | 0  |
+| Est déjà entré/e par effraction dans la maison, l'édifice ou la voiture de quelqu'un.          | 0  | 0  | 0  | 0  |
+| Sort tard le soir, même si c'est contre les règles.                                            | 0  | 0  | -  | -  |
+| Vole en confrontant quelqu'un (par exemple, agression, vol de sac à main ou vol à main armée). | 0  | 0  | 0  | 0  |
+| T-Score                                                                                        | 69 | 51 | 45 | 45 |
+| Nombre de critères majeurs validés                                                             | 1  | 1  | 0  | 0  |
+
+
+### DSM-IV-TR Impulsivité-Hyperactivité
+
+| Signe clinique                                                          | P1 | P2 | E1 | E2 |
+| ----------------------------------------------------------------------- | -- | -- | -- | -- |
+| Parle trop.                                                             | 3  | 2  | 0  | 0  |
+| Donne la réponse avant la fin de la question.                           | 1  | 2  | 0  | 0  |
+| Bouge constamment.                                                      | 2  | 2  | 0  | 0  |
+| Agit comme s'il/elle était animé/e par un moteur.                       | 3  | 2  | 0  | 0  |
+| A de la difficulté à attendre son tour.                                 | 2  | 1  | 0  | 0  |
+| Court ou grimpe quand il/elle ne devrait pas le faire.                  | 1  | 1  | 0  | 0  |
+| Est bruyant/e lors des jeux et des temps libres.                        | 3  | 1  | 0  | 0  |
+| Quitte son siège lorsqu'il/elle devrait rester assis/e.                 | 3  | 1  | 0  | 0  |
+| Gigote ou se tortille sur son siège.                                    | 3  | 1  | 0  | 0  |
+| Agité/e ou hyperactif/ve.                                               | 3  | 3  | 0  | 0  |
+| Interrompt les autres (par exemple, leurs conversations ou leurs jeux). | 3  | 2  | 0  | 0  |
+| T-Score                                                                 | 90 | 77 | 43 | 43 |
+| Nombre de critères majeurs validés                                      | 8  | 5  | 0  | 0  |
+
+
+### DSM-IV-TR Trouble oppositionnel/provocation
+
+| Signe clinique                                                  | P1 | P2 | E1 | E2 |
+| --------------------------------------------------------------- | -- | -- | -- | -- |
+| Se met en colère.                                               | 3  | 2  | 0  | 0  |
+| Blâme les autres pour ses erreurs ou ses mauvais comportements. | 3  | 1  | 0  | 0  |
+| Est en colère et éprouve du ressentiment.                       | 3  | 1  | 0  | 0  |
+| Essaie de se venger.                                            | 2  | 0  | 0  | 0  |
+| Embête ou ennuie délibérément les autres.                       | 0  | 0  | 0  | 0  |
+| Est irritable et facilement embêté/e par les autres.            | 1  | 2  | 0  | 0  |
+| Refuse activement de faire ce que les adultes lui demandent.    | 1  | 1  | 0  | 0  |
+| S'obstine avec les adultes.                                     | 3  | 1  | 0  | 0  |
+| T-Score                                                         | 90 | 68 | 47 | 47 |
+| Nombre de critères majeurs validés                              | 5  | 2  | 0  | 0  |
+
+
+### Anxiété
+
+| Signe clinique                                  | P1 | P2 | E1 | E2 |
+| ----------------------------------------------- | -- | -- | -- | -- |
+| S'inquiète de beaucoup de choses.               | 2  | 2  | 0  | 0  |
+| A de la difficulté à contrôler ses inquiétudes. | 3  | 1  | 0  | 0  |
+| Semble "sur les nerfs", nerveux/se ou tendu/e.  | 2  | 2  | 0  | 0  |
+| Devient irritable lorsqu'anxieux/se.            | 3  | 1  | 0  | 0  |
+
+
+### Dépression
+
+| Signe clinique                                                          | P1 | P2 | E1 | E2 |
+| ----------------------------------------------------------------------- | -- | -- | -- | -- |
+| Se sent sans valeur.                                                    | 3  | 2  | 0  | 0  |
+| Semble fatigué/e; a peu d'énergie.                                      | 0  | 0  | 0  | 0  |
+| N'a plus de plaisir ou d'intérêt pour les activités.                    | 1  | 1  | 0  | 0  |
+| Est triste, morose ou irritable durant plusieurs journées consécutives. | 1  | 0  | 0  | 0  |
+
+
+Résultats des questionnaires de Conners 3, version longue pour CL221, agé de 9 ans 7 mois
+Nombre de critères majeurs inattention : 7, 6, 0, 0
+Nombre de critères majeurs hyperactivité/impulsivité : 8, 5, 0, 0
+
+```mermaid
+graph TD
+    A[Parent 1] --> B[90]
+    C[Parent 2] --> D[80]
+    E[Enseignant 1] --> F[70]
+    G[Enseignant 2] --> H[60]
+    I[Inattention] --> J[50]
+    K[Hyperactivité] --> L[40]
+    M[Problèmes d'apprentissage] --> N[30]
+    O[Fonctions exécutives] --> P[20]
+    Q[Agression] --> R[10]
+    S[Relations avec les pairs] --> T[0]
+```

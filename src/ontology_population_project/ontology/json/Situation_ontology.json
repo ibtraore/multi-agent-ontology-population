@@ -1,0 +1,168 @@
+{
+  "title": "Situation Ontology",
+  "id": "ont_situation",
+  "concepts": [
+    {
+      "qid": "Person",
+      "label": "Person"
+    },
+    {
+      "qid": "Patient",
+      "label": "Patient"
+    },
+    {
+      "qid": "Child",
+      "label": "Child"
+    },
+    {
+      "qid": "Father",
+      "label": "Father"
+    },
+    {
+      "qid": "Mother",
+      "label": "Mother"
+    },
+    {
+      "qid": "Situation",
+      "label": "Situation"
+    },
+    {
+      "qid": "SituationState",
+      "label": "SituationState"
+    },
+    {
+      "qid": "AcademicSituation",
+      "label": "AcademicSituation"
+    },
+    {
+      "qid": "EmotionalRegulationSituation",
+      "label": "EmotionalRegulationSituation"
+    },
+    {
+      "qid": "FamilyDynamicSituation",
+      "label": "FamilyDynamicSituation"
+    },
+    {
+      "qid": "OrganizationSituation",
+      "label": "OrganizationSituation"
+    },
+    {
+      "qid": "SocialSituation",
+      "label": "SocialSituation"
+    },
+    {
+      "qid": "TimeManagementSituation",
+      "label": "TimeManagementSituation"
+    }
+  ],
+  "relations": [
+    {
+      "pid": "hasDateOfBirth",
+      "label": "hasDateOfBirth",
+      "domain": "Patient",
+      "range": "date"
+    },
+    {
+      "pid": "hasGender",
+      "label": "hasGender",
+      "domain": "Person",
+      "range": "str"
+    },
+    {
+      "pid": "hasName",
+      "label": "hasName",
+      "domain": "Person",
+      "range": "str"
+    },
+    {
+      "pid": "hasMotivation",
+      "label": "hasMotivation",
+      "domain": "Activity",
+      "range": "bool"
+    },
+    {
+      "pid": "hasActivityType",
+      "label": "hasActivityType",
+      "domain": "Situation",
+      "range": "ActivityState"
+    },
+    {
+      "pid": "hasChallenge",
+      "label": "hasChallenge",
+      "domain": "Patient",
+      "range": "Challenge"
+    },
+    {
+      "pid": "hasChallengeLevel",
+      "label": "hasChallengeLevel",
+      "domain": "Situation",
+      "range": "ChallengeLevel"
+    },
+    {
+      "pid": "hasDiagnosis",
+      "label": "hasDiagnosis",
+      "domain": "Patient",
+      "range": "Diagnosis"
+    },
+    {
+      "pid": "hasEnvironment",
+      "label": "hasEnvironment",
+      "domain": "Situation",
+      "range": "Environment"
+    },
+    {
+      "pid": "hasEnvironmentType",
+      "label": "hasEnvironmentType",
+      "domain": "Situation",
+      "range": "EnvironmentState"
+    },
+    {
+      "pid": "hasPatient",
+      "label": "hasPatient",
+      "domain": "Situation",
+      "range": "Patient"
+    },
+    {
+      "pid": "hasProfileType",
+      "label": "hasProfileType",
+      "domain": "Situation",
+      "range": "ProfileState"
+    },
+    {
+      "pid": "hasSituationState",
+      "label": "hasSituationState",
+      "domain": "Situation",
+      "range": "SituationState"
+    },
+    {
+      "pid": "hasTemporalEntity",
+      "label": "hasTemporalEntity",
+      "domain": "Situation",
+      "range": "TemporalEntity"
+    },
+    {
+      "pid": "hasTimeOfDay",
+      "label": "hasTimeOfDay",
+      "domain": "Situation",
+      "range": "TimeState"
+    },
+    {
+      "pid": "isEngagedIn",
+      "label": "isEngagedIn",
+      "domain": "Patient",
+      "range": "Activity"
+    },
+    {
+      "pid": "isWith",
+      "label": "isWith",
+      "domain": "Activity",
+      "range": "Person"
+    },
+    {
+      "pid": "manifestIn",
+      "label": "manifestIn",
+      "domain": "Disorder",
+      "range": "Environment"
+    }
+  ]
+}

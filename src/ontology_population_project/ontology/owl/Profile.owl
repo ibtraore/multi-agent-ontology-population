@@ -1,0 +1,395 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/author/ontologies/2024/4/profile/"
+     xml:base="http://www.semanticweb.org/author/ontologies/2024/4/profile/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:swrl="http://www.w3.org/2003/11/swrl#"
+     xmlns:swrla="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#"
+     xmlns:swrlb="http://www.w3.org/2003/11/swrlb#"
+     xmlns:adhd-profile="http://www.semanticweb.org/author/ontologies/2024/4/adhd-profile#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/author/ontologies/2024/4/profile"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled -->
+
+    <owl:AnnotationProperty rdf:about="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Datatypes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.w3.org/2001/XMLSchema#date -->
+
+    <rdfs:Datatype rdf:about="http://www.w3.org/2001/XMLSchema#date"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/author/ontologies/2024/4/profile#hasDiagnosisDisorder -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/author/ontologies/2024/4/profile#hasDiagnosisDisorder">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/author/ontologies/2024/4/profile#Diagnosis"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/author/ontologies/2024/4/profile#Disorder"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/author/ontologies/2024/4/profile#hasProfileState -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/author/ontologies/2024/4/profile#hasProfileState">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/author/ontologies/2024/4/profile#Diagnosis"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/author/ontologies/2024/4/profile#ProfileState"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/author/ontologies/2024/4/profile#hasSymptom -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/author/ontologies/2024/4/profile#hasSymptom">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/author/ontologies/2024/4/profile#Disorder"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/author/ontologies/2024/4/profile#Symptom"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/author/ontologies/2024/4/profile#hasType -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/author/ontologies/2024/4/profile#hasType">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/author/ontologies/2024/4/profile#Diagnosis"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/author/ontologies/2024/4/profile#Adhd -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/author/ontologies/2024/4/profile#Adhd">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/author/ontologies/2024/4/profile#Disorder"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/author/ontologies/2024/4/profile#AnxietyDisorders -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/author/ontologies/2024/4/profile#AnxietyDisorders">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/author/ontologies/2024/4/profile#Disorder"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/author/ontologies/2024/4/profile#AvoidingTasks -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/author/ontologies/2024/4/profile#AvoidingTasks">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/author/ontologies/2024/4/profile#InattentionSymptoms"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/author/ontologies/2024/4/profile#BlurtingOut -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/author/ontologies/2024/4/profile#BlurtingOut">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/author/ontologies/2024/4/profile#ImpulsivitySymptoms"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/author/ontologies/2024/4/profile#CarelessMistakes -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/author/ontologies/2024/4/profile#CarelessMistakes">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/author/ontologies/2024/4/profile#InattentionSymptoms"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/author/ontologies/2024/4/profile#ConductDisorder -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/author/ontologies/2024/4/profile#ConductDisorder">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/author/ontologies/2024/4/profile#Disorder"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/author/ontologies/2024/4/profile#Depression -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/author/ontologies/2024/4/profile#Depression">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/author/ontologies/2024/4/profile#Disorder"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/author/ontologies/2024/4/profile#Diagnosis -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/author/ontologies/2024/4/profile#Diagnosis"/>
+    
+
+
+    <!-- http://www.semanticweb.org/author/ontologies/2024/4/profile#DifficultyPlayingQuietly -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/author/ontologies/2024/4/profile#DifficultyPlayingQuietly">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/author/ontologies/2024/4/profile#HyperactivitySymptoms"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/author/ontologies/2024/4/profile#DifficultySustainingAttention -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/author/ontologies/2024/4/profile#DifficultySustainingAttention">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/author/ontologies/2024/4/profile#InattentionSymptoms"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/author/ontologies/2024/4/profile#DifficultyWaiting -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/author/ontologies/2024/4/profile#DifficultyWaiting">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/author/ontologies/2024/4/profile#ImpulsivitySymptoms"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/author/ontologies/2024/4/profile#Disorder -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/author/ontologies/2024/4/profile#Disorder"/>
+    
+
+
+    <!-- http://www.semanticweb.org/author/ontologies/2024/4/profile#Disorganisation -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/author/ontologies/2024/4/profile#Disorganisation">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/author/ontologies/2024/4/profile#InattentionSymptoms"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/author/ontologies/2024/4/profile#EasilyDistracted -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/author/ontologies/2024/4/profile#EasilyDistracted">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/author/ontologies/2024/4/profile#InattentionSymptoms"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/author/ontologies/2024/4/profile#ExcessiveRunning -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/author/ontologies/2024/4/profile#ExcessiveRunning">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/author/ontologies/2024/4/profile#HyperactivitySymptoms"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/author/ontologies/2024/4/profile#ExcessiveTalking -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/author/ontologies/2024/4/profile#ExcessiveTalking">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/author/ontologies/2024/4/profile#HyperactivitySymptoms"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/author/ontologies/2024/4/profile#Fidgeting -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/author/ontologies/2024/4/profile#Fidgeting">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/author/ontologies/2024/4/profile#HyperactivitySymptoms"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/author/ontologies/2024/4/profile#Forgetfulness -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/author/ontologies/2024/4/profile#Forgetfulness">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/author/ontologies/2024/4/profile#InattentionSymptoms"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/author/ontologies/2024/4/profile#HyperactivityImpulsivityType -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/author/ontologies/2024/4/profile#HyperactivityImpulsivityType">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/author/ontologies/2024/4/profile#Adhd"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/author/ontologies/2024/4/profile#HyperactivitySymptoms -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/author/ontologies/2024/4/profile#HyperactivitySymptoms">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/author/ontologies/2024/4/profile#Symptom"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/author/ontologies/2024/4/profile#ImpulsivitySymptoms -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/author/ontologies/2024/4/profile#ImpulsivitySymptoms">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/author/ontologies/2024/4/profile#Symptom"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/author/ontologies/2024/4/profile#InabilityStaySeated -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/author/ontologies/2024/4/profile#InabilityStaySeated">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/author/ontologies/2024/4/profile#HyperactivitySymptoms"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/author/ontologies/2024/4/profile#InattentionSymptoms -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/author/ontologies/2024/4/profile#InattentionSymptoms">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/author/ontologies/2024/4/profile#Symptom"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/author/ontologies/2024/4/profile#InattentionType -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/author/ontologies/2024/4/profile#InattentionType">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/author/ontologies/2024/4/profile#Adhd"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/author/ontologies/2024/4/profile#Interrupting -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/author/ontologies/2024/4/profile#Interrupting">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/author/ontologies/2024/4/profile#ImpulsivitySymptoms"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/author/ontologies/2024/4/profile#LosingThings -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/author/ontologies/2024/4/profile#LosingThings">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/author/ontologies/2024/4/profile#InattentionSymptoms"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/author/ontologies/2024/4/profile#MixedType -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/author/ontologies/2024/4/profile#MixedType">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/author/ontologies/2024/4/profile#Adhd"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/author/ontologies/2024/4/profile#OnTheGo -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/author/ontologies/2024/4/profile#OnTheGo">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/author/ontologies/2024/4/profile#HyperactivitySymptoms"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/author/ontologies/2024/4/profile#OppositionalDefiantDisorder -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/author/ontologies/2024/4/profile#OppositionalDefiantDisorder">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/author/ontologies/2024/4/profile#Disorder"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/author/ontologies/2024/4/profile#PoorListening -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/author/ontologies/2024/4/profile#PoorListening">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/author/ontologies/2024/4/profile#InattentionSymptoms"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/author/ontologies/2024/4/profile#ProfileState -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/author/ontologies/2024/4/profile#ProfileState"/>
+    
+
+
+    <!-- http://www.semanticweb.org/author/ontologies/2024/4/profile#Symptom -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/author/ontologies/2024/4/profile#Symptom"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/author/ontologies/2024/4/profile#Hyperactive -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/author/ontologies/2024/4/profile#Hyperactive">
+        <rdf:type rdf:resource="http://www.semanticweb.org/author/ontologies/2024/4/profile#ProfileState"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/author/ontologies/2024/4/profile#Inattention -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/author/ontologies/2024/4/profile#Inattention"/>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi -->
+

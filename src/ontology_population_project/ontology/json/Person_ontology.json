@@ -1,0 +1,80 @@
+{
+  "title": "Person Ontology",
+  "id": "ont_person",
+  "concepts": [
+    {
+      "qid": "Person",
+      "label": "Person"
+    },
+    {
+      "qid": "InfluenceOnPatient",
+      "label": "InfluenceOnPatient"
+    },
+    {
+      "qid": "Patient",
+      "label": "Patient"
+    },
+    {
+      "qid": "Doctor",
+      "label": "Doctor"
+    },
+    {
+      "qid": "Child",
+      "label": "Child"
+    },
+    {
+      "qid": "Father",
+      "label": "Father"
+    },
+    {
+      "qid": "Parent",
+      "label": "Parent"
+    },
+    {
+      "qid": "Mother",
+      "label": "Mother"
+    },
+    {
+      "qid": "Teacher",
+      "label": "Teacher"
+    }
+  ],
+  "relations": [
+    {
+      "pid": "hasAge",
+      "label": "hasAge",
+      "domain": "Patient",
+      "range": "int"
+    },
+    {
+      "pid": "hasDateOfBirth",
+      "label": "hasDateOfBirth",
+      "domain": "Patient",
+      "range": "date"
+    },
+    {
+      "pid": "hasGender",
+      "label": "hasGender",
+      "domain": "Person",
+      "range": "str"
+    },
+    {
+      "pid": "hasName",
+      "label": "hasName",
+      "domain": "Person",
+      "range": "str"
+    },
+    {
+      "pid": "hasService",
+      "label": "hasService",
+      "domain": "Doctor",
+      "range": "str"
+    },
+    {
+      "pid": "hasInfluence",
+      "label": "hasInfluence",
+      "domain": "Person",
+      "range": "InfluenceOnPatient"
+    }
+  ]
+}

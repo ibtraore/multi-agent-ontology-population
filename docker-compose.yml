@@ -1,0 +1,23 @@
+version: '3.8'
+
+services:
+  crewai-app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: ontology-population-app
+    ports:
+      - "7860:7860"
+    environment:
+      - MISTRAL_API_KEY=${MISTRAL_API_KEY}
+      - LLAMA_CLOUD_API_KEY=${LLAMA_CLOUD_API_KEY}
+      - PYTHONPATH=/app
+    # volumes:
+    #   - ./src/ontology_population_project/agent-output/Gradio:/app/src/ontology_population_project/agent-output/Gradio
+    #restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:7860/"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s

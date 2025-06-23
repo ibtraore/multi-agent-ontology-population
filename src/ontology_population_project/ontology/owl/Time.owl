@@ -1,0 +1,212 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/author/ontologies/2024/4/time/"
+     xml:base="http://www.semanticweb.org/author/ontologies/2024/4/time/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:swrl="http://www.w3.org/2003/11/swrl#"
+     xmlns:swrla="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#"
+     xmlns:swrlb="http://www.w3.org/2003/11/swrlb#"
+     xmlns:adhd-profile="http://www.semanticweb.org/author/ontologies/2024/4/adhd-profile#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/author/ontologies/2024/4/time"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled -->
+
+    <owl:AnnotationProperty rdf:about="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Datatypes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.w3.org/2001/XMLSchema#date -->
+
+    <rdfs:Datatype rdf:about="http://www.w3.org/2001/XMLSchema#date"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/author/ontologies/2024/4/time#hasEnd -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/author/ontologies/2024/4/time#hasEnd">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/author/ontologies/2024/4/time#Interval"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/author/ontologies/2024/4/time#Instant"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/author/ontologies/2024/4/time#hasStart -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/author/ontologies/2024/4/time#hasStart">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/author/ontologies/2024/4/time#Interval"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/author/ontologies/2024/4/time#Instant"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/author/ontologies/2024/4/time#hasTimeState -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/author/ontologies/2024/4/time#hasTimeState">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/author/ontologies/2024/4/time#TemporalEntity"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/author/ontologies/2024/4/time#TimeState"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/author/ontologies/2024/4/time#hasDay -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/author/ontologies/2024/4/time#hasDay">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/author/ontologies/2024/4/time#Instant"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/author/ontologies/2024/4/time#hasHour -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/author/ontologies/2024/4/time#hasHour">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/author/ontologies/2024/4/time#Instant"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/author/ontologies/2024/4/time#hasMinute -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/author/ontologies/2024/4/time#hasMinute">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/author/ontologies/2024/4/time#Instant"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/author/ontologies/2024/4/time#hasMonth -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/author/ontologies/2024/4/time#hasMonth">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/author/ontologies/2024/4/time#Instant"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/author/ontologies/2024/4/time#hasSecond -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/author/ontologies/2024/4/time#hasSecond">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/author/ontologies/2024/4/time#Instant"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/author/ontologies/2024/4/time#hasYear -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/author/ontologies/2024/4/time#hasYear">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/author/ontologies/2024/4/time#Instant"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/author/ontologies/2024/4/time#Instant -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/author/ontologies/2024/4/time#Instant">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/author/ontologies/2024/4/time#TemporalEntity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/author/ontologies/2024/4/time#Interval -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/author/ontologies/2024/4/time#Interval">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/author/ontologies/2024/4/time#TemporalEntity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/author/ontologies/2024/4/time#TemporalEntity -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/author/ontologies/2024/4/time#TemporalEntity"/>
+    
+
+
+    <!-- http://www.semanticweb.org/author/ontologies/2024/4/time#TimeState -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/author/ontologies/2024/4/time#TimeState"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/author/ontologies/2024/4/time#Night -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/author/ontologies/2024/4/time#Night"/>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi -->
+

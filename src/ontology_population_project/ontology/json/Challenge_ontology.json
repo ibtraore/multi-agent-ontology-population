@@ -1,0 +1,102 @@
+{
+  "title": "Challenge Ontology",
+  "id": "ont_challenge",
+  "concepts": [
+    {
+      "qid": "Challenge",
+      "label": "Challenge"
+    },
+    {
+      "qid": "ChallengeLevel",
+      "label": "ChallengeLevel"
+    },
+    {
+      "qid": "AcademicChallenges",
+      "label": "AcademicChallenges"
+    },
+    {
+      "qid": "ArtChallenges",
+      "label": "ArtChallenges"
+    },
+    {
+      "qid": "AuditoryStimuli",
+      "label": "AuditoryStimuli"
+    },
+    {
+      "qid": "EnvironmentalStimuli",
+      "label": "EnvironmentalStimuli"
+    },
+    {
+      "qid": "ChronicStress",
+      "label": "ChronicStress"
+    },
+    {
+      "qid": "EmotionalChallenges",
+      "label": "EmotionalChallenges"
+    },
+    {
+      "qid": "ConflictWithPeers",
+      "label": "ConflictWithPeers"
+    },
+    {
+      "qid": "SocialChallenges",
+      "label": "SocialChallenges"
+    },
+    {
+      "qid": "DifficultyMakingFriend",
+      "label": "DifficultyMakingFriend"
+    },
+    {
+      "qid": "ExamChallenges",
+      "label": "ExamChallenges"
+    },
+    {
+      "qid": "Frustration",
+      "label": "Frustration"
+    },
+    {
+      "qid": "GroupWorkChallenges",
+      "label": "GroupWorkChallenges"
+    },
+    {
+      "qid": "HomeWorkChallenges",
+      "label": "HomeWorkChallenges"
+    },
+    {
+      "qid": "LanguageChallenges",
+      "label": "LanguageChallenges"
+    },
+    {
+      "qid": "LowSelfEsteem",
+      "label": "LowSelfEsteem"
+    },
+    {
+      "qid": "MathChallenges",
+      "label": "MathChallenges"
+    },
+    {
+      "qid": "PeerRejection",
+      "label": "PeerRejection"
+    },
+    {
+      "qid": "TactileStimuli",
+      "label": "TactileStimuli"
+    },
+    {
+      "qid": "TeacherRelationship",
+      "label": "TeacherRelationship"
+    },
+    {
+      "qid": "VisualStimuli",
+      "label": "VisualStimuli"
+    }
+  ],
+  "relations": [
+    {
+      "pid": "hasLevel",
+      "label": "hasLevel",
+      "domain": "Challenge",
+      "range": "ChallengeLevel"
+    }
+  ]
+}

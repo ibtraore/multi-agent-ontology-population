@@ -1,0 +1,369 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/author/ontologies/2024/4/activity/"
+     xml:base="http://www.semanticweb.org/author/ontologies/2024/4/activity/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:swrl="http://www.w3.org/2003/11/swrl#"
+     xmlns:swrla="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#"
+     xmlns:swrlb="http://www.w3.org/2003/11/swrlb#"
+     xmlns:adhd-profile="http://www.semanticweb.org/author/ontologies/2024/4/adhd-profile#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/author/ontologies/2024/4/activity"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled -->
+
+    <owl:AnnotationProperty rdf:about="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Datatypes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.w3.org/2001/XMLSchema#date -->
+
+    <rdfs:Datatype rdf:about="http://www.w3.org/2001/XMLSchema#date"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/author/ontologies/2024/4/activity#hasActivityState -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/author/ontologies/2024/4/activity#hasActivityState">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/author/ontologies/2024/4/activity#Activity"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/author/ontologies/2024/4/activity#ActivityState"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/author/ontologies/2024/4/activity#Activity -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/author/ontologies/2024/4/activity#Activity"/>
+    
+
+
+    <!-- http://www.semanticweb.org/author/ontologies/2024/4/activity#ActivityState -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/author/ontologies/2024/4/activity#ActivityState"/>
+    
+
+
+    <!-- http://www.semanticweb.org/author/ontologies/2024/4/activity#Adventure -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/author/ontologies/2024/4/activity#Adventure">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/author/ontologies/2024/4/activity#OutdoorActivity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/author/ontologies/2024/4/activity#ArtCourse -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/author/ontologies/2024/4/activity#ArtCourse">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/author/ontologies/2024/4/activity#EducationalActivity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/author/ontologies/2024/4/activity#BoardGame -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/author/ontologies/2024/4/activity#BoardGame">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/author/ontologies/2024/4/activity#GameActivity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/author/ontologies/2024/4/activity#CommunityService -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/author/ontologies/2024/4/activity#CommunityService">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/author/ontologies/2024/4/activity#SocialActivity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/author/ontologies/2024/4/activity#Conversation -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/author/ontologies/2024/4/activity#Conversation">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/author/ontologies/2024/4/activity#FamillyActivity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/author/ontologies/2024/4/activity#Cooking -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/author/ontologies/2024/4/activity#Cooking">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/author/ontologies/2024/4/activity#FamillyActivity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/author/ontologies/2024/4/activity#CulturalActivity -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/author/ontologies/2024/4/activity#CulturalActivity">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/author/ontologies/2024/4/activity#Activity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/author/ontologies/2024/4/activity#CulturalFestival -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/author/ontologies/2024/4/activity#CulturalFestival">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/author/ontologies/2024/4/activity#CulturalActivity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/author/ontologies/2024/4/activity#CulturalLearning -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/author/ontologies/2024/4/activity#CulturalLearning">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/author/ontologies/2024/4/activity#CulturalActivity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/author/ontologies/2024/4/activity#Eating -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/author/ontologies/2024/4/activity#Eating">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/author/ontologies/2024/4/activity#FamillyActivity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/author/ontologies/2024/4/activity#EducationalActivity -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/author/ontologies/2024/4/activity#EducationalActivity">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/author/ontologies/2024/4/activity#Activity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/author/ontologies/2024/4/activity#EnvironmentalProject -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/author/ontologies/2024/4/activity#EnvironmentalProject">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/author/ontologies/2024/4/activity#OutdoorActivity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/author/ontologies/2024/4/activity#FamillyActivity -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/author/ontologies/2024/4/activity#FamillyActivity">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/author/ontologies/2024/4/activity#Activity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/author/ontologies/2024/4/activity#Fitness -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/author/ontologies/2024/4/activity#Fitness">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/author/ontologies/2024/4/activity#PhysicalActivity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/author/ontologies/2024/4/activity#GameActivity -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/author/ontologies/2024/4/activity#GameActivity">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/author/ontologies/2024/4/activity#Activity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/author/ontologies/2024/4/activity#GroupGame -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/author/ontologies/2024/4/activity#GroupGame">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/author/ontologies/2024/4/activity#SocialActivity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/author/ontologies/2024/4/activity#GroupWork -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/author/ontologies/2024/4/activity#GroupWork">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/author/ontologies/2024/4/activity#EducationalActivity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/author/ontologies/2024/4/activity#HomeWork -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/author/ontologies/2024/4/activity#HomeWork">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/author/ontologies/2024/4/activity#EducationalActivity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/author/ontologies/2024/4/activity#LanguageCourse -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/author/ontologies/2024/4/activity#LanguageCourse">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/author/ontologies/2024/4/activity#EducationalActivity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/author/ontologies/2024/4/activity#MathCourse -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/author/ontologies/2024/4/activity#MathCourse">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/author/ontologies/2024/4/activity#EducationalActivity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/author/ontologies/2024/4/activity#MuseumVisit -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/author/ontologies/2024/4/activity#MuseumVisit">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/author/ontologies/2024/4/activity#CulturalActivity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/author/ontologies/2024/4/activity#NatureExploration -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/author/ontologies/2024/4/activity#NatureExploration">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/author/ontologies/2024/4/activity#OutdoorActivity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/author/ontologies/2024/4/activity#OutdoorActivity -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/author/ontologies/2024/4/activity#OutdoorActivity">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/author/ontologies/2024/4/activity#Activity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/author/ontologies/2024/4/activity#PhysicalActivity -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/author/ontologies/2024/4/activity#PhysicalActivity">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/author/ontologies/2024/4/activity#Activity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/author/ontologies/2024/4/activity#Picnic -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/author/ontologies/2024/4/activity#Picnic">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/author/ontologies/2024/4/activity#FamillyActivity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/author/ontologies/2024/4/activity#Puzzle -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/author/ontologies/2024/4/activity#Puzzle">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/author/ontologies/2024/4/activity#GameActivity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/author/ontologies/2024/4/activity#SchoolExam -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/author/ontologies/2024/4/activity#SchoolExam">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/author/ontologies/2024/4/activity#EducationalActivity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/author/ontologies/2024/4/activity#SocialActivity -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/author/ontologies/2024/4/activity#SocialActivity">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/author/ontologies/2024/4/activity#Activity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/author/ontologies/2024/4/activity#Sport -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/author/ontologies/2024/4/activity#Sport">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/author/ontologies/2024/4/activity#PhysicalActivity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/author/ontologies/2024/4/activity#VideoGame -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/author/ontologies/2024/4/activity#VideoGame">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/author/ontologies/2024/4/activity#GameActivity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/author/ontologies/2024/4/activity#WatchingMovie -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/author/ontologies/2024/4/activity#WatchingMovie">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/author/ontologies/2024/4/activity#FamillyActivity"/>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/author/ontologies/2024/4/activity#MentallyDemanding -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/author/ontologies/2024/4/activity#MentallyDemanding"/>
+    
+
+
+    <!-- http://www.semanticweb.org/author/ontologies/2024/4/activity#PhysicallyDemanding -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/author/ontologies/2024/4/activity#PhysicallyDemanding">
+        <rdf:type rdf:resource="http://www.semanticweb.org/author/ontologies/2024/4/activity#ActivityState"/>
+    </owl:NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi -->
+

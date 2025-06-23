@@ -1,0 +1,402 @@
+################################################
+########   time_extracting_task  1    ##########
+################################################
+time_triplet_extraction_task:
+  description: >
+    Cette tâche consiste à extraire toutes les informations temporelles explicites présentes 
+    dans un texte donné, et à les convertir en triplets RDF selon l’ontologie temporelle définie.
+
+    L’agent doit repérer les entités temporelles suivantes :
+    - Des instants précis (date, heure),
+    - Des intervalles temporels (avec début et/ou fin),
+    - (Les états temporels sont ignorés car déduits a posteriori).
+
+    Suivre les instructions suivantes dans l'ordre :
+    1- Extraire une instance du concept Interval (ex: SituationInterval):
+      Tu reçois comme contexte les triplets extraits par le module central `situation_extraction_task`. 
+      Utilisé le meme nom de cette instance d'intervalle
+    2- Extraire une instance de concept Instant qui représente le début de l'interval (ex: StartInstant)
+    3- Extraire une instance de concept Instant qui représente la fin de l'interval (ex: EndInstant)
+    4- Relier ces deux instants (start et end) à l'interval avec les relations :(hasStart et hasEnd)
+    5- Pour chacun de ces deux instants, identifier les éléments constitutifs (année, mois, jour, heure, minute, seconde)
+        et Produire les triplets RDF associés, en respectant les autres relations autorisées par l’ontologie :
+        - hasYear
+        - hasMonth
+        - hasDay
+        - hasHour
+        - hasMinute
+        - hasSecond
+
+
+    **Contraintes importantes :**
+    - Seules les informations explicitement présentes dans le texte doivent être utilisées.
+    - Les valeurs doivent respecter les plages définies dans le modèle Pydantic.
+    - Chaque triplet doit être conforme au schéma `ExtractedTimeTriplets`.
+
+    **Format de sortie JSON attendu :**
+    {
+      "triplets": [
+        {"subject": "SituationInterval", "predicate": "is_A", "object": "Interval"}
+        {"subject": "SituationInterval", "predicate": "hasStart", "object": "StartInstant"}
+        {"subject": "SituationInterval", "predicate": "hasEnd", "object": "EndInstant"}
+        {"subject": "StartInstant","predicate": "is_A",  "object": "Instant"},
+        {"subject": "EndInstant","predicate": "is_A",  "object": "Instant"},
+        {"subject": "StartInstant","predicate": "hasYear",  "object": 2024},
+        {"subject": "StartInstant", "predicate": "hasMonth", "object": 5},
+        {"subject": "StartInstant", "predicate": "hasDay",  "object": 21},
+        {"subject": "StartInstant", "predicate": "hasHour",  "object": 10},
+        {"subject": "StartInstant", "predicate": "hasMinute",  "object": 30},
+        {"subject": "EndInstant", "predicate": "hasYear",  "object": 2024},
+        ......
+      ]
+    }
+
+    **Voici le texte à analyser:**
+    {module_text}
+
+
+    
+
+  expected_output: >
+    Une instance valide du modèle `ExtractedTimeTriplets`, contenant uniquement des relations temporelles RDF extraites à partir du texte fourni.
+    
+  agent: extracting_module_agent
+
+  
+##################################################
+########   person_extracting_task  2    ##########
+##################################################
+person_triplet_extraction_task:
+
+  description: >
+    Cette tâche consiste à extraire toutes les informations relatives aux personnes mentionnées dans un texte,
+    qu’il s’agisse du patient ou de son entourage (famille, médecin, enseignant...), et à les représenter 
+    sous forme de triplets RDF conformes à l’ontologie des personnes.
+
+    **Très important** :  
+    Tu reçois comme contexte le texte principal (ci-dessous) ainsi que les triplets extraits par 
+    le module central `situation_extraction_task`.
+    Tu dois impérativement utiliser les mêmes noms d’instances de personnes que ceux déjà définis 
+    (par exemple :'Sylvie', 'MmeMartin').  
+    Tu ne dois jamais renommer ni créer de nouvelles formes.
+
+    L’agent doit identifier et extraire :
+    - Le nom des personnes mentionnées (patients, enseignants, docteurs, parents, etc.).
+    - Leur genre (homme, femme, etc.).
+    - Leur date de naissance (si disponible).
+    - Leur âge (si spécifié explicitement).
+    - Le service médical du docteur (le cas échéant).
+    - Toute relation d’influence directe sur le patient.
+
+    === Relations à utiliser : ===
+      - is_A
+      - hasName
+      - hasGender
+      - hasDateOfBirth
+      - hasAge
+      - hasService (Extraite seulement si c'est un médecin et on connait sa spécialité)
+
+    === Contraintes à respecter : ===
+    - Tous les triplets doivent être conformes au modèle `ExtractedPersonTriplets`.
+    - Chaque champ doit respecter le type, la syntaxe et les contraintes décrites dans les schémas Pydantic.
+    - Les valeurs doivent être extraites mot pour mot à partir du texte source.
+    - Ordonner les triplets concernant chaque personne.
+    - Utiliser exactement les noms d’instances fournis par le module Situation.
+
+    === Format de sortie JSON attendu : ===
+    exemple de sortie du module situation (c'est seulement un exemple le nom réel du patient ce trouve dans le texte au dessous):
+    { "subject": "ThomasSituation","predicate": "hasPatient",           "object": "Thomas" }
+    { "subject": "MathLesson",     "predicate": "isWith",               "object": "Sylvie" },
+    donc voici un exemple des triplets a extraire 
+    {
+      "triplets": [
+        { "subject": "Thomas", "predicate": "is_A", "object": "Patient" },
+        { "subject": "Thomas", "predicate": "hasName", "object": "Thomas" },
+        { "subject": "Thomas", "predicate": "hasDateOfBirth", "object": "2018-03-30" },
+        { "subject": "Thomas", "predicate": "hasGender", "object": "Male" },
+        { "subject": "Sylvie", "predicate": "is_A", "object": "Teacher" },
+        { "subject": "Sylvie", "predicate": "hasName", "object": "Sylvie" }
+      ]
+    }
+
+    **Voici le texte à analyser** :
+    {module_text}
+    
+    
+
+  expected_output: >
+    Une instance du modèle `ExtractedPersonTriplets`, contenant uniquement des triplets RDF valides représentant les relations entre personnes extraites du texte, 
+    avec des noms harmonisés selon ceux du module Situation.
+
+  agent: extracting_module_agent
+
+
+#######################################################
+########   environment_extracting_task  3    ##########
+#######################################################
+
+environment_triplet_extraction_task:
+
+  description: >
+    Cette tâche consiste à identifier les environnements physiques ou éducatifs mentionnés dans un texte 
+    (par exemple : écoles, parcs, bibliothèques) et à produire des triplets RDF valides selon l’ontologie 
+    du module Environnement.
+
+    **Très important** :  
+    Tu reçois comme contexte le texte principal (ci-dessous) ainsi que les triplets extraits par 
+    le module central `situation_extraction_task`.  
+    Tu dois impérativement utiliser les mêmes noms d’instances d’environnements que ceux déjà définis 
+    (par exemple : 'Classroom', 'CityPark', 'Library').  
+    Tu ne dois jamais renommer ni créer de nouvelles formes.
+
+    === L’agent doit : ===
+    - Identifier chaque environnement clairement mentionné dans le texte.
+    - Associer cet environnement au bon type RDF selon l’ontologie.
+
+    === Relation autorisée : ===
+      - is_A
+
+    === Relations exclues : ===
+      - hasEnvironment (traitée uniquement dans le module Situation)
+      - EnvironmentState (ne doit pas être extraite ici, car inférée)
+
+    === Contraintes : ===
+    - Le champ `subject` est le nom exact de l’environnement fourni par le module Situation.
+    - Le champ `object` est l’un des types RDF valides suivants :
+      [Community, LivingEnvironment, FamilyHome, Garden, PlayingEnvironment, HomePlaySpace, 
+       HomeSchooling, LearningEnvironment, Library, OnlineLearning, Park, PreSchool, 
+       PublicPlayground, School, SchoolResidence, SportComplexe, SummerCamp, Theater]
+
+    - Seules les associations clairement exprimées dans le texte doivent être converties en triplets RDF.
+    - Ne jamais extraire un environnement ou un type absent ou non identifiable explicitement.
+
+    === Exemple de sortie attendue : ===
+    {
+      "triplets": [
+        {"subject": "Classroom","predicate": "is_A","object": "LearningEnvironment"},
+        {"subject": "CityPark","predicate": "is_A","object": "Park"}
+      ]
+    }
+
+    ****Voici le texte à analyser**** :
+    {module_text}
+
+    
+
+  expected_output: >
+    Une instance JSON conforme au modèle `ExtractedEnvironmentTriplets`, contenant uniquement des triplets RDF `is_A` 
+    représentant les environnements identifiés, avec des noms harmonisés selon ceux fournis par le module Situation.
+
+  agent: extracting_module_agent
+
+
+#####################################################
+########   challenge_extracting_task  4    ##########
+#####################################################
+
+challenge_triplet_extraction_task:
+  description: >
+    Cette tâche consiste à identifier les défis (ou challenges) mentionnés dans un texte non structuré, 
+    et à les représenter sous forme de triplets RDF valides selon l’ontologie du module Challenge.
+
+    Un défi peut être scolaire, émotionnel, social, sensoriel ou cognitif. Il doit être typé selon 
+    les concepts définis dans l’ontologie (ex : 'MathChallenges', 'Frustration', 'GroupWorkChallenges').
+
+    **Très important** :  
+    Tu reçois comme contexte le texte principale qui est au dessous et  les triplets extraits par 
+    le module central `situation_extraction_task`.  
+    Tu dois impérativement utiliser les mêmes noms d’instances pour chaque challenge, tels qu’ils ont été définis 
+    (par exemple : 'AmelieMathChallenge', 'LeoNoiseChallenge', 'IsabelleFrustration').  
+    Tu ne dois ni renommer ni créer de nouvelles formes 
+
+    **L’agent doit :**
+    - Repérer chaque instance de défi clairement exprimée dans le texte (ex: 'MathematicsChallenge....'),
+
+    **Relations autorisées dans cette tâche :**
+      - is_A
+
+    **Relations exclues :**
+      - hasLevel (cette relation est déduite par l'ontologie et ne doit pas être extraite ici)
+      - Toute relation de type état ou inférence implicite
+
+    **Contraintes :**
+    - Le champ `subject` correspond à une instance du challenge  trouvé dans le texte et extraite par le module 
+    Situation (ex: 'ThomasExamChallenge', 'ThomasFrustration').
+    - Utilise exactement les noms d’instances pré-fournis par le module Situation.
+    - Le champ `object` correspond à l’un des types RDF valides suivants :
+      [AcademicChallenges, ArtChallenges, AuditoryStimuli, EnvironmentalStimuli, ChronicStress, EmotionalChallenges,
+      ConflictWithPeers, SocialChallenges, DifficultyMakingFriend, ExamChallenges, Frustration, GroupWorkChallenges,
+      HomeWorkChallenges, LanguageChallenges, LowSelfEsteem, MathChallenges, PeerRejection, TactileStimuli,
+      TeacherRelationship, VisualStimuli]
+
+    - Seules les associations clairement exprimées dans le texte doivent être converties en triplets RDF.
+    -** Instructions :** 
+      Ne jamais extraire un challenge qui n'est pas clairement mentionné dans le texte.
+
+    **Exemple de sortie attendue :**
+    {
+      "triplets": [
+        {"subject": "MathematicsChallenge","predicate": "is_A","object": "AcademicChallenges" },
+        {"subject": "Frustration", "predicate": "is_A", "object": "Frustration" }
+      ]
+    }
+
+    ******Voici le texte à analyser**** :**
+    {module_text}
+
+    
+
+  expected_output: >
+    Une instance du modèle `ExtractedChallengeTriplets`, contenant uniquement des triplets RDF `is_A` 
+    représentant les défis identifiés dans le texte et typés selon l’ontologie Challenge.
+
+  agent: extracting_module_agent
+
+
+####################################################
+########   activity_extracting_task  5    ##########
+####################################################
+
+activity_triplet_extraction_task:
+
+  description: >
+    Cette tâche consiste à identifier les activités mentionnées dans un texte (ex: cours, jeux, sport...), 
+    puis à les typer selon l’ontologie des activités, en générant des triplets RDF valides de la forme `is_A`.
+
+    **Très important** :  
+    Tu reçois comme contexte le texte principal (ci-dessous) ainsi que les triplets extraits par 
+    le module central `situation_extraction_task`.  
+    Tu dois impérativement utiliser les mêmes noms d’instances d’activités que ceux déjà définis 
+    (par exemple : 'MathLesson', 'CookingSession', 'MusicLesson').  
+    Tu ne dois jamais renommer ni créer de nouvelles formes.
+
+    **L’agent doit :**
+    - Identifier chaque activité concrète exprimée dans le texte.
+    - Associer cette activité au bon type RDF.
+
+    **Seule relation autorisée dans cette tâche :**
+      - is_A
+
+    **Relations exclues :**
+      - isEngagedIn (Person ↔ Activity) → déjà géré par le module Situation
+      - isWith (Person ↔ Activity) → déjà géré par le module Situation
+
+    **Contraintes :**
+    - Le champ `subject` est le nom exact de l’activité fourni par le module Situation.
+    - Le champ `object` est l’un des types RDF valides suivants :
+      [Adventure, OutdoorActivity, ArtCourse, EducationalActivity, BoardGame, GameActivity, CommunityService,
+       SocialActivity, Conversation, FamillyActivity, Cooking, CulturalActivity, CulturalFestival,
+       CulturalLearning, Eating, EnvironmentalProject, Fitness, PhysicalActivity, GroupGame, GroupWork,
+       HomeWork, LanguageCourse, MathCourse, MuseumVisit, NatureExploration, Picnic, Puzzle, SchoolExam,
+       Sport, VideoGame, WatchingMovie]
+
+    - Seules les associations clairement exprimées dans le texte doivent être converties en triplets RDF.
+    - Ne jamais extraire une activité non mentionnée explicitement.
+
+    **Exemple de sortie attendue :**
+    {
+      "triplets": [
+        {"subject": "AmelieMusicLesson","predicate": "is_A","object": "EducationalActivity"},
+        {"subject": "LeoCookingSession","predicate": "is_A","object": "Cooking"}
+      ]
+    }
+
+    ******Voici le texte à analyser**** :**
+    {module_text}
+
+    
+
+  expected_output: >
+    Une instance du modèle `ExtractedActivityTriplets`, contenant uniquement des triplets RDF valides `is_A` 
+    représentant les activités identifiées, avec des noms harmonisés selon ceux du module Situation.
+
+  agent: extracting_module_agent
+
+
+#####################################################
+########   situation_extracting_task  6    ##########
+#####################################################
+situation_extraction_task:
+
+  description: >
+    Tu es un agent d’extraction RDF chargé de construire les triplets intermodulaires associés à une situation de vie d’un enfant, à partir d’un emploi du temps enrichi.
+
+    Ton objectif est de modéliser la situation centrale vécue par l’enfant, et de créer toutes les relations RDF nécessaires pour la relier correctement à :
+    - la personne (l’enfant lui-même et l’adulte encadrant)
+    - l’activité réalisée
+    - l’environnement
+    - l’intervalle de temps
+    - les challenges rencontrés
+
+    Chaque triplet suit la forme : { "subject": ..., "predicate": ..., "object": ... }  
+    Ton résultat final doit être un objet JSON conforme au modèle `SituationmoduleTriplets`.
+
+    === STRUCTURE D’EXTRACTION À SUIVRE ===
+
+    Pour chaque situation décrite dans le texte, tu dois générer les triplets suivants **dans cet ordre** :
+
+    1. **Définir l’instance de situation centrale :**
+       - Nommer l’instance : `<Prénom>Situation` (ex: `ThomasSituation`)
+       - Ajouter la relation :  
+         { "subject": "ThomasSituation", "predicate": "is_A", "object": "<TypeDeSituation>" }  
+         Les types autorisés sont :
+         - AcademicSituation
+         - EmotionalRegulationSituation
+         - FamilyDynamicSituation
+         - OrganizationSituation
+         - SocialSituation
+         - TimeManagementSituation
+
+    2. **Relier la situation à l’enfant concerné :**
+       - Le nom de l’enfant est pris tel quel (ex: `Thomas`)
+       - Relation :  
+         { "subject": "ThomasSituation", "predicate": "hasPatient", "object": "Thomas" }
+
+    3. **Relier la situation à la période de temps correspondante :**
+       - L’intervalle est toujours nommé `SituationInterval`
+       - Relation :  
+         { "subject": "ThomasSituation", "predicate": "hasTemporalEntity", "object": "SituationInterval" }
+
+    4. **Relier la situation à l’environnement où elle se déroule :**
+       - Nommer l’environnement selon le contexte (ex: `SchoolClassroom`, `Playground`)
+       - Relation :  
+         { "subject": "ThomasSituation", "predicate": "hasEnvironment", "object": "SchoolClassroom" }
+
+    5. **Relier la situation à un ou plusieurs challenges :**
+       - Nommer chaque challenge selon son contenu (ex: `MathChallenge`, `NoiseChallenge`, `Frustration`)
+       - Relation(s) :  
+         { "subject": "ThomasSituation", "predicate": "hasChallenge", "object": "Frustration" }
+
+    6. **Relier l’enfant à l’activité pratiquée :**
+       - Nommer l’activité selon sa nature, format : `<NomActivité>` ou équivalent (ex: `MathLesson`, `Music`)
+       - Relation :  
+         { "subject": "Thomas", "predicate": "isEngagedIn", "object": "MathLesson" }
+
+    7. **Relier l’activité à la personne qui l'accompagne :**
+       - Nommer l’adulte tel qu’indiqué dans le texte (ex: `MmeMartin`, `Sylvie`)
+       - Relation :  
+         { "subject": "MathLesson", "predicate": "isWith", "object": "MmeMartin" }
+
+    === CONTRAINTES DE MISE EN FORME ===
+
+    - Tous les noms d’instances doivent être clairs, sans espaces, et commencer par une majuscule.
+    - Tu dois respecter les conventions suivantes :
+      - Situation : `<Prénom>Situation`
+      - Activité : tels qu'il est dans le texte (ex: `ReadingLesson`)
+      - Environnement : `XxxRoom`, `Playground`, etc.
+      - Personnes : prénom exact ou nom complet sans espace (ex: `MmeMartin`)
+      - Challenge : tels qu'il est dans le texte (ex: `NoiseChallenge`)
+      - Intervalle : `SituationInterval`
+    - Chaque relation ne doit être générée **que si elle est justifiée** par les informations du texte.
+    - Tu ne dois pas inventer d’informations ni inférer un type de situation sans qu’il soit mentionné ou clairement implicite.
+
+    ******Voici le texte à analyser**** :**
+       {module_text}
+
+    
+
+  expected_output: >
+    Un objet JSON contenant une clé "triplets" qui contient une liste de triplets RDF intermodulaires.
+    Chaque triplet doit être conforme à la structure { "subject": ..., "predicate": ..., "object": ... } et validable par le modèle `SituationmoduleTriplets`.
+
+  agent: extracting_module_agent
