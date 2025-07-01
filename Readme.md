@@ -1,6 +1,6 @@
-# A Multi LLM-based Agents for Modular Ontology Population: A Case Study on ADHD Ontology
+# A Multi-LLM Agent System for Modular Ontology Population: A Case Study on ADHD
 
-This is the repository for `A Multi LLM-based Agents for Modular Ontology Population: A Case Study on ADHD Ontology`.
+This is the repository for `A Multi-LLM Agent System for Modular Ontology Population: A Case Study on ADHD`.
 This approach to automatically populate a modular ontology using multi LLM-based agents from unstructured documents.
 Given a modular ontology and a set of documents, the task is to extract instance from the documents
 while complying to the given ontology (concepts, relations, domain/range constraints).
