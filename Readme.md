@@ -9,7 +9,7 @@ This is the repository for `A Framework for Contextualizing Symptom Manifestatio
 
 ## Semantic Model
 
-![Alt text](Images/Ontology modules.png)
+![Alt text](Images/Ontology_modules.png)
 
 ---
 
