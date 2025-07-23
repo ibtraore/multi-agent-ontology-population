@@ -15,7 +15,7 @@ This is the repository for `A Framework for Contextualizing Symptom Manifestatio
 
 ## The population System
 
-![Alt text](Images/Population.png)
+![Alt text](Images/population.png)
 
 ---
 
