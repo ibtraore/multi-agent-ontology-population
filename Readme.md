@@ -1,6 +1,6 @@
-# A Framework for Contextualizing Symptom Manifestations in Healthcare: A Case Study on ADHD
+# PATCHES : A Framework for Contextualizing ADHD Symptoms Manifestations
 
-This is the repository for `A Framework for Contextualizing Symptom Manifestations in Healthcare: A Case Study on ADHD`.
+This is the repository for `PATCHES : A Framework for Contextualizing ADHD Symptoms Manifestations`.
  This study introduce a complete framework designed to support clinical reasoning for Contextualizing the manifestations of ADHD symptoms.
 
 **Note:** Due to the confidentiality of medical data, all personal patient information has been replaced with fictitious data.
@@ -168,3 +168,4 @@ The following instructions describe how to execute the complete pipeline, from d
 
 4. **Access the Gradio Interface**:
    Open the Gradio interface using the link mentioned above.
+
